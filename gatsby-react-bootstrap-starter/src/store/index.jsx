@@ -8,6 +8,7 @@ import {
 	OFFERS,
 	ROUTES,
 	ROUTE_DETAIL,
+	ROUTE_SERVISES,
 	TOP_NAVS,
 	MAIN_WHY_WE_ARE,
 	MAIN_QUESTION_ANSWER,
@@ -53,13 +54,14 @@ const defaultState = {
 	[OPEN_AUTH_DIALOG]: false,
 	[TOGGLE_MOBILE_NAV]: false,
 	[MAIN_SLIDER_SLIDS]: demo.main_slider,
-	[OFFERS]: demo.routes,
+	[OFFERS]: demo.offers,
 	[ROUTES]: {
 		data: demo.routes,
 		nowShowRoutes: 6,
 		allCountRoutes: demo.routes.length
 	},
 	[ROUTE_DETAIL]: demo.route_detail,
+	[ROUTE_SERVISES]: demo.route_servises,
 	[MAIN_WHY_WE_ARE]: demo.main_why_we_are,
 	[MAIN_QUESTION_ANSWER]: demo.main_question_answer,
 	[MAIN_NEWS]: demo.news,

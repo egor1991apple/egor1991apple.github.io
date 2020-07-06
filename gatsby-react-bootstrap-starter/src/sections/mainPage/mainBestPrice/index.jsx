@@ -6,7 +6,7 @@ import SectionSubTitle from '../../../components/title/section_subtitle';
 import { GlobalContext } from '../../../store/context';
 import BoxWhite from '../../../components/boxes/boxWhite';
 export default function MainSectionBestPrice() {
-	const { OFFERS = [] } = useContext(GlobalContext);
+	const { ROUTES = [] } = useContext(GlobalContext);
 
 	return (
 		OFFERS.length && (

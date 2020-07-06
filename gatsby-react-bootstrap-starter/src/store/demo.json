@@ -161,15 +161,7 @@
         "currency": "USD",
         "shortDescription": {
             "text": "Proident sint adipisicing dolor eiusmod pariatur eu occaecat aliquip tempor id. Fugiat adipisicing elit reprehenderit reprehenderit reprehenderit consequat occaecat nisi eu eiusmod excepteur sunt adipisicing.Amet nulla qui enim eiusmod nisi laborum mollit id nisi in do.Exercitation elit aute ut ad ut amet ipsum minim sint.",
-            "servises": [{
-                    "icon": "",
-                    "titleServises": "wi-fi"
-                },
-                {
-                    "icon": "",
-                    "titleServises": "cofee"
-                }
-            ]
+            "servises": ["1", "2", "3", "4", "5"]
         },
         "description": [{
                 "title": "Правила бронирования",
@@ -182,6 +174,25 @@
             {
                 "title": "Багаж",
                 "text": "Ea Lorem ex magna magna laborum commodo Lorem nisi.Dolor est anim eiusmod proident et ipsum.Fugiat irure ea ex dolor adipisicing do ex.Mollit ut do ad et Lorem id esse enim Lorem eiusmod."
+            }
+        ],
+        "timetable": [{
+                "duration": "4ч 20мин",
+                "from": "5:30",
+                "to": "6:30",
+                "days": [1, 0, 1, 0, 0, 0, 1]
+            },
+            {
+                "duration": "6ч 20мин",
+                "from": "6:30",
+                "to": "19:30",
+                "days": [1, 0, 1, 0, 0, 1, 1]
+            },
+            {
+                "duration": "13ч 20мин",
+                "from": "12:30",
+                "to": "18:30",
+                "days": [0, 0, 1, 0, 0, 1, 1]
             }
         ],
         "points": [{
@@ -214,6 +225,50 @@
         ]
 
     },
+    "route_servises": [{
+            "id": "1",
+            "title": "wi-fi",
+            "icon": "/",
+            "text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
+
+        },
+        {
+            "id": "2",
+            "title": "Кофе",
+            "icon": "/",
+            "text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
+        },
+        {
+            "id": "3",
+            "title": "Плед",
+            "icon": "/",
+            "text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
+        },
+        {
+            "id": "4",
+            "title": "Медия",
+            "icon": "/",
+            "text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
+        },
+        {
+            "id": "5",
+            "title": "220v",
+            "icon": "/",
+            "text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
+        },
+        {
+            "id": "6",
+            "title": "Кондиционер",
+            "icon": "/",
+            "text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
+        },
+        {
+            "id": "7",
+            "title": "wc",
+            "icon": "/",
+            "text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
+        }
+    ],
     "main_why_we_are": [{
             "title": "Commodo nulla aliqua ",
             "subtitle": "Sit enim aute qui minim.",
@@ -405,5 +460,244 @@
             "link": "test@gmail.com",
             "text": "г. Минск ул. Киселева 10"
         }
+    ],
+    "offers": [{
+            "id": "1",
+            "totalCost": "400",
+            "totalCurrency": "USD",
+            "from": {
+                "cost": "200",
+                "currency": "USD",
+                "route": [{
+                        "city": "Минск",
+                        "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                        "time": "21:00",
+                        "date": "22.02.2020",
+                        "coords": {
+                            "x": "1293741723",
+                            "y": "1923751723"
+                        }
+
+                    },
+                    {
+                        "city": "Cмоленск",
+                        "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                        "time": "21:00",
+                        "date": "22.02.2020",
+                        "coords": {
+                            "x": "1293741723",
+                            "y": "1923751723"
+                        }
+                    },
+                    {
+                        "city": "Москва",
+                        "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                        "time": "21:00",
+                        "date": "22.02.2020",
+                        "coords": {
+                            "x": "1293741723",
+                            "y": "1923751723"
+                        }
+                    }
+
+                ]
+            },
+            "back": {
+                "cost": "200",
+                "currency": "USD",
+                "route": [{
+                        "city": "Минск",
+                        "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                        "time": "21:00",
+                        "date": "22.02.2020",
+                        "coords": {
+                            "x": "1293741723",
+                            "y": "1923751723"
+                        }
+
+                    },
+                    {
+                        "city": "Cмоленск",
+                        "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                        "time": "21:00",
+                        "date": "22.02.2020",
+                        "coords": {
+                            "x": "1293741723",
+                            "y": "1923751723"
+                        }
+                    },
+                    {
+                        "city": "Москва",
+                        "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                        "time": "21:00",
+                        "date": "22.02.2020",
+                        "coords": {
+                            "x": "1293741723",
+                            "y": "1923751723"
+                        }
+                    }
+
+                ]
+            }
+        },
+        {
+            "id": "1",
+            "totalCost": "400",
+            "totalCurrency": "USD",
+            "from": {
+                "cost": "200",
+                "currency": "USD",
+                "route": [{
+                        "city": "Минск",
+                        "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                        "time": "21:00",
+                        "date": "22.02.2020",
+                        "coords": {
+                            "x": "1293741723",
+                            "y": "1923751723"
+                        }
+
+                    },
+                    {
+                        "city": "Cмоленск",
+                        "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                        "time": "21:00",
+                        "date": "22.02.2020",
+                        "coords": {
+                            "x": "1293741723",
+                            "y": "1923751723"
+                        }
+                    },
+                    {
+                        "city": "Москва",
+                        "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                        "time": "21:00",
+                        "date": "22.02.2020",
+                        "coords": {
+                            "x": "1293741723",
+                            "y": "1923751723"
+                        }
+                    }
+
+                ]
+            },
+            "back": {
+                "cost": "200",
+                "currency": "USD",
+                "route": [{
+                        "city": "Минск",
+                        "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                        "time": "21:00",
+                        "date": "22.02.2020",
+                        "coords": {
+                            "x": "1293741723",
+                            "y": "1923751723"
+                        }
+
+                    },
+                    {
+                        "city": "Cмоленск",
+                        "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                        "time": "21:00",
+                        "date": "22.02.2020",
+                        "coords": {
+                            "x": "1293741723",
+                            "y": "1923751723"
+                        }
+                    },
+                    {
+                        "city": "Москва",
+                        "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                        "time": "21:00",
+                        "date": "22.02.2020",
+                        "coords": {
+                            "x": "1293741723",
+                            "y": "1923751723"
+                        }
+                    }
+
+                ]
+            }
+        },
+        {
+            "id": "1",
+            "totalCost": "400",
+            "totalCurrency": "USD",
+            "from": {
+                "cost": "200",
+                "currency": "USD",
+                "route": [{
+                        "city": "Минск",
+                        "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                        "time": "21:00",
+                        "date": "22.02.2020",
+                        "coords": {
+                            "x": "1293741723",
+                            "y": "1923751723"
+                        }
+
+                    },
+                    {
+                        "city": "Cмоленск",
+                        "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                        "time": "21:00",
+                        "date": "22.02.2020",
+                        "coords": {
+                            "x": "1293741723",
+                            "y": "1923751723"
+                        }
+                    },
+                    {
+                        "city": "Москва",
+                        "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                        "time": "21:00",
+                        "date": "22.02.2020",
+                        "coords": {
+                            "x": "1293741723",
+                            "y": "1923751723"
+                        }
+                    }
+
+                ]
+            },
+            "back": {
+                "cost": "200",
+                "currency": "USD",
+                "route": [{
+                        "city": "Минск",
+                        "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                        "time": "21:00",
+                        "date": "22.02.2020",
+                        "coords": {
+                            "x": "1293741723",
+                            "y": "1923751723"
+                        }
+
+                    },
+                    {
+                        "city": "Cмоленск",
+                        "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                        "time": "21:00",
+                        "date": "22.02.2020",
+                        "coords": {
+                            "x": "1293741723",
+                            "y": "1923751723"
+                        }
+                    },
+                    {
+                        "city": "Москва",
+                        "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                        "time": "21:00",
+                        "date": "22.02.2020",
+                        "coords": {
+                            "x": "1293741723",
+                            "y": "1923751723"
+                        }
+                    }
+
+                ]
+            }
+        }
+
     ]
 }

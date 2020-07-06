@@ -7,7 +7,6 @@ function MainSearchForm({ language = 'ru', type = null }, ref) {
 	if (type != 'hor') {
 		return (
 			<Fragment>
-				<h2 className={'text-6 mb-4'}>{lang['ru'].title}</h2>
 				<Form id="bookingBus" className="d-block">
 					<Form.Row>
 						<Form.Group as={Col} controlId="departure" className="position-relative">
@@ -35,7 +34,7 @@ function MainSearchForm({ language = 'ru', type = null }, ref) {
 						</Form.Group>
 						<Form.Group as={Col} controlId="date_arrival" className="position-relative">
 							{/* <Form.Label className="">{lang[language].date_departure.label}</Form.Label> */}
-							<Form.Control disabled type="text" placeholder={lang['ru'].date_departure.placeholder} />
+							<Form.Control disabled type="text" placeholder={lang['ru'].date_arrival.placeholder} />
 							<span className="icon-inside">
 								<MdDateRange />
 							</span>

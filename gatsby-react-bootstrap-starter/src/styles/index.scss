@@ -329,12 +329,39 @@ svg {
 .left-tab {
     &--link {
         padding: .5rem;
-        background-color: #eeeeee;
+        background-color: #f3f3f3;
         border-radius: 0 !important;
         margin-bottom: 2px;
         &.active {
             background-color: transparent !important;
             color: black !important;
+            position: relative;
+            &:after {
+                content: '';
+                background: var(--primary);
+                right: -1rem;
+                z-index: 1;
+                width: 1px;
+                height: 100%;
+                position: absolute;
+                top: 0;
+            }
         }
     }
+}
+
+.table {
+    td {
+        vertical-align: middle;
+        text-align: center;
+        line-height: 1.2;
+    }
+    th {
+        text-align: center;
+        border-top: none;
+    }
+}
+
+.shadow-none-hover:hover {
+    box-shadow: none !important;
 }
