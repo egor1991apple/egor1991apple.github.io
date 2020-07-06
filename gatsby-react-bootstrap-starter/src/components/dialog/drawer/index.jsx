@@ -4,7 +4,6 @@ import { MdClose } from 'react-icons/md';
 import { Button } from 'react-bootstrap';
 import useCreatePortal from '../../../hooks/useCreatePortal';
 import useClickOutside from '../../../hooks/useClickOutside';
-import Slide from 'react-reveal/Fade';
 
 import './style.scss';
 

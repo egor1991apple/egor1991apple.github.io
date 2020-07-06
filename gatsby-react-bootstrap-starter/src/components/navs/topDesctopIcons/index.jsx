@@ -2,15 +2,15 @@ import React, { useState, useContext } from 'react';
 import { GlobalContext } from '../../../store/context';
 import Drawer from '../../dialog/drawer';
 import { Transition } from 'react-transition-group';
-import { ListGroup, Nav } from 'react-bootstrap';
+import { ListGroup, Nav, Button } from 'react-bootstrap';
 import Social from '../../contacts/social';
 import Contact from '../../contacts/contact';
 import Collapse from '../../collapse';
 import { Link } from 'gatsby';
 import { MdMenu } from 'react-icons/md';
-const duration = 400;
+const duration = 300;
 const defaultStyle = {
-	transition: `right ${duration}ms ease-in-out ${duration / 2}ms, background ${duration}ms ease-in-out `,
+	transition: `right ${duration}ms ease-in-out ${duration / 3}ms, background ${duration}ms ease-in-out `,
 	right: '-640px'
 };
 
@@ -22,14 +22,16 @@ const transitionStyles = {
 };
 //import Hamburger from 'hamburger-react';
 
-const TopMobile = ({ children }) => {
+const TopDesctop = ({ children }) => {
 	const { onToggleMobileNav = null, TOGGLE_MOBILE_NAV = false, TOP_NAVS = [] } = useContext(GlobalContext);
 
 	return TOP_NAVS.length ? (
 		<div>
-			<button className={'btn-clear btn-animate'} onClick={onToggleMobileNav}>
-				<MdMenu size="28" />
-			</button>
+			<Button className="btn-auth btn-clear shadow" data-text="Меню" onClick={onToggleMobileNav}>
+				<span className="auth-icon shadow-lg">
+					<MdMenu size="18" />
+				</span>
+			</Button>
 
 			<Transition in={TOGGLE_MOBILE_NAV} timeout={duration} unmountOnExit={true} appear={true}>
 				{(state) => (
@@ -78,4 +80,4 @@ const TopMobile = ({ children }) => {
 		</div>
 	) : null;
 };
-export default TopMobile;
+export default TopDesctop;

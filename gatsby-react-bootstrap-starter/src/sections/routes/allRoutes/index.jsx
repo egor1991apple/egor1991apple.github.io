@@ -18,12 +18,12 @@ export default function SectionRoutes() {
 				<SectionSubTitle>Nulla minim laboris occaecat cillum aliqua dolore ipsum.</SectionSubTitle>
 
 				<TransitionGroup className="row">
-					{data.map((offers, index) => {
+					{data.map((routes, index) => {
 						if (index < nowShowRoutes) {
 							return (
 								<CSSTransition key={`${index}_routes`} timeout={500} classNames="route">
 									<Col md="4" className="mb-4">
-										<RouteCard {...offers} />
+										<RouteCard {...routes} />
 									</Col>
 								</CSSTransition>
 							);

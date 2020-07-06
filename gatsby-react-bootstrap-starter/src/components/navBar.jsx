@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Navbar, Button, Container } from 'react-bootstrap';
 import Drawer from './dialog/drawer';
 import { GlobalContext } from '../store/context';
-import { MdPerson } from 'react-icons/md';
+import { MdPerson, MdLocalPhone } from 'react-icons/md';
 import TopMobileMenu from './navs/topMobile';
 import TopDesctopMenu from './navs/topDesctop';
 
@@ -18,9 +18,19 @@ const CustomNavbar = () => {
 				<div className="d-none d-lg-flex ml-auto align-items-center">
 					<TopDesctopMenu />
 					<div className="vertical-line" />
-					<Button className="btn-auth btn-clear" data-text="Войти" onClick={onOpenAuthDialog}>
+					<Button
+						className="btn-auth btn-clear text-white"
+						data-text="Служба поддрежки"
+						onClick={onOpenAuthDialog}
+					>
 						<span className="auth-icon">
-							<MdPerson />
+							<MdLocalPhone size="18" />
+						</span>
+					</Button>
+					<div className="vertical-line " />
+					<Button className="btn-auth btn-clear" data-text="Войти" onClick={onOpenAuthDialog}>
+						<span className="auth-icon text-white">
+							<MdPerson size="18" />
 						</span>
 					</Button>
 				</div>

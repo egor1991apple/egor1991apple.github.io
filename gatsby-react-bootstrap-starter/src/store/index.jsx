@@ -7,6 +7,7 @@ import {
 	MAIN_SLIDER_SLIDS,
 	OFFERS,
 	ROUTES,
+	ROUTE_DETAIL,
 	TOP_NAVS,
 	MAIN_WHY_WE_ARE,
 	MAIN_QUESTION_ANSWER,
@@ -17,7 +18,7 @@ import {
 	PAYMENT,
 	SHOW_MORE_ROUTES
 } from './const';
-import demo from './demo-prod.json';
+import demo from './demo.json';
 
 export default function GlobalState({ children }) {
 	const [ state, dispatch ] = useReducer(Reducer, defaultState);
@@ -52,12 +53,13 @@ const defaultState = {
 	[OPEN_AUTH_DIALOG]: false,
 	[TOGGLE_MOBILE_NAV]: false,
 	[MAIN_SLIDER_SLIDS]: demo.main_slider,
-	[OFFERS]: demo.offers,
+	[OFFERS]: demo.routes,
 	[ROUTES]: {
-		data: demo.offers,
+		data: demo.routes,
 		nowShowRoutes: 6,
-		allCountRoutes: demo.offers.length
+		allCountRoutes: demo.routes.length
 	},
+	[ROUTE_DETAIL]: demo.route_detail,
 	[MAIN_WHY_WE_ARE]: demo.main_why_we_are,
 	[MAIN_QUESTION_ANSWER]: demo.main_question_answer,
 	[MAIN_NEWS]: demo.news,

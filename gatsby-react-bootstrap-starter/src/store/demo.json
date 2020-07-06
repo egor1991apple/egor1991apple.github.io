@@ -80,7 +80,7 @@
             "link": "/"
         }
     ],
-    "offers": [{
+    "routes": [{
             "img": "bus.jpg",
             "title": ["Москва", "Минск"],
             "date": "21.02.2020",
@@ -95,7 +95,7 @@
             "date": "21.02.2020",
             "cost": "400",
             "currency": "USD",
-            "link": "/",
+            "link": "/routes_detail",
             "route": "В одну сторону"
         },
         {
@@ -104,7 +104,7 @@
             "date": "21.02.2020",
             "cost": "400",
             "currency": "USD",
-            "link": "/",
+            "link": "/routes_detail",
             "route": "В одну сторону"
         },
         {
@@ -113,7 +113,7 @@
             "date": "21.02.2020",
             "cost": "400",
             "currency": "USD",
-            "link": "/",
+            "link": "/routes_detail",
             "route": "В одну сторону"
         },
         {
@@ -122,7 +122,7 @@
             "date": "21.02.2020",
             "cost": "400",
             "currency": "USD",
-            "link": "/",
+            "link": "/routes_detail",
             "route": "В одну сторону"
         },
         {
@@ -131,7 +131,7 @@
             "date": "21.02.2020",
             "cost": "400",
             "currency": "USD",
-            "link": "/",
+            "link": "/routes_detail",
             "route": "В одну сторону"
         },
         {
@@ -140,7 +140,7 @@
             "date": "21.02.2020",
             "cost": "400",
             "currency": "USD",
-            "link": "/",
+            "link": "/routes_detail",
             "route": "В одну сторону"
         },
         {
@@ -149,10 +149,71 @@
             "date": "21.02.2020",
             "cost": "400",
             "currency": "USD",
-            "link": "/",
+            "link": "/routes_detail",
             "route": "В одну сторону"
         }
     ],
+    "route_detail": {
+        "id": "uasdiaksd123",
+        "img": "/moskow.jpg",
+        "title": ["Москва", "Минск"],
+        "cost": "400",
+        "currency": "USD",
+        "shortDescription": {
+            "text": "Proident sint adipisicing dolor eiusmod pariatur eu occaecat aliquip tempor id. Fugiat adipisicing elit reprehenderit reprehenderit reprehenderit consequat occaecat nisi eu eiusmod excepteur sunt adipisicing.Amet nulla qui enim eiusmod nisi laborum mollit id nisi in do.Exercitation elit aute ut ad ut amet ipsum minim sint.",
+            "servises": [{
+                    "icon": "",
+                    "titleServises": "wi-fi"
+                },
+                {
+                    "icon": "",
+                    "titleServises": "cofee"
+                }
+            ]
+        },
+        "description": [{
+                "title": "Правила бронирования",
+                "text": "Reprehenderit dolor sit quis laboris est pariatur nostrud et labore id sit consequat fugiat.Magna occaecat non fugiat exercitation officia et aliquip ullamco nulla eiusmod.Cillum ipsum voluptate est ad elit velit ullamco qui irure in nostrud pariatur.Aliqua ad laboris anim dolor ad laboris eu.Anim anim elit mollit nulla ut laboris ut aliqua tempor sit aliqua consectetur nostrud."
+            },
+            {
+                "title": "Условия отмены",
+                "text": "Ea Lorem ex magna magna laborum commodo Lorem nisi.Dolor est anim eiusmod proident et ipsum.Fugiat irure ea ex dolor adipisicing do ex.Mollit ut do ad et Lorem id esse enim Lorem eiusmod."
+            },
+            {
+                "title": "Багаж",
+                "text": "Ea Lorem ex magna magna laborum commodo Lorem nisi.Dolor est anim eiusmod proident et ipsum.Fugiat irure ea ex dolor adipisicing do ex.Mollit ut do ad et Lorem id esse enim Lorem eiusmod."
+            }
+        ],
+        "points": [{
+                "title": "Москва",
+                "coords": {
+                    "x": "129385123",
+                    "y": "192385123"
+                },
+                "durationTime": "4:00",
+                "description": "Est et sunt eiusmod incididunt qui magna mollit."
+            },
+            {
+                "title": "Смоленск",
+                "coords": {
+                    "x": "129385123",
+                    "y": "192385123"
+                },
+                "durationTime": "5:00",
+                "description": "In fugiat anim sunt sint ullamco eu elit occaecat."
+            },
+            {
+                "title": "Минск",
+                "coords": {
+                    "x": "129385123",
+                    "y": "192385123"
+                },
+                "durationTime": "0",
+                "description": "Aliquip id eu nisi reprehenderit."
+            }
+        ]
+
+    },
     "main_why_we_are": [{
             "title": "Commodo nulla aliqua ",
             "subtitle": "Sit enim aute qui minim.",

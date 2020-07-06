@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Link } from 'gatsby';
-import { BsArrowRight, BsSearch } from 'react-icons/bs';
+import { BsArrowRight } from 'react-icons/bs';
 
 export default function RouteCard({
 	title = [],
@@ -23,7 +23,7 @@ export default function RouteCard({
 						className="border bg-primary text-white rounded-circle ml-auto d-flex display-onHover"
 						style={{ width: '25px', height: '25px' }}
 					>
-						<BsArrowRight className="m-auto" style={{ transform: 'translate(0px,1px)' }} />
+						<BsArrowRight className="m-auto" style={{ transform: 'translate(0px,0px)' }} />
 					</div>
 				</Card.Text>
 				<Card.Title className="d-flex align-items-center mb-1 mt-auto">

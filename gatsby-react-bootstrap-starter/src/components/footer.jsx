@@ -7,7 +7,7 @@ import SubscribeForm from './forms/subscribe';
 import FooterNav from './navs/footer';
 export default function Footer() {
 	return (
-		<footer id="footer">
+		<footer id="footer" className="pt-4">
 			<Container>
 				<Row>
 					<Col xs="12" lg={4}>

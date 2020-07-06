@@ -18,3 +18,4 @@ export const CONTACT = 'CONTACT';
 //routes
 export const ROUTES = 'ROUTES';
 export const SHOW_MORE_ROUTES = 'SHOW_MORE_ROUTES';
+export const ROUTE_DETAIL = "ROUTE_DETAIL";
