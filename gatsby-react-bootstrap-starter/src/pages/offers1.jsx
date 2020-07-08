@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Layout from '../components/layout';
 import { Container, Row, Col } from 'react-bootstrap';
 import MainSearchForm from '../components/forms/mainSearchForm';
-import SectionOffers from '../sections/offers';
+import SectionOffers from '../sections/offers1';
 import { GlobalContext } from '../store/context';
 export default function Offers() {
 	//const { OFFERS = [] } = useContext(GlobalContext);

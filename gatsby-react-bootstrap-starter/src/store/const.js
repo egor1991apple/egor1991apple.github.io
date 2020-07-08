@@ -18,10 +18,12 @@ export const CONTACT = 'CONTACT';
 //routes
 export const ROUTES = 'ROUTES';
 export const SHOW_MORE_ROUTES = 'SHOW_MORE_ROUTES';
-export const ROUTE_DETAIL = "ROUTE_DETAIL";
-export const ROUTE_SERVISES = "ROUTE_SERVISES";
-
+export const ROUTE_DETAIL = 'ROUTE_DETAIL';
+export const ROUTE_SERVISES = 'ROUTE_SERVISES';
 
 //offers
-
 export const OFFERS = 'OFFERS';
+export const OFFERS1 = 'OFFERS1';
+
+//bus
+export const BUS = 'BUS';

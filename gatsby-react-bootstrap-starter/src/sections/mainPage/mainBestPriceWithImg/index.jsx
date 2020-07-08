@@ -4,20 +4,20 @@ import { Container, Row, Col } from 'react-bootstrap';
 import SectionTitle from '../../../components/title/section_title';
 import SectionSubTitle from '../../../components/title/section_subtitle';
 import { GlobalContext } from '../../../store/context';
-import BoxWhite from '../../../components/boxes/boxWhite';
+
 export default function MainSectionBestPrice() {
-	const { OFFERS = [] } = useContext(GlobalContext);
+	const { ROUTES: { data = [] } } = useContext(GlobalContext);
 
 	return (
-		OFFERS.length && (
+		data.length && (
 			<Container as="section" className="py-5">
 				<SectionTitle>Лучшие предложения</SectionTitle>
 				<SectionSubTitle>Nulla minim laboris occaecat cillum aliqua dolore ipsum.</SectionSubTitle>
 				<Row>
-					{OFFERS.map((offers, index) => {
+					{data.map((route, index) => {
 						return (
 							<Col md="6" lg="4" key={`${index}_bestOffers`} className="mb-4">
-								<RouteCard {...offers} />
+								<RouteCard {...route} />
 							</Col>
 						);
 					})}

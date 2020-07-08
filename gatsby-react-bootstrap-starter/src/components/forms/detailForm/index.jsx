@@ -35,7 +35,7 @@ function MainSearchForm({ language = 'ru', type = null }, ref) {
 						<MdPeople />
 					</span>
 				</Form.Group>
-				<Link to="/offers" className="text-white">
+				<Link to="/offers1" className="text-white">
 					<Button variant="primary" type="submit" className="btn-block">
 						{lang[language].submit}
 					</Button>

@@ -6,6 +6,7 @@ import {
 	OPEN_AUTH_DIALOG,
 	MAIN_SLIDER_SLIDS,
 	OFFERS,
+	OFFERS1,
 	ROUTES,
 	ROUTE_DETAIL,
 	ROUTE_SERVISES,
@@ -17,7 +18,8 @@ import {
 	SOCIAL,
 	CONTACT,
 	PAYMENT,
-	SHOW_MORE_ROUTES
+	SHOW_MORE_ROUTES,
+	BUS
 } from './const';
 import demo from './demo.json';
 
@@ -55,6 +57,7 @@ const defaultState = {
 	[TOGGLE_MOBILE_NAV]: false,
 	[MAIN_SLIDER_SLIDS]: demo.main_slider,
 	[OFFERS]: demo.offers,
+	[OFFERS1]: demo.offers1,
 	[ROUTES]: {
 		data: demo.routes,
 		nowShowRoutes: 6,
@@ -68,5 +71,6 @@ const defaultState = {
 	[SOCIAL]: demo.social,
 	[PAYMENT]: demo.payment,
 	[CONTACT]: demo.contact,
-	[TOP_NAVS]: demo.main_navs_list
+	[TOP_NAVS]: demo.main_navs_list,
+	[BUS]: demo.busPlacement
 };

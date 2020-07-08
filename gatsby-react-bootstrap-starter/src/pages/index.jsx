@@ -8,16 +8,13 @@ import MainSectionBestPrice from '../sections/mainPage/mainBestPriceWithImg';
 import MainSectionWhyWeAre from '../sections/mainPage/mainWhyWeAre';
 import MainSectionQuestionAnswer from '../sections/mainPage/mainQuestionAnswer';
 import MainSectionNews from '../sections/mainPage/mainNews';
-import MainSectionQuestionAnwer from '../sections/mainPage/mainQuestionAnswer';
 
 const IndexPage = () => (
 	<Layout pageInfo={{ pageName: 'index' }}>
 		<SEO title="Home" keywords={[ `gatsby`, `react`, `bootstrap` ]} />
-
 		<SectionFormHorizontal />
 		<MainSectionBestPrice />
 		<MainSectionWhyWeAre />
-
 		<MainSectionNews />
 		<MainSectionQuestionAnswer />
 	</Layout>
