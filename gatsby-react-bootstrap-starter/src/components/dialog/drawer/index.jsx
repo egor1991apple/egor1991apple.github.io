@@ -1,7 +1,7 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { MdClose } from 'react-icons/md';
-import { Button } from 'react-bootstrap';
+
 import useCreatePortal from '../../../hooks/useCreatePortal';
 import useClickOutside from '../../../hooks/useClickOutside';
 
@@ -14,7 +14,7 @@ const Drawer = ({ children, callback, styles }) => {
 
 	const ref = useRef(null);
 	useClickOutside(ref, () => callback());
-	//render
+
 	return isRender
 		? typeof document !== 'undefined' &&
 			document.getElementById(NamePortal) &&

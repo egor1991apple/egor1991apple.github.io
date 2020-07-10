@@ -1,5 +1,6 @@
 import React from 'react';
 import { MdPlace } from 'react-icons/md';
+
 export default function ticketInfo({ city = '', address = '', time = '', date = '' }) {
 	return (
 		<div className="d-flex flex-column line-height-14">

@@ -1,51 +1,49 @@
 import React, { Fragment } from 'react';
-import { Card, Row, Col } from 'react-bootstrap';
-import { Link } from 'gatsby';
+import { Card, Row, Col, Button } from 'react-bootstrap';
+
 import Ticket from './ticket';
-export default function Offer({ id, totalCost, totalCurrency, tickets = [], link }) {
+import TicketDetail from './ticketDetail';
+
+export default function Offer({ id, cost, currency, link, callback, ...ticket }) {
 	return (
-		<Card>
-			<Card.Body className="p-0 overflow-hidden">
+		<Card className="bg-light-1">
+			<Card.Body className="p-0 ">
 				<Row noGutters>
-					<Col className="flex-grow-1">
-						{tickets.map((ticket, index) => (
-							<Fragment key={`${index}_ticket`}>
-								<Row className={`py-3 m-0  ${index == 0 ? '' : ''}`}>
-									<Ticket {...ticket} />
-								</Row>
-								<Row
-									key={`${index}_ticket`}
-									className={`mx-0 mt-auto border-top bg-light-1 ${tickets.length > 1 && index == 0
-										? ' border-bottom '
-										: 'border-left-bottom-radius'} `}
-								>
-									<Col>border-top border-bottom</Col>
-								</Row>
-							</Fragment>
-						))}
+					<Col className="flex-grow-1 d-flex flex-column">
+						<Row className={`py-3 mt-auto mx-0`}>
+							<Col lg="auto" className="my-auto">
+								<h5>#{id}</h5>
+							</Col>
+							<Ticket {...ticket} />
+						</Row>
+						<TicketDetail {...{ ...ticket, id }} />
 					</Col>
-					<Col sm="2" className="border-left  d-flex  flex-column p-3  line-height-14">
-						{tickets.length > 1 && (
+					<Col
+						sm="2"
+						className="border-left-dashed    px-3 py-1 d-flex  flex-column   line-height-14 ticket-styled"
+					>
+						{' '}
+						<div className="sticky-top pb-1" style={{ top: '1rem' }}>
 							<div className="border-bottom pb-1">
-								<small>Билет: </small>
-								<div>Туда и обратно</div>
+								<small>Мест:</small>
+								<div>6 свободных</div>
 							</div>
-						)}
-
-						<div className="border-bottom py-1">
-							<small>Мест:</small>
-							<div>6 свободных</div>
-						</div>
-						<div className=" py-1">
-							<small>Цена:</small>
-							<div className="text-5 text-danger">
-								{totalCost} {totalCurrency}
+							<div className=" py-1">
+								<small>Цена:</small>
+								<div className="text-5 text-danger">
+									{cost} {currency}
+								</div>
 							</div>
-						</div>
 
-						<Link to="/" className="btn btn-primary btn-block btn-sm px-2 mt-auto">
-							Выбрать
-						</Link>
+							<Button
+								variant="primary"
+								size="sm"
+								className="btn-block btn-sm"
+								onClick={() => callback(id)}
+							>
+								Выбрать
+							</Button>
+						</div>
 					</Col>
 				</Row>
 			</Card.Body>

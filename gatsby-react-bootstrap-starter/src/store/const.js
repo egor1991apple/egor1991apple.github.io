@@ -24,6 +24,17 @@ export const ROUTE_SERVISES = 'ROUTE_SERVISES';
 //offers
 export const OFFERS = 'OFFERS';
 export const OFFERS1 = 'OFFERS1';
+export const SELECTED_OFFERS_ID = 'SELECTED_OFFERS_ID';
 
 //bus
 export const BUS = 'BUS';
+
+//dialog
+export const OPEN_PLACEMENT_DIALOG = 'OPEN_PLACEMENT_DIALOG';
+
+//basket
+export const BASKET = 'BASKET';
+export const CREATE_BASKET = 'CREATE_BASKET';
+export const ADD_BASKET = 'ADD_BASKET';
+export const REMOVE_BASKET = 'REMOVE_BASKET';
+export const BASKET_COMMIT = 'BASKET_COMMIT';

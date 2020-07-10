@@ -1,22 +1,21 @@
 import React, { useContext } from 'react';
 import Layout from '../components/layout';
-import { Container, Row, Col } from 'react-bootstrap';
-import MainSearchForm from '../components/forms/mainSearchForm';
-import SectionOffers from '../sections/offers';
-import { GlobalContext } from '../store/context';
+import { Container, Row } from 'react-bootstrap';
+import SectionForm from '../sections/offers/formOffers';
+import SectionOffers from '../sections/offers/listOffers';
+import SectionPlacementDialog from '../sections/offers/placementDialog';
+import SectionBasket from '../sections/offers/basket';
 export default function Offers() {
-	//const { OFFERS = [] } = useContext(GlobalContext);
-	console.log(useContext(GlobalContext));
 	return (
 		<Layout pageInfo={{ pageName: 'routes' }}>
 			<Container className="my-5 ">
 				<Row className="bg-white border-radius border rounded mx-0">
-					<Col lg="3" className="py-3 zIndex">
-						<MainSearchForm />
-					</Col>
+					<SectionForm />
 					<SectionOffers />
+					<SectionBasket />
 				</Row>
 			</Container>
+			<SectionPlacementDialog />
 		</Layout>
 	);
 }

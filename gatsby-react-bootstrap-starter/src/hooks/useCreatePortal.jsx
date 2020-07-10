@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-export default function useCreatePortal(NamePortal) {
+export default function useCreatePortal(NamePortal, condition = false) {
 	const [ isRender, setRender ] = useState(false);
 
 	useEffect(() => {

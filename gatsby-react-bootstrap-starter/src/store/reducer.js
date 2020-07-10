@@ -1,4 +1,19 @@
-import { IS_AUTH, OPEN_AUTH_DIALOG, MAIN_SLIDER_SLIDS, TOGGLE_MOBILE_NAV, SHOW_MORE_ROUTES, ROUTES } from './const';
+import {
+    IS_AUTH,
+    OPEN_AUTH_DIALOG,
+    MAIN_SLIDER_SLIDS,
+    TOGGLE_MOBILE_NAV,
+    SHOW_MORE_ROUTES,
+    OPEN_PLACEMENT_DIALOG,
+    CREATE_BASKET,
+    SELECT_PLACEMENT,
+    SELECTED_OFFERS_ID,
+    BASKET,
+    ADD_BASKET,
+    REMOVE_BASKET,
+    DELETE_BASKET,
+    BASKET_COMMIT
+} from './const';
 
 export const Reducer = (state, { type = null, payload = null }) => {
     switch (type) {
@@ -20,10 +35,38 @@ export const Reducer = (state, { type = null, payload = null }) => {
             }
         case SHOW_MORE_ROUTES:
             {
-                console.log(payload);
                 return {...state, ROUTES: {...state.ROUTES, nowShowRoutes: payload } };
             }
+        case OPEN_PLACEMENT_DIALOG:
+            {
+                return {...state, OPEN_PLACEMENT_DIALOG: !state[OPEN_PLACEMENT_DIALOG], SELECTED_OFFERS_ID: payload };
+            }
 
+            //basket
+        case CREATE_BASKET:
+            {
+                return {...state, BASKET: payload.basket_data, BASKET_COMMIT: payload.basket_commit };
+            }
+        case ADD_BASKET:
+            {
+                return {...state, BASKET: payload };
+            }
+        case REMOVE_BASKET:
+            {
+                return {...state, BASKET: payload };
+            }
+        case BASKET_COMMIT:
+            {
+                return {...state, BASKET: payload };
+            }
+        case SELECT_PLACEMENT:
+            {
+                return {...state, BASKET: payload };
+            }
+        case DELETE_BASKET:
+            {
+                return state;
+            }
         default:
             {
                 return state;

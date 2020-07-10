@@ -3,7 +3,7 @@ import { Col } from 'react-bootstrap';
 import TicketInfo from './ticketInfo';
 import { BsArrowRight } from 'react-icons/bs';
 
-export default function Ticket({ cost, currency, duration, route = [] }) {
+export default function Ticket({ duration, route = [] }) {
 	return (
 		<Fragment>
 			<Col>

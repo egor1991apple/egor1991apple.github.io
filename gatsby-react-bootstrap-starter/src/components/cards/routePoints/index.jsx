@@ -2,7 +2,6 @@ import React from 'react';
 import { BsClock, BsFlag, BsDot } from 'react-icons/bs';
 import { MdPlace } from 'react-icons/md';
 export default function routePoints({ points = [] }) {
-	console.log(points);
 	return (
 		<ul className="list-points">
 			{points.map(({ city, durationTime, address }, index) => (

@@ -5,32 +5,14 @@ import { GlobalContext } from '../../../store/context';
 import { MdClose } from 'react-icons/md';
 import LogginForm from '../../forms/logginForm';
 import RegForm from '../../forms/regForm';
-import { isNullableType } from 'graphql';
+import useCreatePortal from '../../../hooks/useCreatePortal';
 
 const AuthDialog = () => {
 	const { state, OPEN_AUTH_DIALOG, onOpenAuthDialog = null, lang = 'ru' } = useContext(GlobalContext);
-	const [ isRender, setRender ] = useState(false);
+	const NamePortal = 'AuthPortal';
+	const isRender = useCreatePortal(NamePortal,OPEN_AUTH_DIALOG);
 
-	useEffect(() => {
-		const NamePortal = 'AuthPortal';
-		if (OPEN_AUTH_DIALOG) {
-			const portal = document.createElement('div');
-			portal.id = NamePortal;
-			document.body.appendChild(portal);
-			setRender(true);
-		} else {
-			if (document.getElementById(NamePortal)) {
-				document.getElementById(NamePortal).remove();
-				setRender(false);
-			}
-		}
-		return () => {
-			if (document.getElementById(NamePortal)) {
-				document.getElementById(NamePortal).remove();
-				setRender(false);
-			}
-		};
-	}, []);
+	
 	return isRender
 		? typeof document !== 'undefined' &&
 			document.getElementById('AuthPortal') &&
