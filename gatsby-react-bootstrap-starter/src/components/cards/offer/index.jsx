@@ -6,7 +6,7 @@ import TicketDetail from './ticketDetail';
 
 export default function Offer({ id, cost, currency, link, callback, ...ticket }) {
 	return (
-		<Card className="bg-light-1">
+		<Card className="bg-light-1 mx-auto">
 			<Card.Body className="p-0 ">
 				<Row noGutters>
 					<Col className="flex-grow-1 d-flex flex-column">

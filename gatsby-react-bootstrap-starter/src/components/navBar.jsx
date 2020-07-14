@@ -18,15 +18,36 @@ const CustomNavbar = () => {
 				<div className="d-none d-lg-flex ml-auto align-items-center">
 					<TopDesctopMenu />
 					<div className="vertical-line" />
-					<Button
-						className="btn-auth btn-clear text-white"
-						data-text="Служба поддрежки"
-						onClick={onOpenAuthDialog}
-					>
+					<table>
+						<tbody>
+							<tr>
+								<td className="text-center">
+									<img src="a1.png" style={{ height: '18px' }} alt="" />
+								</td>
+								<td>
+									{' '}
+									<a className="nav-link p-0" href="tel:3751111111">
+										+375(11)-111-11-11
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td className="text-center">
+									<img src="mts.png" style={{ height: '14px' }} alt="" />
+								</td>
+								<td>
+									<a className="nav-link p-0" href="tel:3751111111">
+										+375(11)-111-11-11
+									</a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					{/* <Button className="btn-auth btn-clear text-white" onClick={onOpenAuthDialog}>
 						<span className="auth-icon">
 							<MdLocalPhone size="18" />
 						</span>
-					</Button>
+					</Button> */}
 					<div className="vertical-line " />
 					<Button className="btn-auth btn-clear" data-text="Войти" onClick={onOpenAuthDialog}>
 						<span className="auth-icon text-white">

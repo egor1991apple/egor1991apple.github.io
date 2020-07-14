@@ -10,6 +10,7 @@ import {
 	ROUTES,
 	ROUTE_DETAIL,
 	ROUTE_SERVISES,
+	SERVISES,
 	TOP_NAVS,
 	MAIN_WHY_WE_ARE,
 	MAIN_QUESTION_ANSWER,
@@ -21,15 +22,12 @@ import {
 	SHOW_MORE_ROUTES,
 	BUS,
 	BASKET,
-	SELECT_PLACEMENT,
 	SELECTED_OFFERS_ID,
-	CREATE_BASKET,
-	ADD_BASKET,
-	REMOVE_BASKET,
+	ADD_BASKET_ITEM,
+	REMOVE_BASKET_ITEM,
 	BASKET_COMMIT
 } from './const';
 import demo from './demo.json';
-import { FaDirections } from 'react-icons/fa';
 
 function createArray(length, value) {
 	const arr = [];
@@ -75,7 +73,7 @@ export default function GlobalState({ children }) {
 		// 	// });
 		// }
 	};
-	const onSelectPlacement = (direction) => (data) => {
+	const onAddBasketItem = (direction) => (data) => {
 		const { BASKET, OFFERS, SELECTED_OFFERS_ID } = state;
 
 		const maxTicketsInBasket = OFFERS[SELECTED_OFFERS_ID - 1].tickets || null;
@@ -83,12 +81,13 @@ export default function GlobalState({ children }) {
 
 		if (newBasket[direction].length < maxTicketsInBasket) {
 			newBasket[direction].push({
-				offers_id: SELECTED_OFFERS_ID,
+				ticket_id: `${SELECTED_OFFERS_ID}.${data}`,
 				place: data,
-				status: 0
+				status: 0,
+				offers_id: SELECTED_OFFERS_ID
 			});
 		} else {
-			const filtredValue = newBasket[direction].filter(({ offers_id }) => offers_id != SELECTED_OFFERS_ID);
+			const filtredValue = newBasket[direction].filter(({ ticket_id }) => ticket_id != SELECTED_OFFERS_ID);
 
 			newBasket[direction] = [];
 			if (filtredValue.length > maxTicketsInBasket) {
@@ -101,15 +100,25 @@ export default function GlobalState({ children }) {
 					}
 				});
 				newBasket[direction][findIndex] = {
-					offers_id: SELECTED_OFFERS_ID,
+					ticket_id: `${SELECTED_OFFERS_ID}.${data}`,
 					place: data,
-					status: 0
+					status: 0,
+					offers_id: SELECTED_OFFERS_ID
 				};
 			}
 		}
 
-		dispatch({ type: ADD_BASKET, payload: newBasket });
+		dispatch({ type: ADD_BASKET_ITEM, payload: newBasket });
 	};
+	const onRemoveBaksetItem = (direction) => (id) => {
+		const { BASKET } = state;
+		let newBasket = { ...BASKET };
+
+		newBasket[direction] = newBasket[direction].filter(({ ticket_id }) => ticket_id != id);
+
+		dispatch({ type: REMOVE_BASKET_ITEM, payload: newBasket });
+	};
+
 	const onBasketCommit = (direction) => (e) => {
 		const { BASKET, OFFERS, SELECTED_OFFERS_ID } = state;
 		const newBasket = { ...BASKET };
@@ -119,8 +128,7 @@ export default function GlobalState({ children }) {
 		});
 		dispatch({ type: BASKET_COMMIT, payload: newBasket });
 	};
-
-	console.log(state.BASKET);
+	// console.log(state.BASKET);
 	return (
 		<GlobalContext.Provider
 			value={{
@@ -129,7 +137,8 @@ export default function GlobalState({ children }) {
 				onToggleMobileNav,
 				onShowMoreRoutes,
 				onOpenPlacementDialog,
-				onSelectPlacement,
+				onAddBasketItem,
+				onRemoveBaksetItem,
 				onBasketCommit,
 				lang: 'ru'
 			}}
@@ -140,7 +149,7 @@ export default function GlobalState({ children }) {
 }
 
 const defaultBasketValue = {
-	offer_id: null,
+	ticket_id: null,
 	place: [],
 	status: 0
 };
@@ -163,6 +172,7 @@ const defaultState = {
 	[MAIN_WHY_WE_ARE]: demo.main_why_we_are,
 	[MAIN_QUESTION_ANSWER]: demo.main_question_answer,
 	[MAIN_NEWS]: demo.news,
+	[SERVISES]: demo.servises,
 	[SOCIAL]: demo.social,
 	[PAYMENT]: demo.payment,
 	[CONTACT]: demo.contact,

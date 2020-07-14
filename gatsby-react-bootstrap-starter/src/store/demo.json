@@ -80,6 +80,43 @@
             "link": "/"
         }
     ],
+    "servises": [{
+            "img": "bus.jpg",
+            "title": "Трансфер в москву",
+            "subtitle": "Аэропорт домдедова...",
+            "link": "/routes_detail"
+        },
+        {
+            "img": "bus.jpg",
+            "title": "Трансфер в москву",
+            "subtitle": "Аэропорт домдедова...",
+            "link": "/routes_detail"
+        },
+        {
+            "img": "bus.jpg",
+            "title": "Из Москвы в Питер",
+            "subtitle": "Аэропорт домдедова...",
+            "link": "/routes_detail"
+        },
+        {
+            "img": "bus.jpg",
+            "title": "Трансфер в москву",
+            "subtitle": "Аэропорт домдедова...",
+            "link": "/routes_detail"
+        },
+        {
+            "img": "bus.jpg",
+            "title": "Трансфер в москву",
+            "subtitle": "Аэропорт домдедова...",
+            "link": "/routes_detail"
+        },
+        {
+            "img": "bus.jpg",
+            "title": "Из Москвы в Питер",
+            "subtitle": "Аэропорт домдедова...",
+            "link": "/routes_detail"
+        }
+    ],
     "routes": [{
             "img": "bus.jpg",
             "title": ["Москва", "Минск"],
@@ -452,7 +489,14 @@
     "contact": [{
             "type": "tel",
             "link": "+375111111",
-            "text": "+375(11) 111-11-11"
+            "text": "+375(11) 111-11-11",
+            "img": "mts.png"
+        },
+        {
+            "type": "tel",
+            "link": "+375111111",
+            "text": "+375(11) 111-11-11",
+            "img": "a1.png"
         },
         {
             "type": "mail",

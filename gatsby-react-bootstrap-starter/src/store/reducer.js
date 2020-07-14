@@ -9,8 +9,8 @@ import {
     SELECT_PLACEMENT,
     SELECTED_OFFERS_ID,
     BASKET,
-    ADD_BASKET,
-    REMOVE_BASKET,
+    ADD_BASKET_ITEM,
+    REMOVE_BASKET_ITEM,
     DELETE_BASKET,
     BASKET_COMMIT
 } from './const';
@@ -47,11 +47,11 @@ export const Reducer = (state, { type = null, payload = null }) => {
             {
                 return {...state, BASKET: payload.basket_data, BASKET_COMMIT: payload.basket_commit };
             }
-        case ADD_BASKET:
+        case ADD_BASKET_ITEM:
             {
                 return {...state, BASKET: payload };
             }
-        case REMOVE_BASKET:
+        case REMOVE_BASKET_ITEM:
             {
                 return {...state, BASKET: payload };
             }

@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import { Form, Button, Col } from 'react-bootstrap';
 import lang from './lang';
 import { MdPlace, MdDateRange, MdPeople } from 'react-icons/md';
+import { Link } from 'gatsby';
 
 function MainSearchForm({ language = 'ru', type = null }, ref) {
 	if (type != 'hor') {
@@ -48,10 +49,11 @@ function MainSearchForm({ language = 'ru', type = null }, ref) {
 							<MdPeople />
 						</span>
 					</Form.Group>
-
-					<Button variant="primary" type="submit" className="btn-block">
-						{lang[language].submit}
-					</Button>
+					<Link to="/offers" className="text-white">
+						<Button variant="primary" type="submit" className="btn-block">
+							{lang[language].submit}
+						</Button>
+					</Link>
 				</Form>
 			</Fragment>
 		);
@@ -98,9 +100,11 @@ function MainSearchForm({ language = 'ru', type = null }, ref) {
 							</span>
 						</Form.Group>
 						<Form.Group className="position-relative col-sm-6 col-lg">
-							<Button variant="primary" type="submit" className="btn-block">
-								{lang[language].submit}
-							</Button>
+							<Link to="/offers" className="text-white">
+								<Button variant="primary" type="submit" className="btn-block">
+									{lang[language].submit}
+								</Button>
+							</Link>
 						</Form.Group>
 					</Form.Row>
 				</Form>

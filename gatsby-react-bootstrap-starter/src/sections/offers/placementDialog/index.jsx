@@ -15,17 +15,13 @@ function getBookingPlace(basket, id, offers) {
 }
 
 export default function SectionPlacementDialog() {
-	const {
-		SELECTED_OFFERS_ID = null,
-		OFFERS = [],
-		BASKET = [],
-		BASKET_COMMIT = [],
-		onBasketCommit,
-		onSelectPlacement
-	} = useContext(GlobalContext);
+	const { SELECTED_OFFERS_ID = null, OFFERS = [], BASKET = [], onBasketCommit, onAddBasketItem } = useContext(
+		GlobalContext
+	);
 
 	let placements = { selected: [], disabled: [], booking: [] };
 	const booking = getBookingPlace(BASKET, SELECTED_OFFERS_ID, OFFERS);
+	console.log(booking);
 
 	try {
 		placements = { ...OFFERS[SELECTED_OFFERS_ID - 1].placements, booking } || [];
@@ -51,9 +47,9 @@ export default function SectionPlacementDialog() {
 								</tr>
 							</thead>
 							<tbody>
-								{BASKET[OFFERS[SELECTED_OFFERS_ID - 1].direction].map(({ offers_id, place }, index) => (
+								{BASKET[OFFERS[SELECTED_OFFERS_ID - 1].direction].map(({ ticket_id, place }, index) => (
 									<tr key={index + 'place'}>
-										<td className="border-right"> #{offers_id}</td>
+										<td className="border-right"> #{ticket_id}</td>
 										<td className="border-right">Пассажир №{index + 1}</td>
 										<td className="">{place} место</td>
 									</tr>
@@ -63,7 +59,7 @@ export default function SectionPlacementDialog() {
 					</Col>
 					<Col lg="7">
 						<h6>Рассадка в автобусе</h6>
-						<Bus {...placements} callback={onSelectPlacement(OFFERS[SELECTED_OFFERS_ID - 1].direction)} />
+						<Bus {...placements} callback={onAddBasketItem(OFFERS[SELECTED_OFFERS_ID - 1].direction)} />
 						<table className="bus-info mt-2">
 							<tbody className="d-flex ">
 								<tr>
