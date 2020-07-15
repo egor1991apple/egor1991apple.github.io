@@ -124,11 +124,12 @@ export default function GlobalState({ children }) {
 		const newBasket = { ...BASKET };
 		newBasket[direction].forEach((item) => {
 			item.status = 1;
-			item.offers = OFFERS[SELECTED_OFFERS_ID];
+			item.offers = OFFERS[SELECTED_OFFERS_ID - 1];
 		});
 		dispatch({ type: BASKET_COMMIT, payload: newBasket });
+		dispatch({ type: OPEN_PLACEMENT_DIALOG, payload: false });
 	};
-	// console.log(state.BASKET);
+	console.log(state.BASKET);
 	return (
 		<GlobalContext.Provider
 			value={{

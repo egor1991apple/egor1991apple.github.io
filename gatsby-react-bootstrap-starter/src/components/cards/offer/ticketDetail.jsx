@@ -1,6 +1,5 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-import { MdKeyboardArrowDown } from 'react-icons/md';
 
 import Collapse from '../../collapse/ticket-detail';
 import RoutePoints from '../routePoints';
@@ -8,7 +7,7 @@ import MapDialog from '../../dialog/MapDialog';
 import Servises from '../../servises_block';
 import Bus from '../bus';
 
-export default function ticketDetail({ route = [], placements }) {
+const ticketDetail = ({ route = [], placements }) => {
 	return (
 		<div className="border-top-dashed">
 			<Collapse title="Детальная информация">
@@ -24,7 +23,7 @@ export default function ticketDetail({ route = [], placements }) {
 							<h4>Места</h4>
 
 							<div className="d-flex ">
-								<Bus {...{ ...placements, booking: [] }} />
+								<Bus {...{ ...placements }} />
 								<h6 />
 								<table className="bus-info px-3">
 									<tbody>
@@ -62,4 +61,6 @@ export default function ticketDetail({ route = [], placements }) {
 			</Collapse>
 		</div>
 	);
-}
+};
+
+export default ticketDetail;

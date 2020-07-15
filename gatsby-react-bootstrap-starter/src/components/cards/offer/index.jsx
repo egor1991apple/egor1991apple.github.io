@@ -4,7 +4,7 @@ import { Card, Row, Col, Button } from 'react-bootstrap';
 import Ticket from './ticket';
 import TicketDetail from './ticketDetail';
 
-export default function Offer({ id, cost, currency, link, callback, ...ticket }) {
+export default function Offer({ id, cost, currency, link, callback, inPay = false, ...ticket }) {
 	return (
 		<Card className="bg-light-1 mx-auto">
 			<Card.Body className="p-0 ">
@@ -18,33 +18,35 @@ export default function Offer({ id, cost, currency, link, callback, ...ticket })
 						</Row>
 						<TicketDetail {...{ ...ticket, id }} />
 					</Col>
-					<Col
-						sm="2"
-						className="border-left-dashed    px-3 py-1 d-flex  flex-column   line-height-14 ticket-styled"
-					>
-						{' '}
-						<div className="sticky-top pb-1" style={{ top: '1rem' }}>
-							<div className="border-bottom pb-1">
-								<small>Мест:</small>
-								<div>6 свободных</div>
-							</div>
-							<div className=" py-1">
-								<small>Цена:</small>
-								<div className="text-5 text-danger">
-									{cost} {currency}
+					{!inPay && (
+						<Col
+							sm="2"
+							className="border-left-dashed    px-3 py-1 d-flex  flex-column   line-height-14 ticket-styled"
+						>
+							{' '}
+							<div className="sticky-top pb-1" style={{ top: '1rem' }}>
+								<div className="border-bottom pb-1">
+									<small>Мест:</small>
+									<div>6 свободных</div>
 								</div>
-							</div>
+								<div className=" py-1">
+									<small>Цена:</small>
+									<div className="text-5 text-danger">
+										{cost} {currency}
+									</div>
+								</div>
 
-							<Button
-								variant="primary"
-								size="sm"
-								className="btn-block btn-sm"
-								onClick={() => callback(id)}
-							>
-								Выбрать
-							</Button>
-						</div>
-					</Col>
+								<Button
+									variant="primary"
+									size="sm"
+									className="btn-block btn-sm"
+									onClick={() => callback(id)}
+								>
+									Выбрать
+								</Button>
+							</div>
+						</Col>
+					)}
 				</Row>
 			</Card.Body>
 		</Card>

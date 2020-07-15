@@ -21,7 +21,7 @@ export default function Bus({ selected = [], disabled = [], booking = [], callba
 										callback &&
 										callback(td)}
 									className={`bus-td 
-									 ${booking.find((item) => item == td) ? 'bus-td--active' : ''}
+									${booking.find((item) => item == td) ? 'bus-td--active' : ''}
 									${disabled && disabled.find((disable) => disable == td) ? 'bus-td--disabled' : ''} 
 									${selected && selected.find((select) => select == td) ? 'bus-td--selected' : ''}`}
 								>

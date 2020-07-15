@@ -4,9 +4,26 @@ import CardOffer from '../../../components/cards/offer';
 
 import { GlobalContext } from '../../../store/context';
 
+function getBookingPlace(basket, id, offers) {
+	try {
+		const direction = offers[id - 1].direction;
+		const item = basket[direction].filter(({ offers_id }) => id == offers_id);
+		return item.length ? item.map(({ place }) => place) : [];
+	} catch (e) {
+		return [];
+	}
+}
 export default function Offers() {
-	const { OFFERS = [], onOpenPlacementDialog = null, BASKET_COMMIT = [] } = useContext(GlobalContext);
+	const { OFFERS = [], onOpenPlacementDialog = null, BASKET = [], SELECTED_OFFERS_ID = null } = useContext(
+		GlobalContext
+	);
 
+	let placements = { selected: [], disabled: [], booking: [] };
+	const booking = getBookingPlace(BASKET, SELECTED_OFFERS_ID, OFFERS);
+
+	try {
+		placements = { ...OFFERS[SELECTED_OFFERS_ID - 1].placements, booking } || [];
+	} catch (er) {}
 	return (
 		<Fragment>
 			<Col lg="9" className="py-3 zIndex mx-auto">

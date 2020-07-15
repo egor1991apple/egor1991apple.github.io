@@ -26,3 +26,45 @@
         display: block !important;
     }
 }
+
+.scale-enter {
+    transform: scale(0);
+    max-height: 0;
+}
+
+.scale-enter-active {
+    transform: scale(1);
+    max-height: 600px;
+    transition: transform 300ms ease-in, max-height 300ms ease-in;
+}
+
+.scale-exit {
+    transform: scale(0);
+    max-height: 600px;
+    transition: transform 300ms ease-in, max-height 300ms ease-in;
+}
+
+.scale-exit-active {
+    transform: scale(0);
+    max-height: 0px;
+    transition: transform 300ms ease-in, max-height 300ms ease-in;
+}
+
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+
+.fade-exit {
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+}
+
+.fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+}
