@@ -13,9 +13,9 @@ export default function SectionMainNews() {
 			<section className="bg-light-1">
 				<Container className="py-5">
 					<SectionTitle>Новости и акции</SectionTitle>
-					<SectionSubtitle>Mollit deserunt esse labore do consequat.</SectionSubtitle>
+					{/* <SectionSubtitle>Mollit deserunt esse labore do consequat.</SectionSubtitle> */}
 
-					<CardDeck>
+					<CardDeck className="pt-3">
 						{MAIN_NEWS.map((news, index) => {
 							return <NewsCard key={`${index}_news`} {...news} index={index} />;
 						})}

@@ -13,8 +13,8 @@ export default function MainSectionBestPrice() {
 			<section className="bg-light-1">
 				<Container className="py-5">
 					<SectionTitle>Наши услуги</SectionTitle>
-					<SectionSubTitle>Минск | Беларусь | Россия | Украина | Литва | Польша | Европа</SectionSubTitle>
-					<Row>
+					{/* <SectionSubTitle>Минск | Беларусь | Россия | Украина | Литва | Польша | Европа</SectionSubTitle> */}
+					<Row className="pt-3">
 						{SERVISES.map((item, index) => {
 							return (
 								<Col md="6" lg="4" key={`${index}_servises`} className="mb-4">
