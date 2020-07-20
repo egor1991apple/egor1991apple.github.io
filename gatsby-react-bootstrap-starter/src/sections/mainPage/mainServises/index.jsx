@@ -10,19 +10,21 @@ export default function MainSectionBestPrice() {
 
 	return (
 		SERVISES.length && (
-			<Container as="section" className="py-5">
-				<SectionTitle>Пассажирские перевозки</SectionTitle>
-				<SectionSubTitle>Минск | Беларусь | Россия | Украина | Литва | Польша | Европа</SectionSubTitle>
-				<Row>
-					{SERVISES.map((item, index) => {
-						return (
-							<Col md="6" lg="4" key={`${index}_servises`} className="mb-4">
-								<ServisesCard {...item} />
-							</Col>
-						);
-					})}
-				</Row>
-			</Container>
+			<section className="bg-light-1">
+				<Container className="py-5">
+					<SectionTitle>Пассажирские перевозки</SectionTitle>
+					<SectionSubTitle>Минск | Беларусь | Россия | Украина | Литва | Польша | Европа</SectionSubTitle>
+					<Row>
+						{SERVISES.map((item, index) => {
+							return (
+								<Col md="6" lg="4" key={`${index}_servises`} className="mb-4">
+									<ServisesCard {...item} />
+								</Col>
+							);
+						})}
+					</Row>
+				</Container>
+			</section>
 		)
 	);
 }

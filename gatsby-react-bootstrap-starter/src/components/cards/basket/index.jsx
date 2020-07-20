@@ -7,7 +7,7 @@ export default function index(props) {
 	const { status, place, currency, ticket_id, direction, duration, cost, route = [], callback } = props;
 
 	return (
-		<Card className="mb-3">
+		<Card className="mb-3 bg-light-2">
 			<Card.Body className="p-3">
 				<div className="d-flex justify-content-between ">
 					<h5 className="mb-0">Билет №{ticket_id}</h5>

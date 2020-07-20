@@ -8,6 +8,7 @@ export default function mainSearchFormVerticalSlider() {
 			<Container className="">
 				<Row noGutters className=" bg-light shadow-md rounded p-3">
 					<Col md="5" className="pr-md-3">
+						<h3 className="text-5 mb-4">Автобусные билеты</h3>
 						<MainSearchForm />
 					</Col>
 					<Col md="7" className="pl-md-3 pt-3 pt-md-0">

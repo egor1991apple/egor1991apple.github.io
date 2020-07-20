@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 import lang from './lang';
 export default function LogginForm({ language = 'ru' }) {

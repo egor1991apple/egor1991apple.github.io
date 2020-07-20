@@ -37,7 +37,7 @@ export default function Basket() {
 				return (
 					<Col
 						lg="3"
-						className="border-top  bg-primary "
+						className="border-left-dashed"
 						style={{
 							...defaultStyle,
 							...transitionStyles[state]
@@ -61,7 +61,7 @@ export default function Basket() {
 									</CSSTransition>
 								)}
 							</TransitionGroup>
-							<div style={{ height: '100vh', maxHeight: '500px' }} className="overflow-auto rounded ">
+							<div style={{ height: '100vh' }} className="overflow-auto rounded ">
 								<TransitionGroup>
 									{FROM.map(({ place, offers, status, ticket_id }, index) => {
 										if (status == 1) {
