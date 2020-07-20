@@ -15,7 +15,7 @@ export default function BookingInfo() {
 		<Col lg="3" className="border-left-dashed ticket-styled big">
 			<Card className="border-0 sticky-top">
 				{FROM ? (
-					<Card.Header className="px-0 bg-header bg-white">
+					<Card.Header className="px-1 bg-header bg-white">
 						<div className="text-5">
 							{FROM.offers.route[0].city} <BsArrowRight />{' '}
 							{FROM.offers.route[FROM.offers.route.length - 1].city}
@@ -29,7 +29,7 @@ export default function BookingInfo() {
 				) : null}
 
 				{FROM ? (
-					<Card.Body className="px-0 ">
+					<Card.Body className="px-1 ">
 						<RouteTwoPoints points={FROM.offers.route} />
 						<div className="d-flex align-items-center">
 							<MdPerson size="16" className="text-dark mr-1" /> {BASKET[0].length} места:{' '}
@@ -46,7 +46,7 @@ export default function BookingInfo() {
 					''
 				)}
 				{BACK ? (
-					<Card.Body className="px-0 border-top">
+					<Card.Body className="px-1 border-top">
 						<RouteTwoPoints points={BACK.offers.route} />
 						<div className="d-flex align-items-center">
 							<MdPerson size="16" className="text-dark mr-1" /> {BASKET[0].length} места:{' '}

@@ -12,7 +12,7 @@ export default function MainSectionBestPrice() {
 		SERVISES.length && (
 			<section className="bg-light-1">
 				<Container className="py-5">
-					<SectionTitle>Пассажирские перевозки</SectionTitle>
+					<SectionTitle>Наши услуги</SectionTitle>
 					<SectionSubTitle>Минск | Беларусь | Россия | Украина | Литва | Польша | Европа</SectionSubTitle>
 					<Row>
 						{SERVISES.map((item, index) => {
