@@ -12,10 +12,19 @@ export default function MainFormSlider() {
 					return (
 						<Carousel.Item key={`${index}_mainSlider`} className="position-relative rounded oveflow-hidden">
 							<img className="img-cover" src={img || ''} alt={title || ''} />
-							<Carousel.Caption>
-								{title ? <h3>{title}</h3> : ''}
+							<Carousel.Caption
+								className="h-100 d-flex justify-content-center align-items-center flex-column"
+								style={{ bottom: 0 }}
+							>
+								{title ? <span className="text-white text-shadow text-8 mb-3">{title}</span> : ''}
 								{subtitle ? <p>{subtitle}</p> : ''}
-								{link ? <a href={link || ''}>{lang['ru'].link}</a> : ''}
+								{link ? (
+									<a href={link || ''} className="text-white text-shadow text-3">
+										{lang['ru'].link}...
+									</a>
+								) : (
+									''
+								)}
 							</Carousel.Caption>
 						</Carousel.Item>
 					);

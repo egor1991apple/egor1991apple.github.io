@@ -17,7 +17,8 @@
     }
 }
 
-#authDialog {
+#authDialog,
+.custom-tabs {
     .nav-tabs .nav-link {
         border: 0;
         position: relative;
@@ -513,4 +514,8 @@ svg {
             width: 20px;
         }
     }
+}
+
+.text-shadow {
+    text-shadow: 1px 1px 3px #323131;
 }
