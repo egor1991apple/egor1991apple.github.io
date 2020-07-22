@@ -8,9 +8,13 @@ import { useBookingPlace } from '../../../hooks/useBookingPlace';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export default function SectionPlacementDialog() {
-	const { SELECTED_OFFERS_ID = null, OFFERS = [], BASKET = [], onBasketCommit, onAddBasketItem } = useContext(
-		GlobalContext
-	);
+	const {
+		SELECTED_OFFERS_ID = null,
+		OFFERS = [],
+		BASKET = [],
+		onBasketCommit = () => {},
+		onAddBasketItem = () => {},
+	} = useContext(GlobalContext);
 
 	let placements = { selected: [], disabled: [], booking: [] };
 	const booking = useBookingPlace();
@@ -39,15 +43,18 @@ export default function SectionPlacementDialog() {
 							</thead>
 
 							<TransitionGroup component={'tbody'}>
-								{BASKET[OFFERS[SELECTED_OFFERS_ID - 1].direction].map(({ ticket_id, place }, index) => (
-									<CSSTransition key={index + 'place'} timeout={300} classNames="fade">
-										<tr>
-											<td className="border-right"> #{ticket_id}</td>
-											<td className="border-right">Пассажир №{index + 1}</td>
-											<td className="">{place} место</td>
-										</tr>
-									</CSSTransition>
-								))}
+								{BASKET[OFFERS[SELECTED_OFFERS_ID - 1].direction].length &&
+									BASKET[
+										OFFERS[SELECTED_OFFERS_ID - 1].direction
+									].map(({ ticket_id, place }, index) => (
+										<CSSTransition key={index + 'place'} timeout={300} classNames="fade">
+											<tr>
+												<td className="border-right"> #{ticket_id}</td>
+												<td className="border-right">Пассажир №{index + 1}</td>
+												<td className="">{place} место</td>
+											</tr>
+										</CSSTransition>
+									))}
 							</TransitionGroup>
 						</Table>
 					</Col>

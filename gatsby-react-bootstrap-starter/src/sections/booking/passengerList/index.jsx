@@ -7,7 +7,7 @@ import { GlobalContext } from '../../../store/context';
 export default function PassengerList() {
 	const maxPlacements = useMaxPlacements();
 
-	const { onShowPaymentSytemDialog,onToggleAgreementDialog } = useContext(GlobalContext);
+	const { onShowPaymentSytemDialog=(()=>{}),onToggleAgreementDialog=(()=>{}) } = useContext(GlobalContext);
 	
 	return (
 		<Col lg="9">

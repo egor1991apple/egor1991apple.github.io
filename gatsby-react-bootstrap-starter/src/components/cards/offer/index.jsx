@@ -4,7 +4,15 @@ import { Card, Row, Col, Button } from 'react-bootstrap';
 import Ticket from './ticket';
 import TicketDetail from './ticketDetail';
 
-export default function Offer({ id, cost, currency, link, callback, inPay = false, ...ticket }) {
+export default function Offer({
+	id = null,
+	cost = null,
+	currency = null,
+	link = null,
+	callback = null,
+	inPay = false,
+	...ticket
+}) {
 	return (
 		<Card className="bg-light-1 mx-auto">
 			<Card.Body className="p-0 ">

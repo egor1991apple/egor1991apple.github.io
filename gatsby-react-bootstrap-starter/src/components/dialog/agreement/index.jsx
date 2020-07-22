@@ -11,7 +11,7 @@ import { useContext } from 'react';
 
 export default function AgreementDialog(type) {
    
-    const {AGREEMENT_DIALOGS = [],onToggleAgreementDialog} = useContext(GlobalContext);
+    const {AGREEMENT_DIALOGS = [],onToggleAgreementDialog=(()=>{})} = useContext(GlobalContext);
     const index = AGREEMENT_DIALOGS.indexOf(AGREEMENT_DIALOGS.find((item,index)=>item == true));
 
     const htmlData =  ReactHtmlParser(index == 1 ? htmlAgreement.data : htmlUserTerms.data);

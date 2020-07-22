@@ -4,10 +4,8 @@ import { MdClose } from 'react-icons/md';
 import Timer from '../../../components/timer';
 import { GlobalContext } from '../../../store/context';
 const SectionTimer = () => {
-	const { ALERT: { bookingTimeOver = null }, TOGGLE_ALERT, onToggleAlert, onClearBasket, TIMER } = useContext(
-		GlobalContext
-	);
-	
+	const { onToggleAlert = () => {}, TIMER } = useContext(GlobalContext);
+
 	return (
 		<Col lg="3" className="ml-auto pb-3">
 			<div className="bg-danger  text-white rounded w-100 d-flex align-items-center">
@@ -16,7 +14,11 @@ const SectionTimer = () => {
 					<Timer startTime={TIMER} Done={onToggleAlert('bookingTimeOver')} />
 				</div>
 				<div className="px-2">
-					<MdClose className="cursor text-white " size="32" onClick={()=>onToggleAlert('bookingClear')(true)} />
+					<MdClose
+						className="cursor text-white "
+						size="32"
+						onClick={() => onToggleAlert('bookingClear')(true)}
+					/>
 				</div>
 			</div>
 		</Col>

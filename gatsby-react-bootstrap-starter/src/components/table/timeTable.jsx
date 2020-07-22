@@ -3,8 +3,8 @@ import { Table } from 'react-bootstrap';
 import { MdDirectionsBus } from 'react-icons/md';
 import { GlobalContext } from '../../store/context';
 export default function TimeTable() {
-	const { ROUTE_DETAIL: { timetable = [] } } = useContext(GlobalContext);
-	console.log(timetable);
+	const { ROUTE_DETAIL = {} } = useContext(GlobalContext);
+	const { timetable = [] } = ROUTE_DETAIL;
 	//return <div>Привет мир</div>;
 	return (
 		<Table striped>

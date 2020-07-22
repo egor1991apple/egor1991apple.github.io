@@ -2,7 +2,14 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import ServisesBlock from '../../servises_block';
 import { BsArrowRight } from 'react-icons/bs';
-export default function DetailRoutesCard({ id, img, title, cost, currency, shortDescription: { servises, text } }) {
+export default function DetailRoutesCard({
+	id = null,
+	img = null,
+	title = [],
+	cost = null,
+	currency = null,
+	shortDescription = {},
+}) {
 	return (
 		<Card className="row no-gutters overflow-hidden flex-row shadow-none-hover border-0">
 			<div className="card-img-container col-4">{img && <img src={img} className="img-cover" />}</div>
@@ -10,9 +17,9 @@ export default function DetailRoutesCard({ id, img, title, cost, currency, short
 				<Card.Title>
 					{title[0]} <BsArrowRight /> {title[1]}
 				</Card.Title>
-				<Card.Text> {text}</Card.Text>
+				<Card.Text> {shortDescription.text}</Card.Text>
 				<div className="d-flex flex-wrap">
-					<ServisesBlock includeServises={servises} />
+					<ServisesBlock includeServises={shortDescription.servises} />
 					{/* {servises.map(({ icon, titleServises }) => (
 						
 					))} */}

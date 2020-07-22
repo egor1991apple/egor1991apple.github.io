@@ -23,7 +23,7 @@ export default function Basket() {
 			</Container>
 			<SectionAlerts />
 			<SectionPaymentSystem />
-			<SectionAgreementDialog></SectionAgreementDialog>
+			<SectionAgreementDialog/>
 
 		</Layout>
 	);

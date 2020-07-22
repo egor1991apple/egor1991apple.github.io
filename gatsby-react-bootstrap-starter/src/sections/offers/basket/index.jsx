@@ -18,7 +18,7 @@ const transitionStyles = {
 	exiting: { maxWidth: '0', padding: '0' },
 	exited: { maxWidth: 0, padding: '0' }
 };
-function isRender(FROM, BACK) {
+function isRender(FROM=[], BACK=[]) {
 	if (
 		(FROM.length != 0 && FROM.filter((item) => item.status == 1).length > 0) ||
 		(BACK.length != 0 && BACK.filter((item) => item.status == 1).length > 0)
@@ -27,7 +27,7 @@ function isRender(FROM, BACK) {
 	} else return false;
 }
 export default function Basket() {
-	const { BASKET = [], onRemoveBaksetItem, onClearBasket } = useContext(GlobalContext);
+	const { BASKET = [], onRemoveBaksetItem=(()=>{}) } = useContext(GlobalContext);
 	const FROM = BASKET[0];
 	const BACK = BASKET[1];
 

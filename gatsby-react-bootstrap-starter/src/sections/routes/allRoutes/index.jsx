@@ -7,9 +7,8 @@ import { GlobalContext } from '../../../store/context';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export default function SectionRoutes() {
-	const { ROUTES: { data = [], nowShowRoutes = 0, allCountRoutes = 0 }, onShowMoreRoutes = null } = useContext(
-		GlobalContext
-	);
+	const { ROUTES = {}, onShowMoreRoutes = null } = useContext(GlobalContext);
+	const { data = [], nowShowRoutes = 0, allCountRoutes = 0 } = ROUTES;
 
 	return (
 		data.length && (

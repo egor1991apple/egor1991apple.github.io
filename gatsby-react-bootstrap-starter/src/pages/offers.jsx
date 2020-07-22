@@ -6,17 +6,16 @@ import SectionOffers from '../sections/offers/listOffers';
 import SectionPlacementDialog from '../sections/offers/placementDialog';
 import SectionBasket from '../sections/offers/basket';
 export default function Offers(props) {
-
 	return (
 		<Layout pageInfo={{ pageName: 'routes' }}>
-			<Container className="my-5 ">
+			{/* <Container className="my-5 ">
 				<Row className="bg-white border-radius border rounded mx-0">
 					<SectionForm />
 					<SectionOffers />
 					<SectionBasket />
 				</Row>
 			</Container>
-			<SectionPlacementDialog />
+			<SectionPlacementDialog /> */}
 		</Layout>
 	);
 }
