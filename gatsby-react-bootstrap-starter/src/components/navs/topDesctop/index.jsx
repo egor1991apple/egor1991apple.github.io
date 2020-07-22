@@ -12,7 +12,7 @@ export default function TopDesctop() {
 				{TOP_NAVS.length &&
 					TOP_NAVS.map(({ title, link, children = [], id }, index) => {
 						return !children.length ? (
-							<Link className="nav-link" key={id} to={link}>
+							<Link className="nav-link" key={id} to={link} replace={true}>
 								{title}
 							</Link>
 						) : (

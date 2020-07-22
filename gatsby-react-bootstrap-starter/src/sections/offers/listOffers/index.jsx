@@ -6,6 +6,7 @@ import { GlobalContext } from '../../../store/context';
 
 function getBookingPlace(basket, id, offers) {
 	try {
+		console.log(basket, 'getBookingPlace');
 		const direction = offers[id - 1].direction;
 		const item = basket[direction].filter(({ offers_id }) => id == offers_id);
 		return item.length ? item.map(({ place }) => place) : [];
@@ -13,6 +14,7 @@ function getBookingPlace(basket, id, offers) {
 		return [];
 	}
 }
+
 export default function Offers() {
 	const { OFFERS = [], onOpenPlacementDialog = null, BASKET = [], SELECTED_OFFERS_ID = null } = useContext(
 		GlobalContext

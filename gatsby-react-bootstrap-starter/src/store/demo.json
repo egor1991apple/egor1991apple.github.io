@@ -1,728 +1,781 @@
 {
-	"main_navs_list": [
-		{
-			"id": "1",
-			"title": "Маршруты",
-			"link": "/routes",
-			"children": []
-		},
-		{
-			"id": "2",
-			"title": "Аренда",
-			"link": "/",
-			"children": []
-		},
-		{
-			"id": "3",
-			"title": "Клиентам",
-			"link": "/",
-			"children": [
-				{
-					"id": "01",
-					"title": "Оплата",
-					"link": "/"
-				},
-				{
-					"id": "02",
-					"title": "Правила",
-					"link": "/"
-				},
-				{
-					"id": "03",
-					"title": "Договор публиличной оферты",
-					"link": "/"
-				},
-				{
-					"id": "04",
-					"title": "Как забронировать",
-					"link": "/"
-				},
-				{
-					"id": "05",
-					"title": "Вопросы и ответы",
-					"link": "/"
-				}
-			]
-		},
-		{
-			"id": "6",
-			"title": "Агенствам",
-			"link": "/",
-			"children": []
-		},
-		{
-			"id": "4",
-			"title": "Перевозчикам",
-			"link": "/",
-			"children": []
-		},
-		{
-			"id": "5",
-			"title": "О компании",
-			"link": "/",
-			"children": []
-		}
-	],
-	"main_slider": [
-		{
-			"img": "main_slider.jpg",
-			"title": "slide 1",
-			"subtitle": "Lorem ullamco sint consequat ea eu cillum consectetur quis cillum nostrud.",
-			"link": "/"
-		},
-		{
-			"img": "main_slider1.png",
-			"title": "slide 1",
-			"subtitle": "Lorem ullamco sint consequat ea eu cillum consectetur quis cillum nostrud.",
-			"link": "/"
-		},
-		{
-			"img": "main_slider2.png",
-			"title": "slide 1",
-			"subtitle": "Lorem ullamco sint consequat ea eu cillum consectetur quis cillum nostrud.",
-			"link": "/"
-		}
-	],
-	"servises": [
-		{
-			"img": "bus.jpg",
-			"title": "Трансфер в москву",
-			"subtitle": "Аэропорт домдедова...",
-			"link": "/routes_detail"
-		},
-		{
-			"img": "bus.jpg",
-			"title": "Трансфер в москву",
-			"subtitle": "Аэропорт домдедова...",
-			"link": "/routes_detail"
-		},
-		{
-			"img": "bus.jpg",
-			"title": "Из Москвы в Питер",
-			"subtitle": "Аэропорт домдедова...",
-			"link": "/routes_detail"
-		},
-		{
-			"img": "bus.jpg",
-			"title": "Трансфер в москву",
-			"subtitle": "Аэропорт домдедова...",
-			"link": "/routes_detail"
-		},
-		{
-			"img": "bus.jpg",
-			"title": "Трансфер в москву",
-			"subtitle": "Аэропорт домдедова...",
-			"link": "/routes_detail"
-		},
-		{
-			"img": "bus.jpg",
-			"title": "Из Москвы в Питер",
-			"subtitle": "Аэропорт домдедова...",
-			"link": "/routes_detail"
-		}
-	],
-	"routes": [
-		{
-			"img": "bus.jpg",
-			"title": [ "Москва", "Минск" ],
-			"date": "21.02.2020",
-			"cost": "400",
-			"currency": "USD",
-			"link": "/",
-			"route": "В одну сторону"
-		},
-		{
-			"img": "bus.jpg",
-			"title": [ "Москва", "Минск" ],
-			"date": "21.02.2020",
-			"cost": "400",
-			"currency": "USD",
-			"link": "/routes_detail",
-			"route": "В одну сторону"
-		},
-		{
-			"img": "bus.jpg",
-			"title": [ "Москва", "Минск" ],
-			"date": "21.02.2020",
-			"cost": "400",
-			"currency": "USD",
-			"link": "/routes_detail",
-			"route": "В одну сторону"
-		},
-		{
-			"img": "bus.jpg",
-			"title": [ "Москва", "Минск" ],
-			"date": "21.02.2020",
-			"cost": "400",
-			"currency": "USD",
-			"link": "/routes_detail",
-			"route": "В одну сторону"
-		},
-		{
-			"img": "bus.jpg",
-			"title": [ "Москва", "Минск" ],
-			"date": "21.02.2020",
-			"cost": "400",
-			"currency": "USD",
-			"link": "/routes_detail",
-			"route": "В одну сторону"
-		},
-		{
-			"img": "bus.jpg",
-			"title": [ "Москва", "Минск" ],
-			"date": "21.02.2020",
-			"cost": "400",
-			"currency": "USD",
-			"link": "/routes_detail",
-			"route": "В одну сторону"
-		},
-		{
-			"img": "bus.jpg",
-			"title": [ "Москва", "Минск" ],
-			"date": "21.02.2020",
-			"cost": "400",
-			"currency": "USD",
-			"link": "/routes_detail",
-			"route": "В одну сторону"
-		},
-		{
-			"img": "bus.jpg",
-			"title": [ "Москва", "Минск" ],
-			"date": "21.02.2020",
-			"cost": "400",
-			"currency": "USD",
-			"link": "/routes_detail",
-			"route": "В одну сторону"
-		}
-	],
-	"route_detail": {
-		"id": "uasdiaksd123",
-		"img": "/moskow.jpg",
-		"title": [ "Москва", "Минск" ],
-		"cost": "400",
-		"currency": "USD",
-		"shortDescription": {
-			"text": "Proident sint adipisicing dolor eiusmod pariatur eu occaecat aliquip tempor id. Fugiat adipisicing elit reprehenderit reprehenderit reprehenderit consequat occaecat nisi eu eiusmod excepteur sunt adipisicing.Amet nulla qui enim eiusmod nisi laborum mollit id nisi in do.Exercitation elit aute ut ad ut amet ipsum minim sint.",
-			"servises": [ "1", "2", "3", "4", "5" ]
-		},
-		"description": [
-			{
-				"title": "Правила бронирования",
-				"text": "Reprehenderit dolor sit quis laboris est pariatur nostrud et labore id sit consequat fugiat.Magna occaecat non fugiat exercitation officia et aliquip ullamco nulla eiusmod.Cillum ipsum voluptate est ad elit velit ullamco qui irure in nostrud pariatur.Aliqua ad laboris anim dolor ad laboris eu.Anim anim elit mollit nulla ut laboris ut aliqua tempor sit aliqua consectetur nostrud."
-			},
-			{
-				"title": "Условия отмены",
-				"text": "Ea Lorem ex magna magna laborum commodo Lorem nisi.Dolor est anim eiusmod proident et ipsum.Fugiat irure ea ex dolor adipisicing do ex.Mollit ut do ad et Lorem id esse enim Lorem eiusmod."
-			},
-			{
-				"title": "Багаж",
-				"text": "Ea Lorem ex magna magna laborum commodo Lorem nisi.Dolor est anim eiusmod proident et ipsum.Fugiat irure ea ex dolor adipisicing do ex.Mollit ut do ad et Lorem id esse enim Lorem eiusmod."
-			}
-		],
-		"timetable": [
-			{
-				"duration": "4ч 20мин",
-				"from": "5:30",
-				"to": "6:30",
-				"days": [ 1, 0, 1, 0, 0, 0, 1 ]
-			},
-			{
-				"duration": "6ч 20мин",
-				"from": "6:30",
-				"to": "19:30",
-				"days": [ 1, 0, 1, 0, 0, 1, 1 ]
-			},
-			{
-				"duration": "13ч 20мин",
-				"from": "12:30",
-				"to": "18:30",
-				"days": [ 0, 0, 1, 0, 0, 1, 1 ]
-			}
-		],
-		"points": [
-			{
-				"city": "Минск",
-				"address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
-				"time": "21:00",
-				"date": "22 янв",
-				"durationTime": "4:00",
-				"coords": {
-					"x": "1293741723",
-					"y": "1923751723"
-				}
-			},
-			{
-				"city": "Минск",
-				"address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
-				"time": "21:00",
-				"date": "22 янв",
-				"durationTime": "4:00",
-				"coords": {
-					"x": "1293741723",
-					"y": "1923751723"
-				}
-			},
-			{
-				"city": "Минск",
-				"address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
-				"time": "21:00",
-				"date": "22 янв",
-				"durationTime": "0",
-				"coords": {
-					"x": "1293741723",
-					"y": "1923751723"
-				}
-			}
-		]
-	},
-	"route_servises": [
-		{
-			"id": "1",
-			"title": "wi-fi",
-			"icon": "/",
-			"text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
-		},
-		{
-			"id": "2",
-			"title": "Кофе",
-			"icon": "/",
-			"text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
-		},
-		{
-			"id": "3",
-			"title": "Плед",
-			"icon": "/",
-			"text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
-		},
-		{
-			"id": "4",
-			"title": "Медия",
-			"icon": "/",
-			"text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
-		},
-		{
-			"id": "5",
-			"title": "220v",
-			"icon": "/",
-			"text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
-		},
-		{
-			"id": "6",
-			"title": "Кондиционер",
-			"icon": "/",
-			"text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
-		},
-		{
-			"id": "7",
-			"title": "wc",
-			"icon": "/",
-			"text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
-		}
-	],
-	"main_why_we_are": [
-		{
-			"title": "Commodo nulla aliqua ",
-			"subtitle": "Sit enim aute qui minim.",
-			"icon": "/whyWeAre/bus.svg"
-		},
-		{
-			"title": "Nostrud cillum consequat ",
-			"subtitle": "Irure ea amet commodo nulla aliqua duis ",
-			"icon": "/whyWeAre/lock.svg"
-		},
-		{
-			"title": "Nostrud cillum consequat ",
-			"subtitle": "Irure  aliqua duis incididunt anim aliqua excepteur eu.",
-			"icon": "/whyWeAre/notifications.svg"
-		},
-		{
-			"title": "Nostrud cillum consequat ",
-			"subtitle": "Irure ea amet commodo nulla aliqua duis incididunt anim aliqua excepteur eu.",
-			"icon": "/whyWeAre/support.svg"
-		},
-		{
-			"title": "Nostrud cillum consequat ",
-			"subtitle": "Irure ea amet commodo nulla  eu.",
-			"icon": "/whyWeAre/thumb.svg"
-		}
-	],
-	"main_question_answer": [
-		{
-			"title": "Proident irure quis labore culpa.",
-			"text": "Ut qui adipisicing velit in aliquip in aute labore nisi non et culpa.s"
-		},
-		{
-			"title": "Proident irure quis labore culpa.",
-			"text": "Ut qui adipisicing velit in aliquip in aute labore nisi non et culpa.s"
-		},
-		{
-			"title": "Proident irure quis labore culpa.",
-			"text": "Ut qui adipisicing velit in aliquip in aute labore nisi non et culpa.s"
-		},
-		{
-			"title": "Proident irure quis labore culpa.",
-			"text": "Ut qui adipisicing velit in aliquip in aute labore nisi non et culpa.s"
-		},
-		{
-			"title": "Proident irure quis labore culpa.",
-			"text": "Ut qui adipisicing velit in aliquip in aute labore nisi non et culpa.s"
-		}
-	],
-	"news": [
-		{
-			"title": "Pariatur cillum cupidatat nulla pariatur nulla amet ullamco nostrud aliquip irure.",
-			"text": "Ipsum commodo sunt ex irure non sit anim anim anim minim.",
-			"date": "21.02.2020",
-			"see": "40",
-			"img": "bus.jpg",
-			"link": "/"
-		},
-		{
-			"title": "Ipsum commodo sunt ex irure non",
-			"text": "Ipsum commodo sunt ex irure non sit anim anim anim minim.",
-			"date": "21.02.2020",
-			"see": "40",
-			"img": "bus.jpg",
-			"link": "/"
-		},
-		{
-			"title": "Ipsum commodo sunt ex irure non",
-			"text": "Ipsum commodo sunt ex irure non sit anim anim anim minim.",
-			"date": "21.02.2020",
-			"see": "40",
-			"img": "bus.jpg",
-			"link": "/"
-		}
-	],
-	"main_search_form": {
-		"direction": [
-			{
-				"id": "1",
-				"name": "Минск пассажирский",
-				"groupName": "Республика беларусь",
-				"groupId": "123"
-			},
-			{
-				"id": "2",
-				"name": "Минск восточный",
-				"groupName": "Республика беларусь",
-				"groupId": "123"
-			}
-		],
-		"dates": [
-			{ "date": "21.08.2020", "cost": "1", "currency": "USD" },
-			{ "date": "22.08.2020", "cost": "1", "currency": "USD" },
-			{ "date": "09.08.2020", "cost": "1", "currency": "USD" }
-		]
-	},
-	"payment": [
-		{
-			"title": "americanexpress",
-			"img": "payment/americanexpress.jpg",
-			"link": "/"
-		},
-		{
-			"title": "assist",
-			"img": "payment/asist.svg",
-			"link": "/"
-		},
-		{
-			"title": "belcart",
-			"img": "payment/belcart.svg",
-			"link": "/"
-		},
-		{
-			"title": "pay",
-			"img": "payment/belcartinternet.svg",
-			"link": "/"
-		},
-		{
-			"title": "pay",
-			"img": "payment/mastercardsecure.svg",
-			"link": "/"
-		},
-		{
-			"title": "pay",
-			"img": "payment/matercard.svg",
-			"link": "/"
-		},
-		{
-			"title": "pay",
-			"img": "payment/visa.svg",
-			"link": "/"
-		},
-		{
-			"title": "pay",
-			"img": "payment/visasecure.svg",
-			"link": "/"
-		}
-	],
-	"social": [
-		{
-			"title": "fb",
-			"img": "/",
-			"link": "/",
-			"type": "fb"
-		},
-		{
-			"title": "vk",
-			"img": "/",
-			"link": "/",
-			"type": "vk"
-		},
-		{
-			"title": "tw",
-			"img": "/",
-			"link": "/",
-			"type": "tw"
-		},
-		{
-			"title": "inst",
-			"img": "/",
-			"link": "/",
-			"type": "inst"
-		},
-		{
-			"title": "telegram",
-			"img": "/",
-			"link": "/",
-			"type": "tl"
-		},
-		{
-			"title": "viber",
-			"img": "/",
-			"link": "/",
-			"type": "vb"
-		},
-		{
-			"title": "whatsapp",
-			"img": "/",
-			"link": "/",
-			"type": "wh"
-		}
-	],
-	"contact": [
-		{
-			"type": "tel",
-			"link": "+375111111",
-			"text": "+375(11) 111-11-11",
-			"img": "mts.png"
-		},
-		{
-			"type": "tel",
-			"link": "+375111111",
-			"text": "+375(11) 111-11-11",
-			"img": "a1.png"
-		},
-		{
-			"type": "mail",
-			"link": "test@gmail.com",
-			"text": "test@gmail.com"
-		},
-		{
-			"type": "map",
-			"link": "test@gmail.com",
-			"text": "г. Минск ул. Киселева 10"
-		}
-	],
+    "timer": "1200",
+    "main_navs_list": [{
+            "id": "1",
+            "title": "Маршруты",
+            "link": "/routes",
+            "children": []
+        },
+        {
+            "id": "2",
+            "title": "Аренда",
+            "link": "/",
+            "children": []
+        },
+        {
+            "id": "3",
+            "title": "Клиентам",
+            "link": "/",
+            "children": [{
+                    "id": "01",
+                    "title": "Оплата",
+                    "link": "/"
+                },
+                {
+                    "id": "02",
+                    "title": "Правила",
+                    "link": "/"
+                },
+                {
+                    "id": "03",
+                    "title": "Договор публиличной оферты",
+                    "link": "/"
+                },
+                {
+                    "id": "04",
+                    "title": "Как забронировать",
+                    "link": "/"
+                },
+                {
+                    "id": "05",
+                    "title": "Вопросы и ответы",
+                    "link": "/"
+                }
+            ]
+        },
+        {
+            "id": "6",
+            "title": "Агенствам",
+            "link": "/",
+            "children": []
+        },
+        {
+            "id": "4",
+            "title": "Перевозчикам",
+            "link": "/",
+            "children": []
+        },
+        {
+            "id": "5",
+            "title": "О компании",
+            "link": "/",
+            "children": []
+        }
+    ],
+    "main_slider": [{
+            "img": "img/main_slider.jpg",
+            "title": "slide 1",
+            "subtitle": "Lorem ullamco sint consequat ea eu cillum consectetur quis cillum nostrud.",
+            "link": "/"
+        },
+        {
+            "img": "img/main_slider1.png",
+            "title": "slide 1",
+            "subtitle": "Lorem ullamco sint consequat ea eu cillum consectetur quis cillum nostrud.",
+            "link": "/"
+        },
+        {
+            "img": "img/main_slider2.png",
+            "title": "slide 1",
+            "subtitle": "Lorem ullamco sint consequat ea eu cillum consectetur quis cillum nostrud.",
+            "link": "/"
+        }
+    ],
+    "servises": [{
+            "img": "img/bus.jpg",
+            "title": "Трансфер в москву",
+            "subtitle": "Аэропорт домдедова...",
+            "link": "/routes_detail"
+        },
+        {
+            "img": "img/bus.jpg",
+            "title": "Трансфер в москву",
+            "subtitle": "Аэропорт домдедова...",
+            "link": "/routes_detail"
+        },
+        {
+            "img": "img/bus.jpg",
+            "title": "Из Москвы в Питер",
+            "subtitle": "Аэропорт домдедова...",
+            "link": "/routes_detail"
+        },
+        {
+            "img": "img/bus.jpg",
+            "title": "Трансфер в москву",
+            "subtitle": "Аэропорт домдедова...",
+            "link": "/routes_detail"
+        },
+        {
+            "img": "img/bus.jpg",
+            "title": "Трансфер в москву",
+            "subtitle": "Аэропорт домдедова...",
+            "link": "/routes_detail"
+        },
+        {
+            "img": "img/bus.jpg",
+            "title": "Из Москвы в Питер",
+            "subtitle": "Аэропорт домдедова...",
+            "link": "/routes_detail"
+        }
+    ],
+    "routes": [{
+            "img": "img/bus.jpg",
+            "title": ["Москва", "Минск"],
+            "date": "21.02.2020",
+            "cost": "400",
+            "currency": "USD",
+            "link": "/",
+            "route": "В одну сторону"
+        },
+        {
+            "img": "img/bus.jpg",
+            "title": ["Москва", "Минск"],
+            "date": "21.02.2020",
+            "cost": "400",
+            "currency": "USD",
+            "link": "/routes_detail",
+            "route": "В одну сторону"
+        },
+        {
+            "img": "img/bus.jpg",
+            "title": ["Москва", "Минск"],
+            "date": "21.02.2020",
+            "cost": "400",
+            "currency": "USD",
+            "link": "/routes_detail",
+            "route": "В одну сторону"
+        },
+        {
+            "img": "img/bus.jpg",
+            "title": ["Москва", "Минск"],
+            "date": "21.02.2020",
+            "cost": "400",
+            "currency": "USD",
+            "link": "/routes_detail",
+            "route": "В одну сторону"
+        },
+        {
+            "img": "img/bus.jpg",
+            "title": ["Москва", "Минск"],
+            "date": "21.02.2020",
+            "cost": "400",
+            "currency": "USD",
+            "link": "/routes_detail",
+            "route": "В одну сторону"
+        },
+        {
+            "img": "img/bus.jpg",
+            "title": ["Москва", "Минск"],
+            "date": "21.02.2020",
+            "cost": "400",
+            "currency": "USD",
+            "link": "/routes_detail",
+            "route": "В одну сторону"
+        },
+        {
+            "img": "img/bus.jpg",
+            "title": ["Москва", "Минск"],
+            "date": "21.02.2020",
+            "cost": "400",
+            "currency": "USD",
+            "link": "/routes_detail",
+            "route": "В одну сторону"
+        },
+        {
+            "img": "img/bus.jpg",
+            "title": ["Москва", "Минск"],
+            "date": "21.02.2020",
+            "cost": "400",
+            "currency": "USD",
+            "link": "/routes_detail",
+            "route": "В одну сторону"
+        }
+    ],
+    "route_detail": {
+        "id": "uasdiaksd123",
+        "img": "img/moskow.jpg",
+        "title": ["Москва", "Минск"],
+        "cost": "400",
+        "currency": "USD",
+        "shortDescription": {
+            "text": "Proident sint adipisicing dolor eiusmod pariatur eu occaecat aliquip tempor id. Fugiat adipisicing elit reprehenderit reprehenderit reprehenderit consequat occaecat nisi eu eiusmod excepteur sunt adipisicing.Amet nulla qui enim eiusmod nisi laborum mollit id nisi in do.Exercitation elit aute ut ad ut amet ipsum minim sint.",
+            "servises": ["1", "2", "3", "4", "5"]
+        },
+        "description": [{
+                "title": "Правила бронирования",
+                "text": "Reprehenderit dolor sit quis laboris est pariatur nostrud et labore id sit consequat fugiat.Magna occaecat non fugiat exercitation officia et aliquip ullamco nulla eiusmod.Cillum ipsum voluptate est ad elit velit ullamco qui irure in nostrud pariatur.Aliqua ad laboris anim dolor ad laboris eu.Anim anim elit mollit nulla ut laboris ut aliqua tempor sit aliqua consectetur nostrud."
+            },
+            {
+                "title": "Условия отмены",
+                "text": "Ea Lorem ex magna magna laborum commodo Lorem nisi.Dolor est anim eiusmod proident et ipsum.Fugiat irure ea ex dolor adipisicing do ex.Mollit ut do ad et Lorem id esse enim Lorem eiusmod."
+            },
+            {
+                "title": "Багаж",
+                "text": "Ea Lorem ex magna magna laborum commodo Lorem nisi.Dolor est anim eiusmod proident et ipsum.Fugiat irure ea ex dolor adipisicing do ex.Mollit ut do ad et Lorem id esse enim Lorem eiusmod."
+            }
+        ],
+        "timetable": [{
+                "duration": "4ч 20мин",
+                "from": "5:30",
+                "to": "6:30",
+                "days": [1, 0, 1, 0, 0, 0, 1]
+            },
+            {
+                "duration": "6ч 20мин",
+                "from": "6:30",
+                "to": "19:30",
+                "days": [1, 0, 1, 0, 0, 1, 1]
+            },
+            {
+                "duration": "13ч 20мин",
+                "from": "12:30",
+                "to": "18:30",
+                "days": [0, 0, 1, 0, 0, 1, 1]
+            }
+        ],
+        "points": [{
+                "city": "Минск",
+                "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                "time": "21:00",
+                "date": "22 янв",
+                "durationTime": "4:00",
+                "coords": {
+                    "x": "1293741723",
+                    "y": "1923751723"
+                }
+            },
+            {
+                "city": "Минск",
+                "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                "time": "21:00",
+                "date": "22 янв",
+                "durationTime": "4:00",
+                "coords": {
+                    "x": "1293741723",
+                    "y": "1923751723"
+                }
+            },
+            {
+                "city": "Минск",
+                "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                "time": "21:00",
+                "date": "22 янв",
+                "durationTime": "0",
+                "coords": {
+                    "x": "1293741723",
+                    "y": "1923751723"
+                }
+            }
+        ]
+    },
+    "route_servises": [{
+            "id": "1",
+            "title": "wi-fi",
+            "icon": "/",
+            "text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
+        },
+        {
+            "id": "2",
+            "title": "Кофе",
+            "icon": "/",
+            "text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
+        },
+        {
+            "id": "3",
+            "title": "Плед",
+            "icon": "/",
+            "text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
+        },
+        {
+            "id": "4",
+            "title": "Медия",
+            "icon": "/",
+            "text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
+        },
+        {
+            "id": "5",
+            "title": "220v",
+            "icon": "/",
+            "text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
+        },
+        {
+            "id": "6",
+            "title": "Кондиционер",
+            "icon": "/",
+            "text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
+        },
+        {
+            "id": "7",
+            "title": "wc",
+            "icon": "/",
+            "text": "Aliquip ad veniam adipisicing amet culpa ea cupidatat dolore occaecat."
+        }
+    ],
+    "main_why_we_are": [{
+            "title": "Commodo nulla aliqua ",
+            "subtitle": "Sit enim aute qui minim.",
+            "icon": "img/whyWeAre/bus.svg"
+        },
+        {
+            "title": "Nostrud cillum consequat ",
+            "subtitle": "Irure ea amet commodo nulla aliqua duis ",
+            "icon": "img/whyWeAre/lock.svg"
+        },
+        {
+            "title": "Nostrud cillum consequat ",
+            "subtitle": "Irure  aliqua duis incididunt anim aliqua excepteur eu.",
+            "icon": "img/whyWeAre/notifications.svg"
+        },
+        {
+            "title": "Nostrud cillum consequat ",
+            "subtitle": "Irure ea amet commodo nulla aliqua duis incididunt anim aliqua excepteur eu.",
+            "icon": "img/whyWeAre/support.svg"
+        },
+        {
+            "title": "Nostrud cillum consequat ",
+            "subtitle": "Irure ea amet commodo nulla  eu.",
+            "icon": "img/whyWeAre/thumb.svg"
+        }
+    ],
+    "main_question_answer": [{
+            "title": "Proident irure quis labore culpa.",
+            "text": "Ut qui adipisicing velit in aliquip in aute labore nisi non et culpa.s"
+        },
+        {
+            "title": "Proident irure quis labore culpa.",
+            "text": "Ut qui adipisicing velit in aliquip in aute labore nisi non et culpa.s"
+        },
+        {
+            "title": "Proident irure quis labore culpa.",
+            "text": "Ut qui adipisicing velit in aliquip in aute labore nisi non et culpa.s"
+        },
+        {
+            "title": "Proident irure quis labore culpa.",
+            "text": "Ut qui adipisicing velit in aliquip in aute labore nisi non et culpa.s"
+        },
+        {
+            "title": "Proident irure quis labore culpa.",
+            "text": "Ut qui adipisicing velit in aliquip in aute labore nisi non et culpa.s"
+        }
+    ],
+    "news": [{
+            "title": "Pariatur cillum cupidatat nulla pariatur nulla amet ullamco nostrud aliquip irure.",
+            "text": "Ipsum commodo sunt ex irure non sit anim anim anim minim.",
+            "date": "21.02.2020",
+            "see": "40",
+            "img": "img/bus.jpg",
+            "link": "/"
+        },
+        {
+            "title": "Ipsum commodo sunt ex irure non",
+            "text": "Ipsum commodo sunt ex irure non sit anim anim anim minim.",
+            "date": "21.02.2020",
+            "see": "40",
+            "img": "img/bus.jpg",
+            "link": "/"
+        },
+        {
+            "title": "Ipsum commodo sunt ex irure non",
+            "text": "Ipsum commodo sunt ex irure non sit anim anim anim minim.",
+            "date": "21.02.2020",
+            "see": "40",
+            "img": "img/bus.jpg",
+            "link": "/"
+        }
+    ],
+    "main_search_form": {
+        "direction": [{
+                "id": "1",
+                "name": "Минск пассажирский",
+                "groupName": "Республика беларусь",
+                "groupId": "123"
+            },
+            {
+                "id": "2",
+                "name": "Минск восточный",
+                "groupName": "Республика беларусь",
+                "groupId": "123"
+            }
+        ],
+        "dates": [
+            { "date": "21.08.2020", "cost": "1", "currency": "USD" },
+            { "date": "22.08.2020", "cost": "1", "currency": "USD" },
+            { "date": "09.08.2020", "cost": "1", "currency": "USD" }
+        ]
+    },
+    "payment": [{
+            "title": "americanexpress",
+            "img": "img/payment/americanexpress.jpg",
+            "link": "/"
+        },
+        {
+            "title": "assist",
+            "img": "img/payment/asist.svg",
+            "link": "/"
+        },
+        {
+            "title": "belcart",
+            "img": "img/payment/belcart.svg",
+            "link": "/"
+        },
+        {
+            "title": "pay",
+            "img": "img/payment/belcartinternet.svg",
+            "link": "/"
+        },
+        {
+            "title": "pay",
+            "img": "img/payment/mastercardsecure.svg",
+            "link": "/"
+        },
+        {
+            "title": "pay",
+            "img": "img/payment/matercard.svg",
+            "link": "/"
+        },
+        {
+            "title": "pay",
+            "img": "img/payment/visa.svg",
+            "link": "/"
+        },
+        {
+            "title": "pay",
+            "img": "img/payment/visasecure.svg",
+            "link": "/"
+        }
+    ],
+    "social": [{
+            "title": "fb",
+            "img": "/",
+            "link": "/",
+            "type": "fb"
+        },
+        {
+            "title": "vk",
+            "img": "/",
+            "link": "/",
+            "type": "vk"
+        },
+        {
+            "title": "tw",
+            "img": "/",
+            "link": "/",
+            "type": "tw"
+        },
+        {
+            "title": "inst",
+            "img": "/",
+            "link": "/",
+            "type": "inst"
+        },
+        {
+            "title": "telegram",
+            "img": "/",
+            "link": "/",
+            "type": "tl"
+        },
+        {
+            "title": "viber",
+            "img": "/",
+            "link": "/",
+            "type": "vb"
+        },
+        {
+            "title": "whatsapp",
+            "img": "/",
+            "link": "/",
+            "type": "wh"
+        }
+    ],
+    "contact": [{
+            "type": "tel",
+            "link": "+375111111",
+            "text": "+375(11) 111-11-11",
+            "img": "img/mts.png"
+        },
+        {
+            "type": "tel",
+            "link": "+375111111",
+            "text": "+375(11) 111-11-11",
+            "img": "img/a1.png"
+        },
+        {
+            "type": "mail",
+            "link": "test@gmail.com",
+            "text": "test@gmail.com"
+        },
+        {
+            "type": "map",
+            "link": "test@gmail.com",
+            "text": "г. Минск ул. Киселева 10"
+        }
+    ],
 
-	"offers": [
-		{
-			"id": "1",
-			"direction": "0",
-			"link": "/",
-			"cost": "200",
-			"currency": "USD",
-			"duration": "13ч 20мин",
-			"tickets": "2",
-			"placements": {
-				"selected": [ 1, 34, 5, 7 ],
-				"disabled": [ 2 ]
-			},
-			"route": [
-				{
-					"city": "Минск",
-					"address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
-					"time": "21:00",
-					"date": "22 янв",
-					"durationTime": "4:00",
-					"coords": {
-						"x": "1293741723",
-						"y": "1923751723"
-					}
-				},
-				{
-					"city": "Cмоленск",
-					"address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
-					"time": "21:00",
-					"date": "23 янв",
-					"durationTime": "4:00",
-					"coords": {
-						"x": "1293741723",
-						"y": "1923751723"
-					}
-				},
-				{
-					"city": "Москва",
-					"address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
-					"time": "21:00",
-					"date": "23 янв",
-					"durationTime": "0",
-					"coords": {
-						"x": "1293741723",
-						"y": "1923751723"
-					}
-				}
-			]
-		},
-		{
-			"id": "2",
-			"direction": "1",
-			"link": "/",
-			"cost": "200",
-			"currency": "USD",
-			"duration": "13ч 20мин",
-			"tickets": "2",
-			"placements": {
-				"selected": [ 1, 34, 5, 7 ],
-				"disabled": [ 2 ]
-			},
-			"route": [
-				{
-					"city": "Минск",
-					"address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
-					"time": "21:00",
-					"date": "22 янв",
-					"durationTime": "4ч 15мин",
-					"coords": {
-						"x": "1293741723",
-						"y": "1923751723"
-					}
-				},
-				{
-					"city": "Cмоленск",
-					"address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
-					"time": "21:00",
-					"date": "23 янв",
-					"coords": {
-						"x": "1293741723",
-						"y": "1923751723"
-					}
-				},
-				{
-					"city": "Москва",
-					"address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
-					"time": "21:00",
-					"date": "23 янв",
-					"durationTime": "4ч 15мин",
-					"coords": {
-						"x": "1293741723",
-						"y": "1923751723"
-					}
-				}
-			]
-		},
-		{
-			"id": "3",
-			"direction": "1",
-			"link": "/",
-			"cost": "200",
-			"currency": "USD",
-			"duration": "13ч 20мин",
-			"tickets": "2",
-			"placements": {
-				"selected": [ 1, 2, 34, 5, 7 ],
-				"disabled": [ 2 ]
-			},
-			"route": [
-				{
-					"city": "Минск",
-					"address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
-					"time": "21:00",
-					"date": "22 янв",
-					"durationTime": "4ч 15мин",
-					"coords": {
-						"x": "1293741723",
-						"y": "1923751723"
-					}
-				},
-				{
-					"city": "Cмоленск",
-					"address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
-					"time": "21:00",
-					"date": "23 янв",
-					"durationTime": "4ч 15мин",
-					"coords": {
-						"x": "1293741723",
-						"y": "1923751723"
-					}
-				},
-				{
-					"city": "Москва",
-					"address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
-					"time": "21:00",
-					"date": "23 янв",
-					"durationTime": "0",
-					"coords": {
-						"x": "1293741723",
-						"y": "1923751723"
-					}
-				}
-			]
-		},
-		{
-			"id": "4",
-			"direction": "1",
-			"link": "/",
-			"cost": "200",
-			"currency": "USD",
-			"duration": "13ч 20мин",
-			"tickets": "2",
-			"placements": {
-				"selected": [ 1, 34, 5, 31, 7 ],
-				"disabled": [ 2 ]
-			},
-			"route": [
-				{
-					"city": "Минск",
-					"address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
-					"time": "21:00",
-					"date": "22 янв",
-					"coords": {
-						"x": "1293741723",
-						"y": "1923751723"
-					}
-				},
-				{
-					"city": "Cмоленск",
-					"address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
-					"time": "21:00",
-					"date": "23 янв",
-					"coords": {
-						"x": "1293741723",
-						"y": "1923751723"
-					}
-				},
-				{
-					"city": "Москва",
-					"address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
-					"time": "21:00",
-					"date": "23 янв",
-					"coords": {
-						"x": "1293741723",
-						"y": "1923751723"
-					}
-				}
-			]
-		}
-	],
+    "offers": [{
+            "id": "1",
+            "direction": "0",
+            "link": "/",
+            "cost": "200",
+            "currency": "USD",
+            "duration": "13ч 20мин",
+            "tickets": "2",
+            "placements": {
+                "selected": [1, 34, 5, 7],
+                "disabled": [2]
+            },
+            "route": [{
+                    "city": "Минск",
+                    "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                    "time": "21:00",
+                    "date": "22 янв",
+                    "durationTime": "4:00",
+                    "coords": {
+                        "x": "1293741723",
+                        "y": "1923751723"
+                    }
+                },
+                {
+                    "city": "Cмоленск",
+                    "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                    "time": "21:00",
+                    "date": "23 янв",
+                    "durationTime": "4:00",
+                    "coords": {
+                        "x": "1293741723",
+                        "y": "1923751723"
+                    }
+                },
+                {
+                    "city": "Москва",
+                    "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                    "time": "21:00",
+                    "date": "23 янв",
+                    "durationTime": "0",
+                    "coords": {
+                        "x": "1293741723",
+                        "y": "1923751723"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "direction": "1",
+            "link": "/",
+            "cost": "200",
+            "currency": "USD",
+            "duration": "13ч 20мин",
+            "tickets": "2",
+            "placements": {
+                "selected": [1, 34, 5, 7],
+                "disabled": [2]
+            },
+            "route": [{
+                    "city": "Минск",
+                    "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                    "time": "21:00",
+                    "date": "22 янв",
+                    "durationTime": "4ч 15мин",
+                    "coords": {
+                        "x": "1293741723",
+                        "y": "1923751723"
+                    }
+                },
+                {
+                    "city": "Cмоленск",
+                    "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                    "time": "21:00",
+                    "date": "23 янв",
+                    "coords": {
+                        "x": "1293741723",
+                        "y": "1923751723"
+                    }
+                },
+                {
+                    "city": "Москва",
+                    "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                    "time": "21:00",
+                    "date": "23 янв",
+                    "durationTime": "4ч 15мин",
+                    "coords": {
+                        "x": "1293741723",
+                        "y": "1923751723"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "3",
+            "direction": "1",
+            "link": "/",
+            "cost": "200",
+            "currency": "USD",
+            "duration": "13ч 20мин",
+            "tickets": "2",
+            "placements": {
+                "selected": [1, 2, 34, 5, 7],
+                "disabled": [2]
+            },
+            "route": [{
+                    "city": "Минск",
+                    "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                    "time": "21:00",
+                    "date": "22 янв",
+                    "durationTime": "4ч 15мин",
+                    "coords": {
+                        "x": "1293741723",
+                        "y": "1923751723"
+                    }
+                },
+                {
+                    "city": "Cмоленск",
+                    "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                    "time": "21:00",
+                    "date": "23 янв",
+                    "durationTime": "4ч 15мин",
+                    "coords": {
+                        "x": "1293741723",
+                        "y": "1923751723"
+                    }
+                },
+                {
+                    "city": "Москва",
+                    "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                    "time": "21:00",
+                    "date": "23 янв",
+                    "durationTime": "0",
+                    "coords": {
+                        "x": "1293741723",
+                        "y": "1923751723"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "4",
+            "direction": "1",
+            "link": "/",
+            "cost": "200",
+            "currency": "USD",
+            "duration": "13ч 20мин",
+            "tickets": "2",
+            "placements": {
+                "selected": [1, 34, 5, 31, 7],
+                "disabled": [2]
+            },
+            "route": [{
+                    "city": "Минск",
+                    "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                    "time": "21:00",
+                    "date": "22 янв",
+                    "coords": {
+                        "x": "1293741723",
+                        "y": "1923751723"
+                    }
+                },
+                {
+                    "city": "Cмоленск",
+                    "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                    "time": "21:00",
+                    "date": "23 янв",
+                    "coords": {
+                        "x": "1293741723",
+                        "y": "1923751723"
+                    }
+                },
+                {
+                    "city": "Москва",
+                    "address": "Автовокзал 'Центральный', метро Площадь Ленина; улица Бобруйская; дом 6",
+                    "time": "21:00",
+                    "date": "23 янв",
+                    "coords": {
+                        "x": "1293741723",
+                        "y": "1923751723"
+                    }
+                }
+            ]
+        }
+    ],
 
-	"busPlacement": [
-		[ 18, 20, 22, 24, 26, 28, 30, 32, 34 ],
-		[ 17, 19, 21, 23, 25, 27, 29, 31, 33 ],
-		[ 16, 0, 0, 0, 0, 0, 0, 0, 0 ],
-		[ 15, 0, 0, 0, 0, 0, 0, 0, 0 ],
-		[ 14, 12, 10, 8, 0, 6, 4, 2, 0 ],
-		[ 13, 11, 9, 7, 0, 5, 3, 1, 0 ]
-	]
+    "busPlacement": [
+        [18, 20, 22, 24, 26, 28, 30, 32, 34],
+        [17, 19, 21, 23, 25, 27, 29, 31, 33],
+        [16, 0, 0, 0, 0, 0, 0, 0, 0],
+        [15, 0, 0, 0, 0, 0, 0, 0, 0],
+        [14, 12, 10, 8, 0, 6, 4, 2, 0],
+        [13, 11, 9, 7, 0, 5, 3, 1, 0]
+    ],
+    "alert": [{
+            "open": false,
+            "type": "bookingTimeOver",
+            "typeModal": "error",
+            "typeButtons": ["danger"],
+            "buttonsText": ["Ok"],
+            "title": "Booking TimeOver",
+            "text": "loreamAnim laboris cupidatat sint sint. loreUllamco reprehenderit elit ipsum elit magna occaecat."
+        },
+        {
+            "open": false,
+            "type": "bookingSucces",
+            "typeModal": "success",
+            "typeButtons": ["success"],
+            "buttonsText": ["К предложения"],
+            "title": "Booking Success",
+            "text": "loreamAnim laboris cupidatat sint sint. loreUllamco reprehenderit elit ipsum elit magna occaecat."
+        },
+        {
+            "open": false,
+            "type": "bookingGreeting",
+            "typeModal": "warining",
+            "typeButtons": ["danger"],
+            "buttonsText": ["Ok"],
+            "title": "Booking Greeting",
+            "text": "loreamAnim laboris cupidatat sint sint. loreUllamco reprehenderit elit ipsum elit magna occaecat."
+        },
+        {
+            "open": false,
+            "type": "bookingError",
+            "typeModal": "error",
+            "typeButtons": ["danger", "primary"],
+            "buttonsText": ["К предложениям", "Еще раз"],
+            "title": "Booking error",
+            "text": "loreamAnim laboris cupidatat sint sint. loreUllamco reprehenderit elit ipsum elit magna occaecat."
+        },
+        {
+            "open": false,
+            "type": "bookingClear",
+            "typeModal": "error",
+            "typeButtons": ["danger"],
+            "buttonsText": ["Ok"],
+            "title": "Условия отмены",
+            "text": ["loreamAnim laboris cupidatat sint sint. loreUllamco reprehenderit elit ipsum elit magna occaecat.", "loreamAnim laboris cupidatat sint sint. loreUllamco reprehenderit elit ipsum elit magna occaecat.", "loreamAnim laboris cupidatat sint sint. loreUllamco reprehenderit elit ipsum elit magna occaecat."]
+
+        }
+    ],
+    "paymentSystem": [{
+            "id": "1",
+            "type": "nal",
+            "img": "img/cach.png",
+            "title": "Наличными в офисе",
+            "text": "Do amet do !lorExcepteur nostrud officia magna deserunt aliqua. Lorem et pariatur laborum nostrud do enim ipsum.",
+            "checked": false
+        },
+        {
+            "id": "2",
+            "img": "img/erip.jpg",
+            "type": "erip",
+            "title": "Ерип",
+            "text": "Do Culpa officia eu nisi et duis. amet do Lorem et pariatur laborum nostrud do enim ipsum.",
+            "checked": false
+        },
+        {
+            "id": "3",
+            "type": "card",
+            "img": "img/cardPay.svg",
+            "title": "Банковской картой",
+            "text": "Do amet do Lorem et pariatur laborum nostrud do enim ipsum.",
+            "checked": false
+
+        }
+    ]
 }

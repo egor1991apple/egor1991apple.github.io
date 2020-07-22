@@ -28,9 +28,10 @@ export const SELECTED_OFFERS_ID = 'SELECTED_OFFERS_ID';
 
 //bus
 export const BUS = 'BUS';
-
-//dialog
 export const OPEN_PLACEMENT_DIALOG = 'OPEN_PLACEMENT_DIALOG';
+//dialog
+
+
 
 //basket
 export const BASKET = 'BASKET';
@@ -38,3 +39,21 @@ export const CREATE_BASKET = 'CREATE_BASKET';
 export const ADD_BASKET_ITEM = 'ADD_BASKET_ITEM';
 export const REMOVE_BASKET_ITEM = 'REMOVE_BASKET_ITEM';
 export const BASKET_COMMIT = 'BASKET_COMMIT';
+export const CLEAR_BASKET = '';
+
+//ALERT
+export const ALERT = 'ALERT';
+export const TOGGLE_ALERT = 'TOGGLE_ALERT';
+
+
+//paymentSystem
+export const SHOW_PAYMENT_SYTEM_DIALOG = 'SHOW_PAYMENT_SYTEM_DIALOG';
+export const PAYMENT_SYSTEM = 'PAYMENT_SYSTEM';
+export const SELECT_PAYMENT_SYSTEM = 'SELECT_PAYMENT_SYSTEM';
+
+//timer
+export const TIMER = "TIMER";
+
+//booking
+export const AGREEMENT_DIALOGS = "AGREEMENT_DIALOGS";
+export const TOGGLE_AGREEMENT_DIALOGS = "TOGGLE_AGREEMENT_DIALOGS";

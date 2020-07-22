@@ -13,7 +13,7 @@ const CustomNavbar = () => {
 		<Navbar collapseOnSelect expand="lg" className="w-100 bg-white shadow-sm">
 			<Container>
 				<Navbar.Brand href="/" className="d-flex">
-					<img src="logo.svg" style={{ maxWidth: '150px' }} alt="sheddi" />
+					<img src="img/logo.svg" style={{ maxWidth: '150px' }} alt="sheddi" />
 				</Navbar.Brand>
 				<div className="d-none d-lg-flex ml-auto align-items-center">
 					<TopDesctopMenu />
@@ -22,7 +22,7 @@ const CustomNavbar = () => {
 						<tbody>
 							<tr>
 								<td className="text-center">
-									<img src="a1.png" style={{ height: '18px' }} alt="" />
+									<img src="img/a1.png" style={{ height: '18px' }} alt="" />
 								</td>
 								<td>
 									{' '}
@@ -33,7 +33,7 @@ const CustomNavbar = () => {
 							</tr>
 							<tr>
 								<td className="text-center">
-									<img src="mts.png" style={{ height: '14px' }} alt="" />
+									<img src="img/mts.png" style={{ height: '14px' }} alt="" />
 								</td>
 								<td>
 									<a className="nav-link p-0" href="tel:3751111111">

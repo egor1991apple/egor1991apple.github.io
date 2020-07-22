@@ -12,14 +12,24 @@ import {
     ADD_BASKET_ITEM,
     REMOVE_BASKET_ITEM,
     DELETE_BASKET,
-    BASKET_COMMIT
+    BASKET_COMMIT,
+    TOGGLE_ALERT,
+    SHOW_PAYMENT_SYTEM_DIALOG,
+    PAYMENT_SYSTEM,
+    SELECT_PAYMENT_SYSTEM,
+    CLEAR_BASKET,
+    TOGGLE_AGREEMENT_DIALOGS,
+    AGREEMENT_DIALOGS
+
 } from './const';
+import { GiConsoleController } from 'react-icons/gi';
 
 export const Reducer = (state, { type = null, payload = null }) => {
+    console.log(state, type);
     switch (type) {
         case IS_AUTH:
             {
-                return state;
+                return {...state };
             }
         case OPEN_AUTH_DIALOG:
             {
@@ -41,35 +51,50 @@ export const Reducer = (state, { type = null, payload = null }) => {
             {
                 return {...state, OPEN_PLACEMENT_DIALOG: !state[OPEN_PLACEMENT_DIALOG], SELECTED_OFFERS_ID: payload };
             }
-
-            //basket
-        case CREATE_BASKET:
-            {
-                return {...state, BASKET: payload.basket_data, BASKET_COMMIT: payload.basket_commit };
-            }
         case ADD_BASKET_ITEM:
             {
                 return {...state, BASKET: payload };
             }
         case REMOVE_BASKET_ITEM:
             {
+
                 return {...state, BASKET: payload };
             }
         case BASKET_COMMIT:
             {
                 return {...state, BASKET: payload };
             }
+        case CLEAR_BASKET:
+            {
+                const newState = {...state, BASKET: { "1": [], "0": [] } };
+
+                return {...newState };
+            }
         case SELECT_PLACEMENT:
             {
                 return {...state, BASKET: payload };
             }
-        case DELETE_BASKET:
+        case TOGGLE_ALERT:
             {
-                return state;
+                return {...state, ALERT: payload }
+            }
+        case SHOW_PAYMENT_SYTEM_DIALOG:
+            {
+
+                return {...state, SHOW_PAYMENT_SYTEM_DIALOG: !state[SHOW_PAYMENT_SYTEM_DIALOG] }
+            }
+        case SELECT_PAYMENT_SYSTEM:
+            {
+                return {...state, PAYMENT_SYSTEM: payload }
+            }
+        case TOGGLE_AGREEMENT_DIALOGS:
+            {
+                return {...state, AGREEMENT_DIALOGS: payload }
             }
         default:
             {
-                return state;
+
+                return {...state };
             }
     }
 };

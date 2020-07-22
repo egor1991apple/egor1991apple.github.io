@@ -3,11 +3,22 @@
         display: block;
         opacity: 0;
     }
-    50% {
-        opacity: .5;
-    }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes slideRight {
+    from {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100vw);
+        opacity: 0;
     }
 }
 
@@ -67,4 +78,39 @@
 .fade-exit-active {
     opacity: 0;
     transition: opacity 300ms ease-in;
+}
+
+.preloader-enter {
+    opacity: 0;
+}
+
+.preloader-active {
+    opacity: 1;
+    transition: opacity 200ms;
+}
+
+.preloader-exit {
+    opacity: 1;
+}
+
+.preloder-active {
+    opacity: 0;
+    transition: opacity 200ms;
+}
+
+.preloader {
+    animation-duration: 4s;
+    animation-name: slideRight;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    &-container {
+        background: white;
+        overflow: hidden;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        z-index: 99999;
+    }
 }

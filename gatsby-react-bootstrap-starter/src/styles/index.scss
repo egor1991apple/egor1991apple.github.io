@@ -519,3 +519,71 @@ svg {
 .text-shadow {
     text-shadow: 1px 1px 3px #323131;
 }
+
+.modal {
+    &_alert {
+        .modal-content {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .modal_title {
+            font-size: 32px;
+            text-align: center;
+            margin: 1rem 0;
+            color: var(--dark);
+        }
+        .modal_text {
+            font-size: 18px;
+            text-align: center;
+            font-weight: normal;
+        }
+        &.error {
+            .modal_title {
+                color: #cb3d3c;
+            }
+        }
+        &.success {
+            .modal_title {
+                color: var(--success);
+            }
+        }
+    }
+}
+
+.template ol li {
+    display: block;
+    padding-bottom: 12px;
+    padding-left: 0;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: #424543;
+}
+
+.template ol li.point {
+    padding-top: 40px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.template ol li.point>ol>li {
+    margin: 0 0 5px!important;
+}
+
+.template ol li.point>ol {
+    margin: 20px 0 0;
+}
+
+.template ol {
+    counter-reset: item;
+    padding-left: 0;
+}
+
+.template ol li:before {
+    content: counters(item, ".") ". ";
+    counter-increment: item;
+    display: marker;
+}

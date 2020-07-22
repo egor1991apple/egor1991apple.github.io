@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Col, Card, Button, Form } from 'react-bootstrap';
 import { useMaxPlacements } from '../../../hooks/useMaxPlacements';
 import BookingFormPassenger from '../../../components/forms/booking/passenger';
 import BookingFormBuyer from '../../../components/forms/booking/buyer';
+import { GlobalContext } from '../../../store/context';
 export default function PassengerList() {
 	const maxPlacements = useMaxPlacements();
 
+	const { onShowPaymentSytemDialog,onToggleAgreementDialog } = useContext(GlobalContext);
+	
 	return (
 		<Col lg="9">
 			<Card className={`border-0`}>
@@ -52,7 +55,7 @@ export default function PassengerList() {
 								<Form.Check type="checkbox" />
 								<Form className="Labl">
 									Я принимаю{' '}
-									<u className="cursor text-warning text-underline">
+									<u className="cursor text-warning text-underline" onClick={onToggleAgreementDialog(0)}>
 										условия пользовательского соглашения
 									</u>{' '}
 									lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -62,14 +65,14 @@ export default function PassengerList() {
 								<Form.Check type="checkbox" />
 								<Form className="Labl">
 									Я даю{' '}
-									<u className="cursor text-warning">
+									<u className="cursor text-warning" onClick={onToggleAgreementDialog(1)}>
 										согласие на обработку пользовательских данных
 									</u>{' '}
 									Lorem ipsum dolor sit amet consectetur adipisicing elit.
 								</Form>
 							</Form.Group>
 						</div>
-						<Button variant="danger" className="btn-block">
+						<Button variant="danger" className="btn-block" onClick={onShowPaymentSytemDialog}>
 							Оплатить
 						</Button>
 					</Card.Footer>

@@ -5,7 +5,8 @@ import SectionForm from '../sections/offers/formOffers';
 import SectionOffers from '../sections/offers/listOffers';
 import SectionPlacementDialog from '../sections/offers/placementDialog';
 import SectionBasket from '../sections/offers/basket';
-export default function Offers() {
+export default function Offers(props) {
+
 	return (
 		<Layout pageInfo={{ pageName: 'routes' }}>
 			<Container className="my-5 ">

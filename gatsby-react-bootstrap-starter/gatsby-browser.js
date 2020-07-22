@@ -10,3 +10,7 @@ import './src/styles/index.scss';
 
 import './src/styles/style.scss';
 import './src/styles/animation.scss';
+
+
+export { default as wrapRootElement }
+from './src/state/index.js';

@@ -8,8 +8,7 @@ import useCreatePortal from '../../../hooks/useCreatePortal';
 
 const PlacementDialog = ({ children, callback, disabled = true }) => {
 	const { OPEN_PLACEMENT_DIALOG, onOpenPlacementDialog = null, lang = 'ru' } = useContext(GlobalContext);
-	// const NamePortal = 'PlacementPortal';
-	// const isRender = useCreatePortal(NamePortal);
+	
 	return (
 		<Modal size="lg" id="PlacementDialog" show={OPEN_PLACEMENT_DIALOG} onHide={onOpenPlacementDialog}>
 			<Modal.Header>
@@ -26,13 +25,7 @@ const PlacementDialog = ({ children, callback, disabled = true }) => {
 			</Modal.Footer>
 		</Modal>
 	);
-	// ? typeof document !== 'undefined' &&
-	// 	document.getElementById('PlacementPortal') &&
-	// 	createPortal(
 
-	// 		document.getElementById('PlacementPortal')
-	// 	)
-	// : null;
 };
 
 export default PlacementDialog;

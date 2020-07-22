@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Row, Col, Container, ListGroup } from 'react-bootstrap';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
@@ -9,14 +9,17 @@ import MainSectionWhyWeAre from '../sections/mainPage/mainWhyWeAre';
 //import MainSectionQuestionAnswer from '../sections/mainPage/mainQuestionAnswer';
 import MainSectionNews from '../sections/mainPage/mainNews';
 
-const IndexPage = () => (
-	<Layout pageInfo={{ pageName: 'index' }}>
-		<SEO title="Home" keywords={[ `gatsby`, `react`, `bootstrap` ]} />
-		<MainSearctionFormVerticalSlider />
-		<MainSectionServises />
-		<MainSectionWhyWeAre />
-		<MainSectionNews />
-	</Layout>
-);
+const IndexPage = () => {
+	
+	return (
+		<Layout pageInfo={{ pageName: 'index' }}>
+			<SEO title="Home" keywords={[ `gatsby`, `react`, `bootstrap` ]} />
+			<MainSearctionFormVerticalSlider />
+			<MainSectionServises />
+			<MainSectionWhyWeAre />
+			<MainSectionNews />
+		</Layout>
+	);
+};
 
 export default IndexPage;

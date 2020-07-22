@@ -1,4 +1,4 @@
-import React, { useContext, Fragment } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { GlobalContext } from '../../../store/context';
 import { Col, Button } from 'react-bootstrap';
 import BasketCard from '../../../components/cards/basket';
@@ -27,12 +27,12 @@ function isRender(FROM, BACK) {
 	} else return false;
 }
 export default function Basket() {
-	const { BASKET, onRemoveBaksetItem } = useContext(GlobalContext);
+	const { BASKET = [], onRemoveBaksetItem, onClearBasket } = useContext(GlobalContext);
 	const FROM = BASKET[0];
 	const BACK = BASKET[1];
 
 	return (
-		<Transition in={isRender(FROM, BACK)} timeout={duration} appear={true}>
+		<Transition in={isRender(FROM, BACK)} timeout={duration}>
 			{(state) => {
 				return (
 					<Col
