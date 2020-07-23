@@ -6,7 +6,7 @@ import { MdClose } from 'react-icons/md';
 
 import useCreatePortal from '../../../hooks/useCreatePortal';
 
-const PlacementDialog = ({ children, callback = () => {}, disabled = true }) => {
+const PlacementDialog = ({ children, callback = () => {}, disabled = true, btnText = 'ok' }) => {
 	const { OPEN_PLACEMENT_DIALOG = false, onOpenPlacementDialog = null, lang = 'ru' } = useContext(GlobalContext);
 
 	return (
@@ -20,7 +20,7 @@ const PlacementDialog = ({ children, callback = () => {}, disabled = true }) => 
 			<Modal.Body>{children}</Modal.Body>
 			<Modal.Footer>
 				<Button onClick={callback} size="sm" disabled={disabled}>
-					В корзину
+					{btnText}
 				</Button>
 			</Modal.Footer>
 		</Modal>

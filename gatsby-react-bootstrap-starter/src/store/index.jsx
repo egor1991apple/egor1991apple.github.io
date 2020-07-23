@@ -42,10 +42,13 @@ import {
 	SELECTED_DIRECTION,
 	SELECT_DIRECTION,
 	REMOVE_DIRECTION_FROM_BASKET,
+	CHANGE_PLACEMET,
+	SAVE_PREV_BASKET,
+	COMMIT_CHANGE_PLACEMET,
 } from './const';
 import demo from './demo.json';
 import { navigate } from 'gatsby';
-
+import { cloneDeep } from 'lodash';
 function createArray(length, value) {
 	const arr = [];
 	for (let i = 0; i < length; i++) {
@@ -75,10 +78,28 @@ export default function GlobalState({ children }) {
 	};
 	//placementDialog
 	const onOpenPlacementDialog = (data) => {
-		const { BASKET, OFFERS } = state;
 		dispatch({ type: OPEN_PLACEMENT_DIALOG, payload: data });
 	};
+	const onSavePrevBasket = () => {
+		const newBasket = cloneDeep(state.BASKET_COMMIT);
+		dispatch({ type: SAVE_PREV_BASKET, payload: newBasket });
+	};
+	const onChangePlacement = (direction = 0) => (data = 3) => {
+		const p_id = state.SELECTED_PASSENGER_ID;
+		const newBasket = cloneDeep(state.BASKET);
+		newBasket[direction].forEach((item, index) => {
+			if (item.passenger_id == p_id) {
+				newBasket[direction][index].place = data;
+			}
+		});
 
+		dispatch({ type: CHANGE_PLACEMET, payload: newBasket });
+	};
+	const onChangePlacementCommit = () => {
+		const newBasket = cloneDeep(state.BASKET);
+		dispatch({ type: COMMIT_CHANGE_PLACEMET, payload: newBasket });
+	};
+	//basket
 	const onAddBasketItem = (direction) => (data) => {
 		const { BASKET, OFFERS, SELECTED_OFFERS_ID } = state;
 
@@ -126,7 +147,7 @@ export default function GlobalState({ children }) {
 	};
 
 	const onRemovePassengerFromBasket = () => {
-		const newBasket = state.BASKET;
+		const newBasket = state.BASKET_COMMIT;
 		const indexPassanger = state.SELECTED_PASSENGER_ID;
 		for (let i = 0; i < 2; i++) {
 			newBasket[i] = newBasket[i].filter(({ passenger_id }) => passenger_id != indexPassanger);
@@ -135,7 +156,7 @@ export default function GlobalState({ children }) {
 		dispatch({ type: SELECT_PASSENGER_ID, payload: null });
 	};
 	const onRemoveDirectionFromBasket = () => {
-		const newBasket = state.BASKET;
+		const newBasket = state.BASKET_COMMIT;
 		const direction = state.SELECTED_DIRECTION;
 
 		newBasket[direction] = [];
@@ -159,6 +180,7 @@ export default function GlobalState({ children }) {
 		dispatch({ type: BASKET_COMMIT, payload: newBasket });
 		dispatch({ type: OPEN_PLACEMENT_DIALOG, payload: false });
 	};
+
 	const onClearBasket = () => {
 		dispatch({ type: CLEAR_BASKET, payload: { 1: [], 0: [] } });
 		navigate('/offers');
@@ -219,7 +241,7 @@ export default function GlobalState({ children }) {
 	const onSelectPassengerId = (id) => {
 		dispatch({ type: SELECT_PASSENGER_ID, payload: id });
 	};
-
+	console.log(state);
 	return (
 		<GlobalContext.Provider
 			value={{
@@ -241,7 +263,9 @@ export default function GlobalState({ children }) {
 				onRemovePassengerFromBasket,
 				onSelectDirectionFromBasket,
 				onRemoveDirectionFromBasket,
-
+				onSavePrevBasket,
+				onChangePlacement,
+				onChangePlacementCommit,
 				lang: 'ru',
 			}}
 		>
@@ -277,7 +301,10 @@ const defaultState = {
 		0: [],
 		1: [],
 	},
-	[BASKET_COMMIT]: [],
+	[BASKET_COMMIT]: {
+		0: [],
+		1: [],
+	},
 	[SELECTED_OFFERS_ID]: 0,
 	[ALERT]: demo.alert,
 	[SHOW_PAYMENT_SYTEM_DIALOG]: false,

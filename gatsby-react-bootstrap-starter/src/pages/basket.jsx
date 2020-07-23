@@ -12,17 +12,23 @@ import { GlobalContext } from '../store/context';
 import { navigate } from 'gatsby';
 
 export default function Basket() {
-	const { BASKET = [], onToggleAlert = () => {} } = useContext(GlobalContext);
+	const { BASKET_COMMIT = [], onToggleAlert = () => {} } = useContext(GlobalContext);
 	useEffect(
 		() => {
 			let status = [];
 			for (let i = 0; i < 2; i++) {
-				BASKET[i].length > 0 && status.push(true);
+				BASKET_COMMIT[i].length > 0 && status.push(true);
 			}
-			!status.find((item) => item == true) ? navigate('/offers') : onToggleAlert('bookingGreeting')(true);
+			console.log(status.find((item) => item == true));
+			!status.find((item) => item == true) && navigate('/offers');
 		},
-		[ JSON.stringify(BASKET) ]
+		[ JSON.stringify(BASKET_COMMIT) ]
 	);
+
+	useEffect(() => {
+		onToggleAlert('bookingGreeting')(true);
+	}, []);
+
 	return (
 		<Layout pageInfo={{ pageName: 'basket' }}>
 			<Container className="my-5 ">

@@ -9,9 +9,11 @@ import { GlobalContext } from '../../../store/context';
 export default function BookingInfo() {
 	const {
 		BASKET = {},
+		BASKET_COMMIT = {},
 		onToggleAlert = () => {},
 		onSelectDirectionFromBasket = () => {},
 		onOpenPlacementDialog = () => {},
+		onSavePrevBasket = () => {},
 	} = useContext(GlobalContext);
 	const result = useGroupBasket();
 	const { FROM = null, BACK = null } = result;
@@ -45,11 +47,11 @@ export default function BookingInfo() {
 						/>
 						<RouteTwoPoints points={FROM.offers.route} />
 						<div className="d-flex align-items-center">
-							<MdPerson size="16" className="text-dark mr-1" /> {BASKET[0].length} места:{' '}
-							{BASKET[0].map(({ place }, index) => (
+							<MdPerson size="16" className="text-dark mr-1" /> {BASKET_COMMIT[0].length} места:{' '}
+							{BASKET_COMMIT[0].map(({ place }, index) => (
 								<span className="ml-1">
 									{place}
-									{index !== BASKET[0].length - 1 ? ', ' : ' '}
+									{index !== BASKET_COMMIT[0].length - 1 ? ', ' : ' '}
 								</span>
 							))}
 							<span
@@ -57,6 +59,7 @@ export default function BookingInfo() {
 								onClick={() => {
 									onSelectDirectionFromBasket(0);
 									onOpenPlacementDialog();
+									onSavePrevBasket();
 								}}
 							>
 								изменить...
@@ -78,11 +81,11 @@ export default function BookingInfo() {
 						/>
 						<RouteTwoPoints points={BACK.offers.route} />
 						<div className="d-flex align-items-center">
-							<MdPerson size="16" className="text-dark mr-1" /> {BASKET[0].length} места:{' '}
-							{BASKET[1].map(({ place }, index) => (
+							<MdPerson size="16" className="text-dark mr-1" /> {BASKET_COMMIT[1].length} места:{' '}
+							{BASKET_COMMIT[1].map(({ place }, index) => (
 								<span className="ml-1">
 									{place}
-									{index !== BASKET[1].length - 1 ? ', ' : ' '}
+									{index !== BASKET_COMMIT[1].length - 1 ? ', ' : ' '}
 								</span>
 							))}
 							<span
@@ -90,6 +93,7 @@ export default function BookingInfo() {
 								onClick={() => {
 									onSelectDirectionFromBasket(1);
 									onOpenPlacementDialog();
+									onSavePrevBasket();
 								}}
 							>
 								изменить...

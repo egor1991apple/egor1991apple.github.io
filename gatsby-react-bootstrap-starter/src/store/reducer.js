@@ -26,6 +26,9 @@ import {
     SELECT_DIRECTION,
     SELECTED_DIRECTION,
     REMOVE_DIRECTION_FROM_BASKET,
+    SAVE_PREV_BASKET,
+    CHANGE_PLACEMET,
+    COMMIT_CHANGE_PLACEMET,
 } from './const';
 
 export const Reducer = (state, { type = null, payload = null }) => {
@@ -65,11 +68,15 @@ export const Reducer = (state, { type = null, payload = null }) => {
             }
         case BASKET_COMMIT:
             {
+                return {...state, BASKET: { 1: [], 0: [] }, BASKET_COMMIT: payload };
+            }
+        case SAVE_PREV_BASKET:
+            {
                 return {...state, BASKET: payload };
             }
         case REMOVE_PASSENGER_FROM_BASKET:
             {
-                return {...state, BASKET: payload };
+                return {...state, BASKET_COMMIT: payload };
             }
         case SELECT_PASSENGER_ID:
             {
@@ -77,13 +84,21 @@ export const Reducer = (state, { type = null, payload = null }) => {
             }
         case CLEAR_BASKET:
             {
-                const newState = {...state, BASKET: { '1': [], '0': [] } };
+                const newState = {...state, BASKET_COMMIT: { '1': [], '0': [] } };
 
                 return {...newState };
             }
         case SELECT_PLACEMENT:
             {
+                return {...state, BASKET_COMMIT: payload };
+            }
+        case CHANGE_PLACEMET:
+            {
                 return {...state, BASKET: payload };
+            }
+        case COMMIT_CHANGE_PLACEMET:
+            {
+                return {...state, BASKET_COMMIT: payload };
             }
         case TOGGLE_ALERT:
             {
@@ -107,7 +122,7 @@ export const Reducer = (state, { type = null, payload = null }) => {
             }
         case REMOVE_DIRECTION_FROM_BASKET:
             {
-                return {...state, BASKET: payload };
+                return {...state, BASKET_COMMIT: payload };
             }
         default:
             {

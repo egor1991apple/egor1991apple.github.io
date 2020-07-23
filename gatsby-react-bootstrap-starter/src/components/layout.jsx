@@ -13,7 +13,7 @@ import AuthDialog from './dialog/authDialog';
 import Preloader from './preloader';
 import { Transition } from 'react-transition-group';
 
-const duration = 2000;
+const duration = 1000;
 
 const defaultStyle = {
 	transition: `opacity ${duration}ms ease-in-out`,

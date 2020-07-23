@@ -27,9 +27,9 @@ function isRender(FROM = [], BACK = []) {
 	} else return false;
 }
 export default function Basket() {
-	const { BASKET = [], onRemoveBaksetItem = () => {} } = useContext(GlobalContext);
-	const FROM = BASKET[0] || [];
-	const BACK = BASKET[1] || [];
+	const { BASKET_COMMIT = [], onRemoveBaksetItem = () => {} } = useContext(GlobalContext);
+	const FROM = BASKET_COMMIT[0] || [];
+	const BACK = BASKET_COMMIT[1] || [];
 
 	return (
 		<Transition in={isRender(FROM, BACK)} timeout={duration}>
