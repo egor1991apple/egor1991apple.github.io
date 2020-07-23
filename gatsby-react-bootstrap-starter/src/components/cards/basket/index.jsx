@@ -4,7 +4,17 @@ import { MdClose } from 'react-icons/md';
 import { BsArrowRight } from 'react-icons/bs';
 
 export default function index(props) {
-	const { status, place, currency, ticket_id, direction, duration, cost, route = [], callback } = props;
+	const {
+		status = 0,
+		place = null,
+		currency = null,
+		ticket_id = null,
+		direction = null,
+		duration = null,
+		cost = null,
+		route = [],
+		callback = null,
+	} = props;
 
 	return (
 		<Card className="mb-3 bg-light-2">
@@ -16,7 +26,7 @@ export default function index(props) {
 						fill="black"
 						className="position-absolute cursor"
 						style={{ top: '10px', right: '10px' }}
-						onClick={() => callback(ticket_id)}
+						onClick={() => callback && callback(ticket_id)}
 					/>
 				</div>
 				{route.length ? (

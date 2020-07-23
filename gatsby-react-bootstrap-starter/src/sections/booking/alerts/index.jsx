@@ -5,7 +5,7 @@ import {FcAlarmClock} from 'react-icons/fc'
 import {Button,Row, Col} from 'react-bootstrap';
 //import {navigate} from 'gatsby'
 export default function SectionAlerts() {
-    const {ALERT = [], onToggleAlert=(()=>{}), onClearBasket} = useContext(GlobalContext);
+    const {ALERT = [], onToggleAlert=(()=>{}), onClearBasket=(()=>{})} = useContext(GlobalContext);
 
     const handleClick = (type) => {
         onToggleAlert(type)(false);

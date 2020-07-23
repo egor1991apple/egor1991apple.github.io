@@ -9,16 +9,16 @@ const duration = 400;
 const defaultStyle = {
 	transition: `max-width ${duration}ms ease-in-out, padding ${duration}ms ease-in-out`,
 	maxWidth: '0',
-	padding: '0'
+	padding: '0',
 };
 
 const transitionStyles = {
 	entering: { maxWidth: '0', padding: '0' },
 	entered: { maxWidth: '600px', padding: '0 1rem' },
 	exiting: { maxWidth: '0', padding: '0' },
-	exited: { maxWidth: 0, padding: '0' }
+	exited: { maxWidth: 0, padding: '0' },
 };
-function isRender(FROM=[], BACK=[]) {
+function isRender(FROM = [], BACK = []) {
 	if (
 		(FROM.length != 0 && FROM.filter((item) => item.status == 1).length > 0) ||
 		(BACK.length != 0 && BACK.filter((item) => item.status == 1).length > 0)
@@ -27,9 +27,9 @@ function isRender(FROM=[], BACK=[]) {
 	} else return false;
 }
 export default function Basket() {
-	const { BASKET = [], onRemoveBaksetItem=(()=>{}) } = useContext(GlobalContext);
-	const FROM = BASKET[0];
-	const BACK = BASKET[1];
+	const { BASKET = [], onRemoveBaksetItem = () => {} } = useContext(GlobalContext);
+	const FROM = BASKET[0] || [];
+	const BACK = BASKET[1] || [];
 
 	return (
 		<Transition in={isRender(FROM, BACK)} timeout={duration}>
@@ -40,7 +40,7 @@ export default function Basket() {
 						className="border-left-dashed"
 						style={{
 							...defaultStyle,
-							...transitionStyles[state]
+							...transitionStyles[state],
 						}}
 					>
 						<div className="sticky-top ">
@@ -63,40 +63,47 @@ export default function Basket() {
 							</TransitionGroup>
 							<div style={{ height: '100vh' }} className="overflow-auto rounded ">
 								<TransitionGroup>
-									{FROM.map(({ place, offers, status, ticket_id }, index) => {
-										if (status == 1) {
-											return (
-												<CSSTransition
-													key={index + 'basket_item'}
-													classNames="scale"
-													timeout={300}
-												>
-													<BasketCard
-														{...{ place, ...offers, status, ticket_id }}
-														callback={onRemoveBaksetItem(0)}
-													/>
-												</CSSTransition>
-											);
-										}
-									})}
+									{FROM.length &&
+										FROM.map(({ place, offers, status, ticket_id }, index) => {
+											if (status == 1) {
+												return (
+													<CSSTransition
+														key={index + 'basket_item'}
+														classNames="scale"
+														timeout={300}
+													>
+														<BasketCard
+															{...{ place, ...offers, status, ticket_id }}
+															callback={onRemoveBaksetItem(0)}
+														/>
+													</CSSTransition>
+												);
+											}
+										})}
 								</TransitionGroup>
 								<TransitionGroup>
-									{BACK.map(({ place, offers, status, ticket_id }, index) => {
-										if (status == 1) {
-											return (
-												<CSSTransition
-													key={index + 'basket_item'}
-													classNames="scale"
-													timeout={300}
-												>
-													<BasketCard
-														{...{ place, ...offers, status, ticket_id }}
-														callback={onRemoveBaksetItem(1)}
-													/>
-												</CSSTransition>
-											);
-										}
-									})}
+									{BACK.length &&
+										BACK.map(
+											(
+												{ place = null, offers = null, status = null, ticket_id = null },
+												index
+											) => {
+												if (status == 1) {
+													return (
+														<CSSTransition
+															key={index + 'basket_item'}
+															classNames="scale"
+															timeout={300}
+														>
+															<BasketCard
+																{...{ place, ...offers, status, ticket_id }}
+																callback={onRemoveBaksetItem(1)}
+															/>
+														</CSSTransition>
+													);
+												}
+											}
+										)}
 								</TransitionGroup>
 							</div>
 						</div>
