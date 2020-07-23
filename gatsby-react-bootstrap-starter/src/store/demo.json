@@ -726,8 +726,8 @@
         {
             "open": false,
             "type": "bookingGreeting",
-            "typeModal": "warining",
-            "typeButtons": ["danger"],
+            "typeModal": "warning",
+            "typeButtons": ["warning"],
             "buttonsText": ["Ok"],
             "title": "Booking Greeting",
             "text": "loreamAnim laboris cupidatat sint sint. loreUllamco reprehenderit elit ipsum elit magna occaecat."
@@ -748,8 +748,29 @@
             "typeButtons": ["danger"],
             "buttonsText": ["Ok"],
             "title": "Условия отмены",
-            "text": ["loreamAnim laboris cupidatat sint sint. loreUllamco reprehenderit elit ipsum elit magna occaecat.", "loreamAnim laboris cupidatat sint sint. loreUllamco reprehenderit elit ipsum elit magna occaecat.", "loreamAnim laboris cupidatat sint sint. loreUllamco reprehenderit elit ipsum elit magna occaecat."]
-
+            "text": [
+                "loreamAnim laboris cupidatat sint sint. loreUllamco reprehenderit elit ipsum elit magna occaecat.",
+                "loreamAnim laboris cupidatat sint sint. loreUllamco reprehenderit elit ipsum elit magna occaecat.",
+                "loreamAnim laboris cupidatat sint sint. loreUllamco reprehenderit elit ipsum elit magna occaecat."
+            ]
+        },
+        {
+            "open": false,
+            "type": "bookingRemovePassenger",
+            "typeModal": "error",
+            "typeButtons": ["danger"],
+            "buttonsText": ["Удалить"],
+            "title": "Удаление пассажира.",
+            "text": "Вы действительно хотите удалить пассажира?"
+        },
+        {
+            "open": false,
+            "type": "bookingRemoveDirection",
+            "typeModal": "error",
+            "typeButtons": ["danger"],
+            "buttonsText": ["Удалить"],
+            "title": "Удаление направления.",
+            "text": "Вы действительно хотите удалить направление?"
         }
     ],
     "paymentSystem": [{
@@ -775,7 +796,6 @@
             "title": "Банковской картой",
             "text": "Do amet do Lorem et pariatur laborum nostrud do enim ipsum.",
             "checked": false
-
         }
     ]
 }

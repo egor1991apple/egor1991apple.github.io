@@ -1,14 +1,20 @@
 import React, { useContext } from 'react';
 import { Col, Card, Button, Form } from 'react-bootstrap';
 import { useMaxPlacements } from '../../../hooks/useMaxPlacements';
+import { MdClose } from 'react-icons/Md';
 import BookingFormPassenger from '../../../components/forms/booking/passenger';
 import BookingFormBuyer from '../../../components/forms/booking/buyer';
 import { GlobalContext } from '../../../store/context';
 export default function PassengerList() {
 	const maxPlacements = useMaxPlacements();
 
-	const { onShowPaymentSytemDialog=(()=>{}),onToggleAgreementDialog=(()=>{}) } = useContext(GlobalContext);
-	
+	const {
+		onShowPaymentSytemDialog = () => {},
+		onToggleAgreementDialog = () => {},
+		onToggleAlert = () => {},
+		onSelectPassengerId = () => {},
+	} = useContext(GlobalContext);
+
 	return (
 		<Col lg="9">
 			<Card className={`border-0`}>
@@ -17,7 +23,18 @@ export default function PassengerList() {
 					for (let i = 1; i <= maxPlacements; i++) {
 						template.push(
 							<Card.Body className={'border-bottom'}>
-								<div className="text-6 mb-3">Пассажир №{i}</div>
+								<div className="text-6 mb-3 d-flex">
+									Пассажир №{i}{' '}
+									{maxPlacements > 1 && (
+										<MdClose
+											className={'ml-auto cursor'}
+											onClick={() => {
+												onSelectPassengerId(i);
+												onToggleAlert('bookingRemovePassenger')(true);
+											}}
+										/>
+									)}
+								</div>
 								<p className="text-dark line-height-14 mb-4">
 									Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nulla molestias
 									quibusdam corrupti temporibus, quidem ducimus quis ut sapiente doloribus quasi
@@ -55,7 +72,10 @@ export default function PassengerList() {
 								<Form.Check type="checkbox" />
 								<Form className="Labl">
 									Я принимаю{' '}
-									<u className="cursor text-warning text-underline" onClick={onToggleAgreementDialog(0)}>
+									<u
+										className="cursor text-warning text-underline"
+										onClick={onToggleAgreementDialog(0)}
+									>
 										условия пользовательского соглашения
 									</u>{' '}
 									lorem ipsum dolor sit amet consectetur adipisicing elit.

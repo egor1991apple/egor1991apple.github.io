@@ -6,9 +6,9 @@ import { MdClose } from 'react-icons/md';
 
 import useCreatePortal from '../../../hooks/useCreatePortal';
 
-const PlacementDialog = ({ children, callback, disabled = true }) => {
-	const { OPEN_PLACEMENT_DIALOG, onOpenPlacementDialog = null, lang = 'ru' } = useContext(GlobalContext);
-	
+const PlacementDialog = ({ children, callback = () => {}, disabled = true }) => {
+	const { OPEN_PLACEMENT_DIALOG = false, onOpenPlacementDialog = null, lang = 'ru' } = useContext(GlobalContext);
+
 	return (
 		<Modal size="lg" id="PlacementDialog" show={OPEN_PLACEMENT_DIALOG} onHide={onOpenPlacementDialog}>
 			<Modal.Header>
@@ -25,7 +25,6 @@ const PlacementDialog = ({ children, callback, disabled = true }) => {
 			</Modal.Footer>
 		</Modal>
 	);
-
 };
 
 export default PlacementDialog;

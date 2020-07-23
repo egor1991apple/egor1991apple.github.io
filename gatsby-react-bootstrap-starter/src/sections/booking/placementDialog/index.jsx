@@ -8,23 +8,28 @@ import { useBookingPlace } from '../../../hooks/useBookingPlace';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 export default function SectionPlacementDialog() {
-	const { SELECTED_OFFERS_ID = null, OFFERS = [], BASKET = [], onBasketCommit, onAddBasketItem } = useContext(
-		GlobalContext
-	);
+	const { BASKET = [], onBasketCommit = () => {}, SELECTED_DIRECTION = null } = useContext(GlobalContext);
+	console.log(SELECTED_DIRECTION);
+	let selected = [];
+	let disabled = [];
+	let booking = [];
+	if (SELECTED_DIRECTION !== null && BASKET.length !== 0) {
+		selected = BASKET[SELECTED_DIRECTION][0].offers.placements.selected;
+		disabled = BASKET[SELECTED_DIRECTION][0].offers.placements.disabled;
+		booking = BASKET[SELECTED_DIRECTION].map(({ place }) => place);
+	}
+	const placements = { selected, disabled, booking };
+	// const { disabled = [] } = BASKET[SELECTED_DIRECTION][0].offers.placements || [];
+	// const booking = BASKET[SELECTED_DIRECTION].map(({ place }) => place);
 
-	let placements = { selected: [], disabled: [], booking: [] };
-	const booking = useBookingPlace();
-	try {
-		placements = { ...OFFERS[SELECTED_OFFERS_ID - 1].placements, booking } || [];
-	} catch (er) {}
-
+	// let
+	//console.log(placements);
+	//const booking = useBookingPlace();
+	//console.log(offers);
 	return (
-		OFFERS.length &&
-		SELECTED_OFFERS_ID && (
-			<PlacementDialog
-				callback={onBasketCommit(OFFERS[SELECTED_OFFERS_ID - 1].direction)}
-				disabled={!booking.length && true}
-			>
+		SELECTED_DIRECTION !== null &&
+		BASKET.length !== 0 && (
+			<PlacementDialog>
 				<Row>
 					<Col lg="5">
 						<h6>Места посадки</h6>
@@ -39,7 +44,7 @@ export default function SectionPlacementDialog() {
 							</thead>
 
 							<TransitionGroup component={'tbody'}>
-								{BASKET[OFFERS[SELECTED_OFFERS_ID - 1].direction].map(({ ticket_id, place }, index) => (
+								{BASKET[SELECTED_DIRECTION].map(({ ticket_id, place }, index) => (
 									<CSSTransition key={index + 'place'} timeout={300} classNames="fade">
 										<tr>
 											<td className="border-right"> #{ticket_id}</td>
@@ -53,7 +58,7 @@ export default function SectionPlacementDialog() {
 					</Col>
 					<Col lg="7">
 						<h6>Рассадка в автобусе</h6>
-						<Bus {...placements} callback={onAddBasketItem(OFFERS[SELECTED_OFFERS_ID - 1].direction)} />
+						<Bus {...placements} />
 						<table className="bus-info mt-2">
 							<tbody className="d-flex ">
 								<tr>

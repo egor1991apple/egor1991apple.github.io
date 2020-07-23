@@ -36,6 +36,12 @@ import {
 	AGREEMENT_DIALOGS,
 	TOGGLE_AGREEMENT_DIALOGS,
 	BOOKING_VALID,
+	REMOVE_PASSENGER_FROM_BASKET,
+	SELECTED_PASSENGER_ID,
+	SELECT_PASSENGER_ID,
+	SELECTED_DIRECTION,
+	SELECT_DIRECTION,
+	REMOVE_DIRECTION_FROM_BASKET,
 } from './const';
 import demo from './demo.json';
 import { navigate } from 'gatsby';
@@ -85,6 +91,7 @@ export default function GlobalState({ children }) {
 				place: data,
 				status: 0,
 				offers_id: SELECTED_OFFERS_ID,
+				passenger_id: newBasket[direction].length + 1,
 			});
 		} else {
 			const filtredValue = newBasket[direction].filter(({ ticket_id }) => ticket_id != SELECTED_OFFERS_ID);
@@ -103,6 +110,7 @@ export default function GlobalState({ children }) {
 					place: data,
 					status: 0,
 					offers_id: SELECTED_OFFERS_ID,
+					passenger_id: newBasket[direction].length + 1,
 				};
 			}
 		}
@@ -117,6 +125,29 @@ export default function GlobalState({ children }) {
 		dispatch({ type: REMOVE_BASKET_ITEM, payload: newBasket });
 	};
 
+	const onRemovePassengerFromBasket = () => {
+		const newBasket = state.BASKET;
+		const indexPassanger = state.SELECTED_PASSENGER_ID;
+		for (let i = 0; i < 2; i++) {
+			newBasket[i] = newBasket[i].filter(({ passenger_id }) => passenger_id != indexPassanger);
+		}
+		dispatch({ type: REMOVE_PASSENGER_FROM_BASKET, payload: newBasket });
+		dispatch({ type: SELECT_PASSENGER_ID, payload: null });
+	};
+	const onRemoveDirectionFromBasket = () => {
+		const newBasket = state.BASKET;
+		const direction = state.SELECTED_DIRECTION;
+
+		newBasket[direction] = [];
+
+		dispatch({ type: REMOVE_DIRECTION_FROM_BASKET, payload: newBasket });
+		dispatch({ type: SELECT_DIRECTION, payload: null });
+	};
+
+	const onSelectDirectionFromBasket = (direction) => {
+		dispatch({ type: SELECT_DIRECTION, payload: direction });
+	};
+
 	const onBasketCommit = (direction) => (e) => {
 		const { BASKET, OFFERS, SELECTED_OFFERS_ID } = state;
 		const newBasket = { ...BASKET };
@@ -129,7 +160,7 @@ export default function GlobalState({ children }) {
 		dispatch({ type: OPEN_PLACEMENT_DIALOG, payload: false });
 	};
 	const onClearBasket = () => {
-		dispatch({ type: CLEAR_BASKET, payload: [] });
+		dispatch({ type: CLEAR_BASKET, payload: { 1: [], 0: [] } });
 		navigate('/offers');
 	};
 
@@ -181,8 +212,12 @@ export default function GlobalState({ children }) {
 	const onToggleAgreementDialog = (index) => () => {
 		const newAgreementDialogs = state.AGREEMENT_DIALOGS;
 		newAgreementDialogs[index] = !newAgreementDialogs[index];
-		console.log(newAgreementDialogs);
 		dispatch({ type: TOGGLE_AGREEMENT_DIALOGS, payload: newAgreementDialogs });
+	};
+
+	//pessanger
+	const onSelectPassengerId = (id) => {
+		dispatch({ type: SELECT_PASSENGER_ID, payload: id });
 	};
 
 	return (
@@ -202,20 +237,18 @@ export default function GlobalState({ children }) {
 				onClearBasket,
 				onBooking,
 				onToggleAgreementDialog,
+				onSelectPassengerId,
+				onRemovePassengerFromBasket,
+				onSelectDirectionFromBasket,
+				onRemoveDirectionFromBasket,
+
 				lang: 'ru',
 			}}
 		>
-			{' '}
 			{children}{' '}
 		</GlobalContext.Provider>
 	);
 }
-
-const defaultBasketValue = {
-	ticket_id: null,
-	place: [],
-	status: 0,
-};
 
 const defaultState = {
 	[IS_AUTH]: false,
@@ -252,4 +285,6 @@ const defaultState = {
 	[TIMER]: demo.timer,
 	[BOOKING_VALID]: false,
 	[AGREEMENT_DIALOGS]: [ false, false ],
+	[SELECTED_PASSENGER_ID]: null,
+	[SELECTED_DIRECTION]: null,
 };

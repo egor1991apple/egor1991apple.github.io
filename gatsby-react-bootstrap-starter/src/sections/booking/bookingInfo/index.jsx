@@ -7,7 +7,12 @@ import RouteTwoPoints from '../../../components/cards/routeTwoPoints';
 import { GlobalContext } from '../../../store/context';
 
 export default function BookingInfo() {
-	const { BASKET } = useContext(GlobalContext);
+	const {
+		BASKET = {},
+		onToggleAlert = () => {},
+		onSelectDirectionFromBasket = () => {},
+		onOpenPlacementDialog = () => {},
+	} = useContext(GlobalContext);
 	const result = useGroupBasket();
 	const { FROM = null, BACK = null } = result;
 
@@ -29,7 +34,15 @@ export default function BookingInfo() {
 				) : null}
 
 				{FROM ? (
-					<Card.Body className="px-1 ">
+					<Card.Body className="px-1 d-flex flex-column">
+						<MdClose
+							size="21"
+							className={'cursor ml-auto'}
+							onClick={() => {
+								onToggleAlert('bookingRemoveDirection')(true);
+								onSelectDirectionFromBasket(0);
+							}}
+						/>
 						<RouteTwoPoints points={FROM.offers.route} />
 						<div className="d-flex align-items-center">
 							<MdPerson size="16" className="text-dark mr-1" /> {BASKET[0].length} места:{' '}
@@ -39,14 +52,30 @@ export default function BookingInfo() {
 									{index !== BASKET[0].length - 1 ? ', ' : ' '}
 								</span>
 							))}
-							<span className="cursor text-danger ml-auto">изменить...</span>
+							<span
+								className="cursor text-danger ml-auto"
+								onClick={() => {
+									onSelectDirectionFromBasket(0);
+									onOpenPlacementDialog();
+								}}
+							>
+								изменить...
+							</span>
 						</div>
 					</Card.Body>
 				) : (
 					''
 				)}
 				{BACK ? (
-					<Card.Body className="px-1 border-top">
+					<Card.Body className="px-1 d-flex flex-column border-top">
+						<MdClose
+							size="21"
+							className={'cursor ml-auto'}
+							onClick={() => {
+								onToggleAlert('bookingRemoveDirection')(true);
+								onSelectDirectionFromBasket(1);
+							}}
+						/>
 						<RouteTwoPoints points={BACK.offers.route} />
 						<div className="d-flex align-items-center">
 							<MdPerson size="16" className="text-dark mr-1" /> {BASKET[0].length} места:{' '}
@@ -56,7 +85,15 @@ export default function BookingInfo() {
 									{index !== BASKET[1].length - 1 ? ', ' : ' '}
 								</span>
 							))}
-							<span className="cursor text-danger ml-auto">изменить...</span>
+							<span
+								className="cursor text-danger ml-auto"
+								onClick={() => {
+									onSelectDirectionFromBasket(1);
+									onOpenPlacementDialog();
+								}}
+							>
+								изменить...
+							</span>
 						</div>
 					</Card.Body>
 				) : (

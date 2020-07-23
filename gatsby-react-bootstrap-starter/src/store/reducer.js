@@ -19,10 +19,14 @@ import {
     SELECT_PAYMENT_SYSTEM,
     CLEAR_BASKET,
     TOGGLE_AGREEMENT_DIALOGS,
-    AGREEMENT_DIALOGS
-
+    AGREEMENT_DIALOGS,
+    REMOVE_PASSENGER_FROM_BASKET,
+    SELECTED_PASSENGER_ID,
+    SELECT_PASSENGER_ID,
+    SELECT_DIRECTION,
+    SELECTED_DIRECTION,
+    REMOVE_DIRECTION_FROM_BASKET,
 } from './const';
-import { GiConsoleController } from 'react-icons/gi';
 
 export const Reducer = (state, { type = null, payload = null }) => {
     console.log(state, type);
@@ -57,16 +61,23 @@ export const Reducer = (state, { type = null, payload = null }) => {
             }
         case REMOVE_BASKET_ITEM:
             {
-
                 return {...state, BASKET: payload };
             }
         case BASKET_COMMIT:
             {
                 return {...state, BASKET: payload };
             }
+        case REMOVE_PASSENGER_FROM_BASKET:
+            {
+                return {...state, BASKET: payload };
+            }
+        case SELECT_PASSENGER_ID:
+            {
+                return {...state, SELECTED_PASSENGER_ID: payload };
+            }
         case CLEAR_BASKET:
             {
-                const newState = {...state, BASKET: { "1": [], "0": [] } };
+                const newState = {...state, BASKET: { '1': [], '0': [] } };
 
                 return {...newState };
             }
@@ -76,24 +87,30 @@ export const Reducer = (state, { type = null, payload = null }) => {
             }
         case TOGGLE_ALERT:
             {
-                return {...state, ALERT: payload }
+                return {...state, ALERT: payload };
             }
         case SHOW_PAYMENT_SYTEM_DIALOG:
             {
-
-                return {...state, SHOW_PAYMENT_SYTEM_DIALOG: !state[SHOW_PAYMENT_SYTEM_DIALOG] }
+                return {...state, SHOW_PAYMENT_SYTEM_DIALOG: !state[SHOW_PAYMENT_SYTEM_DIALOG] };
             }
         case SELECT_PAYMENT_SYSTEM:
             {
-                return {...state, PAYMENT_SYSTEM: payload }
+                return {...state, PAYMENT_SYSTEM: payload };
             }
         case TOGGLE_AGREEMENT_DIALOGS:
             {
-                return {...state, AGREEMENT_DIALOGS: payload }
+                return {...state, AGREEMENT_DIALOGS: payload };
+            }
+        case SELECT_DIRECTION:
+            {
+                return {...state, SELECTED_DIRECTION: payload };
+            }
+        case REMOVE_DIRECTION_FROM_BASKET:
+            {
+                return {...state, BASKET: payload };
             }
         default:
             {
-
                 return {...state };
             }
     }
