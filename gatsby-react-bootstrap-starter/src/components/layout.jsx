@@ -28,6 +28,13 @@ const transitionStyles = {
 };
 
 const Layout = ({ children, pageInfo }) => {
+	const [ loaderPage, setLoader ] = useState(true);
+	useEffect(
+		() => {
+			setLoader(false);
+		},
+		[ pageInfo ]
+	);
 	return (
 		<StaticQuery
 			query={graphql`
@@ -41,7 +48,7 @@ const Layout = ({ children, pageInfo }) => {
 			`}
 			render={(data) => (
 				<Fragment>
-					<Transition in={false} timeout={duration} unmountOnExit={true}>
+					<Transition in={loaderPage} timeout={duration} unmountOnExit={true}>
 						{(state) => (
 							<Preloader
 								style={{
