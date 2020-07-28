@@ -66,3 +66,16 @@ export const SELECT_PASSENGER_ID = 'SELECTED_BASKET_PASSENGER_ID';
 //placements
 export const CHANGE_PLACEMET = 'CHANGE_PLACEMENT';
 export const COMMIT_CHANGE_PLACEMET = 'COMMIT_CHANGE_PLACEMET';
+
+
+//nav
+export const PERSONAL_NAV = 'PERSONAL_NAV';
+export const MAIN_NAV = 'MAIN_NAV';
+
+
+//users
+export const USER_INFO = "USER_INFO";
+export const CURRENT_OFFERS = "CURRENT_OFFERS";
+export const HISTORY_OFFERS = "HISTORY_OFFER";
+export const ALL_STATUS = "ALL_STATUS";
+export const PASSENGER_LIST = "PASSENGER_LIST";

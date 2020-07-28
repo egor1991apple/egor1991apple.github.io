@@ -5,15 +5,16 @@
  * See: https://www.gatsbyjs.org/docs/static-query/
  */
 
-import React, { useContext, useEffect, useState, Fragment } from 'react';
+import React, { useEffect, useState, Fragment } from 'react';
 import { StaticQuery, graphql } from 'gatsby';
 import Header from './header';
 import Footer from './footer';
 import AuthDialog from './dialog/authDialog';
 import Preloader from './preloader';
 import { Transition } from 'react-transition-group';
+import SectionAlerts from '../sections/allPages/alerts';
 
-const duration = 1000;
+const duration = 2000;
 
 const defaultStyle = {
 	transition: `opacity ${duration}ms ease-in-out`,
@@ -63,6 +64,7 @@ const Layout = ({ children, pageInfo }) => {
 						<main>{children}</main>
 						<Footer />
 						<AuthDialog />
+						<SectionAlerts />
 					</div>
 				</Fragment>
 			)}

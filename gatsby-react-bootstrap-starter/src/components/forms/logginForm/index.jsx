@@ -1,7 +1,7 @@
 import React from 'react';
 import { Form, Button } from 'react-bootstrap';
 import lang from './lang';
-export default function LogginForm({ language = 'ru' }) {
+export default function LogginForm({ language = 'ru', onSetAuth = () => {} }) {
 	return (
 		<Form>
 			<Form.Group controlId="formAuth">
@@ -18,7 +18,7 @@ export default function LogginForm({ language = 'ru' }) {
 					<Form.Check type="checkbox" label={lang['ru'].check} />
 				</Form.Group>
 			</Form.Row>
-			<Button variant="primary" type="submit" className="btn-block">
+			<Button variant="primary" type="submit" className="btn-block" onClick={onSetAuth}>
 				{lang[language].submit}
 			</Button>
 		</Form>

@@ -9,7 +9,7 @@ export default function Offers() {
 	return (
 		<Layout pageInfo={{ pageName: 'routes' }}>
 			<Container className="my-5 ">
-				<Row className="bg-white border-radius border rounded mx-0">
+				<Row className="bg-white border-radius shadow-sm rounded mx-0">
 					<SectionForm />
 					<SectionOffers />
 					<SectionBasket />

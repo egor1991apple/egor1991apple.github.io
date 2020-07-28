@@ -8,11 +8,12 @@ import RegForm from '../../forms/regForm';
 import useCreatePortal from '../../../hooks/useCreatePortal';
 
 const AuthDialog = () => {
-	const { state, OPEN_AUTH_DIALOG, onOpenAuthDialog = null, lang = 'ru' } = useContext(GlobalContext);
+	const { state, OPEN_AUTH_DIALOG, onOpenAuthDialog = null, lang = 'ru', onSetAuth = () => {} } = useContext(
+		GlobalContext
+	);
 	const NamePortal = 'AuthPortal';
-	const isRender = useCreatePortal(NamePortal,OPEN_AUTH_DIALOG);
+	const isRender = useCreatePortal(NamePortal, OPEN_AUTH_DIALOG);
 
-	
 	return isRender
 		? typeof document !== 'undefined' &&
 			document.getElementById('AuthPortal') &&
@@ -25,7 +26,7 @@ const AuthDialog = () => {
 							</Button>
 							<Tabs className="text-4 justify-content-center mt-2 mb-4">
 								<Tab.Pane eventKey="login" title="Авторизация">
-									<LogginForm language={lang} />
+									<LogginForm language={lang} onSetAuth={onSetAuth} />
 								</Tab.Pane>
 								<Tab.Pane eventKey="reg" title="Регистрация">
 									<RegForm language={lang} />

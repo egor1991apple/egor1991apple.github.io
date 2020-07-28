@@ -9,7 +9,7 @@ export default function routes_detail() {
 	return (
 		<Layout pageInfo={{ pageName: 'routes' }}>
 			<Container className="my-5 ">
-				<Row className="bg-white  border-radius border rounded mx-0">
+				<Row className="bg-white border-radius shadow-sm rounded mx-0">
 					<LeftSection />
 					<RightSection />
 				</Row>

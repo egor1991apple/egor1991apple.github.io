@@ -13,6 +13,7 @@ export default function PassengerList() {
 		onToggleAgreementDialog = () => {},
 		onToggleAlert = () => {},
 		onSelectPassengerId = () => {},
+		
 	} = useContext(GlobalContext);
 
 	return (

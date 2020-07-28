@@ -4,7 +4,7 @@ import { MdClose } from 'react-icons/md';
 import Timer from '../../../components/timer';
 import { GlobalContext } from '../../../store/context';
 const SectionTimer = () => {
-	const { onToggleAlert = () => {}, TIMER } = useContext(GlobalContext);
+	const { onToggleAlert = () => {}, TIMER='1200' } = useContext(GlobalContext);
 
 	return (
 		<Col lg="3" className="ml-auto pb-3">

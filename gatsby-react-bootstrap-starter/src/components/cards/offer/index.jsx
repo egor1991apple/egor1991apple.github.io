@@ -11,6 +11,7 @@ export default function Offer({
 	link = null,
 	callback = null,
 	inPay = false,
+
 	...ticket
 }) {
 	return (

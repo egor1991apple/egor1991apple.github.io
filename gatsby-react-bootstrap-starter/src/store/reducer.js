@@ -36,7 +36,7 @@ export const Reducer = (state, { type = null, payload = null }) => {
     switch (type) {
         case IS_AUTH:
             {
-                return {...state };
+                return {...state, IS_AUTH: payload };
             }
         case OPEN_AUTH_DIALOG:
             {

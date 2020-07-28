@@ -45,8 +45,15 @@ import {
 	CHANGE_PLACEMET,
 	SAVE_PREV_BASKET,
 	COMMIT_CHANGE_PLACEMET,
+	PERSONAL_NAV,
+	USER_INFO,
+	ALL_STATUS,
+	CURRENT_OFFERS,
+	HISTORY_OFFERS,
+	PASSENGER_LIST,
 } from './const';
 import demo from './demo.json';
+import personal_data from './personal.json';
 import { navigate } from 'gatsby';
 import { cloneDeep } from 'lodash';
 function createArray(length, value) {
@@ -61,6 +68,11 @@ export default function GlobalState({ children }) {
 	const [ state, dispatch ] = useReducer(Reducer, defaultState);
 
 	//authDialog
+	const onSetAuth = (e) => {
+		e.preventDefault();
+		dispatch({ type: IS_AUTH, payload: true });
+		alert('Вы авторизованы');
+	};
 	const onOpenAuthDialog = () => {
 		dispatch({ type: OPEN_AUTH_DIALOG, payload: null });
 	};
@@ -241,11 +253,12 @@ export default function GlobalState({ children }) {
 	const onSelectPassengerId = (id) => {
 		dispatch({ type: SELECT_PASSENGER_ID, payload: id });
 	};
-	console.log(state);
+
 	return (
 		<GlobalContext.Provider
 			value={{
 				...state,
+				onSetAuth,
 				onOpenAuthDialog,
 				onToggleMobileNav,
 				onShowMoreRoutes,
@@ -314,4 +327,10 @@ const defaultState = {
 	[AGREEMENT_DIALOGS]: [ false, false ],
 	[SELECTED_PASSENGER_ID]: null,
 	[SELECTED_DIRECTION]: null,
+	[PERSONAL_NAV]: personal_data.personal_navigation,
+	[USER_INFO]: personal_data.user_info,
+	[CURRENT_OFFERS]: personal_data.current_offers,
+	[HISTORY_OFFERS]: personal_data.history_offers,
+	[ALL_STATUS]: personal_data.all_status,
+	[PASSENGER_LIST]: personal_data.passenger_list,
 };
