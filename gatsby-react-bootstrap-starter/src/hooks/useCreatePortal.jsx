@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react"
 
 export default function useCreatePortal(NamePortal, condition = false) {
-	const [ isRender, setRender ] = useState(false);
+  const [isRender, setRender] = useState(false)
 
-	useEffect(() => {
-		const portal = document.createElement('div');
-		portal.id = NamePortal;
-		document.body.appendChild(portal);
-		setRender(true);
+  useEffect(() => {
+    const portal = document.createElement("div")
+    portal.id = NamePortal
+    portal.classList = "WrapPortal"
+    document.body.appendChild(portal)
+    setRender(true)
 
-		return () => {
-			if (document.getElementById(NamePortal)) {
-				document.getElementById(NamePortal).remove();
-				setRender(false);
-			}
-		};
-	}, []);
+    return () => {
+      if (document.getElementById(NamePortal)) {
+        document.getElementById(NamePortal).remove()
+        setRender(false)
+      }
+    }
+  }, [])
 
-	return isRender;
+  return isRender
 }

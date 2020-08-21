@@ -7,6 +7,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "gatsby": "^2.3.34",
+    "gatsby-cli": "^2.12.77",
     "gatsby-image": "^2.0.41",
     "gatsby-plugin-exclude": "^1.0.2",
     "gatsby-plugin-manifest": "^2.0.29",
@@ -29,7 +30,10 @@
     "react-helmet": "^5.2.0",
     "react-html-parser": "^2.0.2",
     "react-icons": "^3.6.1",
+    "react-input-mask": "^2.0.4",
     "react-redux": "^7.2.0",
+    "react-spring": "^8.0.27",
+    "react-text-mask": "^5.4.3",
     "react-timer": "^1.1.1",
     "redux": "^4.0.5"
   },

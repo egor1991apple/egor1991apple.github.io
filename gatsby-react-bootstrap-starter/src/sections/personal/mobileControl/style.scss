@@ -1,0 +1,13 @@
+.mobileControlContainer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 1000;
+  display: flex;
+  background: white;
+  padding: 0.5rem 1rem;
+  justify-content: space-between;
+  box-shadow: 1px 2px 3px 1px #00000094;
+}

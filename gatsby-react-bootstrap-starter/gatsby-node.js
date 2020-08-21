@@ -1,7 +1,15 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/node-apis/
- */
+const path = require(`path`)
+const fs = require("fs")
+exports.createPages = ({ actions }) => {
+  const { createPage } = actions
+  const pageData = JSON.parse(
+    fs.readFileSync("./content/demo.json", { encoding: "utf-8" })
+  )
+  const blogPostTemplate = path.resolve(`src/templates/index.jsx`)
 
-// You can delete this file if you're not using it
+  createPage({
+    path: "demo",
+    component: blogPostTemplate,
+    context: { str: "hello world" },
+  })
+}

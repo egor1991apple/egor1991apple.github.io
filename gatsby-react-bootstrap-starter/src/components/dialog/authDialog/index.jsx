@@ -1,43 +1,44 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { createPortal } from 'react-dom';
-import { Modal, Tabs, Tab, Button } from 'react-bootstrap';
-import { GlobalContext } from '../../../store/context';
-import { MdClose } from 'react-icons/md';
-import LogginForm from '../../forms/logginForm';
-import RegForm from '../../forms/regForm';
-import useCreatePortal from '../../../hooks/useCreatePortal';
+import React, { useContext, useEffect, useState } from "react"
+import { createPortal } from "react-dom"
+import { Modal, Tabs, Tab, Button } from "react-bootstrap"
+import { GlobalContext } from "../../../store/context"
+import { MdClose } from "react-icons/md"
+import LogginForm from "../../forms/logginForm"
+import RegForm from "../../forms/regForm"
+import useCreatePortal from "../../../hooks/useCreatePortal"
 
 const AuthDialog = () => {
-	const { state, OPEN_AUTH_DIALOG, onOpenAuthDialog = null, lang = 'ru', onSetAuth = () => {} } = useContext(
-		GlobalContext
-	);
-	const NamePortal = 'AuthPortal';
-	const isRender = useCreatePortal(NamePortal, OPEN_AUTH_DIALOG);
+  const {
+    state,
+    OPEN_AUTH_DIALOG,
+    onOpenAuthDialog = null,
+    lang = "ru",
+    onSetAuth = () => {},
+  } = useContext(GlobalContext)
 
-	return isRender
-		? typeof document !== 'undefined' &&
-			document.getElementById('AuthPortal') &&
-			createPortal(
-				<div>
-					<Modal id="authDialog" show={OPEN_AUTH_DIALOG}>
-						<Modal.Body>
-							<Button onClick={() => onOpenAuthDialog()} className="btn-clear btn-close-dialog">
-								<MdClose size="21px" />
-							</Button>
-							<Tabs className="text-4 justify-content-center mt-2 mb-4">
-								<Tab.Pane eventKey="login" title="Авторизация">
-									<LogginForm language={lang} onSetAuth={onSetAuth} />
-								</Tab.Pane>
-								<Tab.Pane eventKey="reg" title="Регистрация">
-									<RegForm language={lang} />
-								</Tab.Pane>
-							</Tabs>
-						</Modal.Body>
-					</Modal>
-				</div>,
-				document.getElementById('AuthPortal')
-			)
-		: null;
-};
+  return (
+    typeof document !== "undefined" &&
+    typeof document !== "null" && (
+      <Modal id="authDialog" show={OPEN_AUTH_DIALOG}>
+        <Modal.Body>
+          <Button
+            onClick={() => onOpenAuthDialog()}
+            className="btn-clear btn-close-dialog"
+          >
+            <MdClose size="21px" />
+          </Button>
+          <Tabs className="text-4 justify-content-center mt-2 mb-4">
+            <Tab.Pane eventKey="login" title="Авторизация">
+              <LogginForm language={lang} onSetAuth={onSetAuth} />
+            </Tab.Pane>
+            <Tab.Pane eventKey="reg" title="Регистрация">
+              <RegForm language={lang} />
+            </Tab.Pane>
+          </Tabs>
+        </Modal.Body>
+      </Modal>
+    )
+  )
+}
 
-export default AuthDialog;
+export default AuthDialog

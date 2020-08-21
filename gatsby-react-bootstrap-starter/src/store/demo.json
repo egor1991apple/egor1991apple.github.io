@@ -82,44 +82,44 @@
         }
     ],
     "servises": [{
-            "img": "/img/bus.jpg",
-            "title": "Трансфер в москву",
+            "img": "/img/route1.jpg",
+            "title": "Трансфер в Москву",
             "subtitle": "Аэропорт домдедова...",
             "link": "/routes_detail"
         },
         {
-            "img": "/img/bus.jpg",
-            "title": "Трансфер в москву",
+            "img": "/img/route2.jpg",
+            "title": "Трансфер в Питер",
             "subtitle": "Аэропорт домдедова...",
             "link": "/routes_detail"
         },
         {
-            "img": "/img/bus.jpg",
-            "title": "Из Москвы в Питер",
+            "img": "/img/route3.jpg",
+            "title": "Трансфер в Вильнюс",
             "subtitle": "Аэропорт домдедова...",
             "link": "/routes_detail"
         },
         {
-            "img": "/img/bus.jpg",
-            "title": "Трансфер в москву",
+            "img": "/img/route4.jpg",
+            "title": "Трансфер в Минск",
             "subtitle": "Аэропорт домдедова...",
             "link": "/routes_detail"
         },
         {
-            "img": "/img/bus.jpg",
-            "title": "Трансфер в москву",
+            "img": "/img/route5.jpg",
+            "title": "Трансфер в Минск",
             "subtitle": "Аэропорт домдедова...",
             "link": "/routes_detail"
         },
         {
-            "img": "/img/bus.jpg",
-            "title": "Из Москвы в Питер",
+            "img": "/img/route6.jpg",
+            "title": "Из Москвы в Париж",
             "subtitle": "Аэропорт домдедова...",
             "link": "/routes_detail"
         }
     ],
     "routes": [{
-            "img": "/img/bus.jpg",
+            "img": "/img/moskow.jpg",
             "title": ["Москва", "Минск"],
             "date": "21.02.2020",
             "cost": "400",
@@ -363,23 +363,23 @@
             "text": "Ipsum commodo sunt ex irure non sit anim anim anim minim.",
             "date": "21.02.2020",
             "see": "40",
-            "img": "/img/bus.jpg",
+            "img": "/img/route3.jpg",
             "link": "/"
         },
         {
             "title": "Ipsum commodo sunt ex irure non",
-            "text": "Ipsum commodo sunt ex irure non sit anim anim anim minim.",
+            "text": "Ipsum commodo sunt ex irure non sit anim anim anim minim. Proident aliqua in ut laboris velit qui cillum exercitation eiusmod.",
             "date": "21.02.2020",
             "see": "40",
-            "img": "/img/bus.jpg",
+            "img": "/img/route1.jpg",
             "link": "/"
         },
         {
             "title": "Ipsum commodo sunt ex irure non",
-            "text": "Ipsum commodo sunt ex irure non sit anim anim anim minim.",
+            "text": "Ipsum commodo sunt ex irure non sit anim anim anim minim. Ut sunt sunt ad qui nostrud et eiusmod id est ea magna dolor cillum.",
             "date": "21.02.2020",
             "see": "40",
-            "img": "/img/bus.jpg",
+            "img": "/img/route2.jpg",
             "link": "/"
         }
     ],

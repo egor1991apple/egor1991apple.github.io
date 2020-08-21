@@ -14,7 +14,8 @@ const IndexPage = () => {
 	return (
 		<Layout pageInfo={{ pageName: 'index' }}>
 			<SEO title="Home" keywords={[ `gatsby`, `react`, `bootstrap` ]} />
-			<MainSearctionFormVerticalSlider />
+			<SectionFormHorizontal/>
+			{/* <MainSearctionFormVerticalSlider /> */}
 			<MainSectionServises />
 			<MainSectionWhyWeAre />
 			<MainSectionNews />

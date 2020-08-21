@@ -12,8 +12,8 @@ export default function DetailRoutesCard({
 }) {
 	return (
 		<Card className="row no-gutters overflow-hidden flex-row shadow-none-hover border-0">
-			<div className="card-img-container col-4">{img && <img src={img} className="img-cover" />}</div>
-			<Card.Body className="col-8 p-4">
+			<div className="card-img-container col-12 col-lg-4">{img && <img src={img} className="img-cover" />}</div>
+			<Card.Body className="col-lg-8 p-lg-4 px-0">
 				<Card.Title>
 					{title[0]} <BsArrowRight /> {title[1]}
 				</Card.Title>

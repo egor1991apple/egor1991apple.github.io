@@ -1,14 +1,23 @@
 import React from 'react';
 import { Tab, Nav, Col, Row, Card } from 'react-bootstrap';
 import TimeTable from '../../../components/table/timeTable';
-export default function index({ data = [] }) {
+export default function TabContainer({
+	data = [], 
+	classes={}}) {
+		const {
+			tabContentContainer="",
+			tabContentItem="",
+			navTabContainer="",
+			navTabItem=""
+		} = classes;
+
 	return (
 		<Tab.Container defaultActiveKey="0">
 			<Row>
 				<Col sm={'auto'} className="border-right">
-					<Nav className="flex-column">
+					<Nav className={`flex-column ${navTabContainer}`}>
 						{data.map(({ title }, index) => (
-							<Nav.Item key={`${index}_navTab`}>
+							<Nav.Item key={`${index}_navTab`} className={`${navTabItem}`}>
 								<Nav.Link eventKey={index} className="left-tab--link">
 									{title}
 								</Nav.Link>
@@ -22,9 +31,9 @@ export default function index({ data = [] }) {
 					</Nav>
 				</Col>
 				<Col>
-					<Tab.Content>
+					<Tab.Content className={`flex-column ${navTabContainer}`} >
 						{data.map(({ text }, index) => (
-							<Tab.Pane key={`${index}_tabContent`} eventKey={index}>
+							<Tab.Pane key={`${index}_tabContent`} eventKey={index} className={`flex-column ${navTabItem}`}>
 								{text}
 							</Tab.Pane>
 						))}

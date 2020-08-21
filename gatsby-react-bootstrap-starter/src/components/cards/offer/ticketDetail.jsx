@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 
 import Collapse from '../../collapse/ticket-detail';
 import RoutePoints from '../routePoints';
@@ -13,19 +13,26 @@ const ticketDetail = ({ route = [], placements }) => {
 			<Collapse title="Детальная информация">
 				<div className="py-3">
 					<Row>
-						<Col lg="4" className="border-right">
-							<h4>Услуги</h4>
-							<div className="d-flex flex-wrap">
-								<Servises />
+						
+					<Col lg="6" className="border-right  mb-sm-0">
+							<div className="d-flex">
+								<div className="text-6 mb-3">Маршрут</div>
 							</div>
+							<RoutePoints points={route} />
+							<Button variant="info" className="btn-block" size="sm">
+								Cмотреть на карте...
+							</Button>
 						</Col>
-						<Col lg="8">
-							<h4>Места</h4>
-
-							<div className="d-flex ">
-								<Bus {...{ ...placements }} />
-								<h6 />
-								<table className="bus-info px-3">
+						<Col xs="12" className="d-lg-none">
+						<hr />
+						</Col>	
+						<Col lg="6">
+							<div className="d-flex mb-4">
+								<div className="text-6">Места</div>
+							</div>
+							<div>
+								<Bus { ...placements} />
+								<table className="bus-info ">
 									<tbody>
 										<tr>
 											<td className="bus-td" />
@@ -44,19 +51,19 @@ const ticketDetail = ({ route = [], placements }) => {
 							</div>
 						</Col>
 					</Row>
-
 					<hr />
 					<Row>
-						<Col xs="12">
-							<h4>Маршрут</h4>
-						</Col>
-						<Col>
-							<RoutePoints points={route} />
-						</Col>
-						<Col>
-							<MapDialog styleHeight={'auto'} />
+						<Col lg="12">
+							<div className="d-flex mb-3">
+								<div className="text-6">Услуги</div>
+							</div>
+							<div className="d-flex flex-wrap">
+								<Servises />
+							</div>
 						</Col>
 					</Row>
+					
+					
 				</div>
 			</Collapse>
 		</div>

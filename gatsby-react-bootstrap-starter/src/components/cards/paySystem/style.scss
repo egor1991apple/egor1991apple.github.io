@@ -1,0 +1,23 @@
+.card {
+  transition: background 0.3s;
+}
+.card.active {
+  transition: background 0.3s;
+  background: var(--primary);
+  & * {
+    color: white !important;
+  }
+  img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 568px) {
+  .card-body {
+    padding: 1rem;
+    img {
+      max-height: 30px !important;
+      max-width: 100%;
+    }
+  }
+}

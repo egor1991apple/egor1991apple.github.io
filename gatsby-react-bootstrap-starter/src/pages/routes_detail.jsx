@@ -4,6 +4,7 @@ import Layout from '../components/layout';
 import { Container, Row, Card, Col } from 'react-bootstrap';
 import LeftSection from '../sections/routes/detailRoutes/leftSection';
 import RightSection from '../sections/routes/detailRoutes/rightSection';
+import '../sections/routes/detailRoutes/style.scss';
 
 export default function routes_detail() {
 	return (

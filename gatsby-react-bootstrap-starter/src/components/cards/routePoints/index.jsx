@@ -1,6 +1,7 @@
 import React from 'react';
 import { BsClock, BsFlag, BsDot } from 'react-icons/bs';
 import { MdPlace } from 'react-icons/md';
+import './style.scss';
 export default function routePoints({ points = [] }) {
 	return (
 		<ul className="list-points">
