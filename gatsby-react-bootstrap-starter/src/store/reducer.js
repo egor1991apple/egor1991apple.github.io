@@ -7,6 +7,7 @@ import {
   OPEN_PLACEMENT_DIALOG,
   CREATE_BASKET,
   SELECT_PLACEMENT,
+  SELECT_OFFER_ID,
   SELECTED_OFFERS_ID,
   BASKET,
   ADD_BASKET_ITEM,
@@ -40,44 +41,47 @@ import {
 export const Reducer = (state, { type = null, payload = null }) => {
   //console.log(type,payload);
   switch (type) {
+    case "SYNC_DEFAULT": {
+      return payload
+    }
     case IS_AUTH: {
       return { ...state, IS_AUTH: payload }
     }
     case OPEN_AUTH_DIALOG: {
-      return { ...state, OPEN_AUTH_DIALOG: !state[OPEN_AUTH_DIALOG] }
+      return { ...state, OPEN_AUTH_DIALOG: !payload ? !state[OPEN_AUTH_DIALOG] : payload }
     }
     case TOGGLE_MOBILE_NAV: {
-      return { ...state, TOGGLE_MOBILE_NAV: !state[TOGGLE_MOBILE_NAV] }
+      return { ...state, TOGGLE_MOBILE_NAV: !payload ? !state[TOGGLE_MOBILE_NAV] : payload}
     }
     case SHOW_MOBILE_BASKET_IN_OFFERS: {
       return {
         ...state,
-        SHOW_MOBILE_BASKET_IN_OFFERS: !state[SHOW_MOBILE_BASKET_IN_OFFERS],
+        SHOW_MOBILE_BASKET_IN_OFFERS: !payload ? !state[SHOW_MOBILE_BASKET_IN_OFFERS] : payload,
       }
     }
     case SHOW_MOBILE_FILTER_IN_OFFERS: {
       return {
         ...state,
-        SHOW_MOBILE_FILTER_IN_OFFERS: !state[SHOW_MOBILE_FILTER_IN_OFFERS],
+        SHOW_MOBILE_FILTER_IN_OFFERS: !payload ? !state[SHOW_MOBILE_FILTER_IN_OFFERS] : payload,
       }
     }
     case SHOW_MOBILE_BASKET_DETAIL: {
       return {
         ...state,
-        SHOW_MOBILE_BASKET_DETAIL: !state[SHOW_MOBILE_BASKET_DETAIL],
+        SHOW_MOBILE_BASKET_DETAIL: !payload ? !state[SHOW_MOBILE_BASKET_DETAIL] : payload,
       }
     }
     case SHOW_MOBILE_BASKET_BOOKING: {
       return {
         ...state,
-        SHOW_MOBILE_BASKET_BOOKING: !state[SHOW_MOBILE_BASKET_BOOKING],
+        SHOW_MOBILE_BASKET_BOOKING: !payload ? !state[SHOW_MOBILE_BASKET_BOOKING] : payload,
       }
     }
 
     case SHOW_MOBILE_PERSONAL_MENU: {
       return {
         ...state,
-        SHOW_MOBILE_PERSONAL_MENU: !state[SHOW_MOBILE_PERSONAL_MENU],
+        SHOW_MOBILE_PERSONAL_MENU: !payload ? !state[SHOW_MOBILE_PERSONAL_MENU] : payload,
       }
     }
 
@@ -90,9 +94,11 @@ export const Reducer = (state, { type = null, payload = null }) => {
     case OPEN_PLACEMENT_DIALOG: {
       return {
         ...state,
-        OPEN_PLACEMENT_DIALOG: !state[OPEN_PLACEMENT_DIALOG],
-        SELECTED_OFFERS_ID: payload,
+        OPEN_PLACEMENT_DIALOG: !state[OPEN_PLACEMENT_DIALOG]
       }
+    }
+    case SELECT_OFFER_ID: {
+      return {...state, SELECTED_OFFERS_ID: payload,}
     }
     case ADD_BASKET_ITEM: {
       return { ...state, BASKET: payload }

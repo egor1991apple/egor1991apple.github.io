@@ -82,4 +82,11 @@ export const CURRENT_OFFERS = "CURRENT_OFFERS"
 export const HISTORY_OFFERS = "HISTORY_OFFER"
 export const ALL_STATUS = "ALL_STATUS"
 export const PASSENGER_LIST = "PASSENGER_LIST"
+
+
+
+
+//dialog
+
+//drawer
 export const SHOW_MOBILE_PERSONAL_MENU = "SHOW_MOBILE_PERSONAL_MENU"

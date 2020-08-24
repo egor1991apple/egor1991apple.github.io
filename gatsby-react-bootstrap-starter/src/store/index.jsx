@@ -62,6 +62,7 @@ import demo from "./demo.json"
 import personal_data from "./personal.json"
 import { navigate } from "gatsby"
 import { cloneDeep } from "lodash"
+
 function createArray(length, value) {
   const arr = []
   for (let i = 0; i < length; i++) {
@@ -69,15 +70,137 @@ function createArray(length, value) {
   }
   return arr
 }
-
+let defaultState = {
+  [IS_AUTH]: false,
+  [OPEN_AUTH_DIALOG]: false,
+  [TOGGLE_MOBILE_NAV]: false,
+  [OPEN_PLACEMENT_DIALOG]: false,
+  [MAIN_SLIDER_SLIDS]: demo.main_slider,
+  [OFFERS]: demo.offers,
+  [ROUTES]: {
+    data: demo.routes,
+    nowShowRoutes: 6,
+    allCountRoutes: demo.routes.length,
+  },
+  [ROUTE_DETAIL]: demo.route_detail,
+  [ROUTE_SERVISES]: demo.route_servises,
+  [MAIN_WHY_WE_ARE]: demo.main_why_we_are,
+  [MAIN_QUESTION_ANSWER]: demo.main_question_answer,
+  [MAIN_NEWS]: demo.news,
+  [SERVISES]: demo.servises,
+  [SOCIAL]: demo.social,
+  [PAYMENT]: demo.payment,
+  [CONTACT]: demo.contact,
+  [TOP_NAVS]: demo.main_navs_list,
+  [BUS]: demo.busPlacement,
+  [BASKET]: {
+    0: [],
+    1: [],
+  },
+  [BASKET_COMMIT]: {
+    0: [],
+    1: [],
+  },
+  [SELECTED_OFFERS_ID]: 0,
+  [ALERT]: demo.alert,
+  [SHOW_PAYMENT_SYTEM_DIALOG]: false,
+  [PAYMENT_SYSTEM]: demo.paymentSystem,
+  [TIMER]: demo.timer,
+  [BOOKING_VALID]: false,
+  [AGREEMENT_DIALOGS]: [false, false],
+  [SELECTED_PASSENGER_ID]: null,
+  [SELECTED_DIRECTION]: null,
+  [PERSONAL_NAV]: personal_data.personal_navigation,
+  [USER_INFO]: personal_data.user_info,
+  [CURRENT_OFFERS]: personal_data.current_offers,
+  [HISTORY_OFFERS]: personal_data.history_offers,
+  [ALL_STATUS]: personal_data.all_status,
+  [PASSENGER_LIST]: personal_data.passenger_list,
+  [SHOW_MOBILE_BASKET_IN_OFFERS]: false,
+  [SHOW_MOBILE_FILTER_IN_OFFERS]: false,
+  [SHOW_MOBILE_BASKET_BOOKING]: false,
+  [SHOW_MOBILE_BASKET_DETAIL]: false,
+  [SHOW_MOBILE_PERSONAL_MENU]: false,
+}
 export default function GlobalState({ children }) {
   const [state, dispatch] = useReducer(Reducer, defaultState)
 
+  useEffect(() => {
+    fetch("./demo.json")
+      .then(response => response.json())
+      .then(demo => {
+        defaultState = {
+          [IS_AUTH]: true,
+          [OPEN_AUTH_DIALOG]: false,
+          [TOGGLE_MOBILE_NAV]: false,
+          [OPEN_PLACEMENT_DIALOG]: false,
+          [MAIN_SLIDER_SLIDS]: demo.main_slider,
+          [OFFERS]: demo.offers,
+          [ROUTES]: {
+            data: demo.routes,
+            nowShowRoutes: 6,
+            allCountRoutes: demo.routes.length,
+          },
+          [ROUTE_DETAIL]: demo.route_detail,
+          [ROUTE_SERVISES]: demo.route_servises,
+          [MAIN_WHY_WE_ARE]: demo.main_why_we_are,
+          [MAIN_QUESTION_ANSWER]: demo.main_question_answer,
+          [MAIN_NEWS]: demo.news,
+          [SERVISES]: demo.servises,
+          [SOCIAL]: demo.social,
+          [PAYMENT]: demo.payment,
+          [CONTACT]: demo.contact,
+          [TOP_NAVS]: demo.main_navs_list,
+          [BUS]: demo.busPlacement,
+          [BASKET]: {
+            0: [],
+            1: [],
+          },
+          [BASKET_COMMIT]: {
+            0: [],
+            1: [],
+          },
+          [SELECTED_OFFERS_ID]: 0,
+          [ALERT]: demo.alert,
+          [SHOW_PAYMENT_SYTEM_DIALOG]: false,
+          [PAYMENT_SYSTEM]: demo.paymentSystem,
+          [TIMER]: demo.timer,
+          [BOOKING_VALID]: false,
+          [AGREEMENT_DIALOGS]: [false, false],
+          [SELECTED_PASSENGER_ID]: null,
+          [SELECTED_DIRECTION]: null,
+          [PERSONAL_NAV]: personal_data.personal_navigation,
+          [USER_INFO]: personal_data.user_info,
+          [CURRENT_OFFERS]: personal_data.current_offers,
+          [HISTORY_OFFERS]: personal_data.history_offers,
+          [ALL_STATUS]: personal_data.all_status,
+          [PASSENGER_LIST]: personal_data.passenger_list,
+          [SHOW_MOBILE_BASKET_IN_OFFERS]: false,
+          [SHOW_MOBILE_FILTER_IN_OFFERS]: false,
+          [SHOW_MOBILE_BASKET_BOOKING]: false,
+          [SHOW_MOBILE_BASKET_DETAIL]: false,
+          [SHOW_MOBILE_PERSONAL_MENU]: false,
+        }
+        dispatch({ type: "SYNC_DEFAULT", payload: defaultState })
+      })
+  }, [])
+  //closeAllDialogAndDrawer
+  useEffect(() => {
+    dispatch({ type: OPEN_AUTH_DIALOG, payload: false })
+    dispatch({ type: TOGGLE_MOBILE_NAV, payload: false })
+    //dispatch({ type: OPEN_PLACEMENT_DIALOG, payload: data })
+    dispatch({ type: SHOW_MOBILE_BASKET_IN_OFFERS, payload: false })
+    dispatch({ type: SHOW_MOBILE_FILTER_IN_OFFERS, payload: false })
+    dispatch({ type: SHOW_MOBILE_BASKET_BOOKING, payload: false })
+    dispatch({ type: SHOW_MOBILE_BASKET_DETAIL, payload: false })
+    dispatch({ type: SHOW_MOBILE_PERSONAL_MENU, payload: false })
+  }, [typeof window ? window.location.href : null])
   //authDialog
   const onSetAuth = e => {
     e.preventDefault()
     dispatch({ type: IS_AUTH, payload: true })
     alert("Вы авторизованы")
+    dispatch({ type: OPEN_AUTH_DIALOG, payload: null })
   }
   const onOpenAuthDialog = () => {
     dispatch({ type: OPEN_AUTH_DIALOG, payload: null })
@@ -348,57 +471,4 @@ export default function GlobalState({ children }) {
       {children}{" "}
     </GlobalContext.Provider>
   )
-}
-
-const defaultState = {
-  [IS_AUTH]: false,
-  [OPEN_AUTH_DIALOG]: false,
-  [TOGGLE_MOBILE_NAV]: false,
-  [OPEN_PLACEMENT_DIALOG]: false,
-  [MAIN_SLIDER_SLIDS]: demo.main_slider,
-  [OFFERS]: demo.offers,
-  [ROUTES]: {
-    data: demo.routes,
-    nowShowRoutes: 6,
-    allCountRoutes: demo.routes.length,
-  },
-  [ROUTE_DETAIL]: demo.route_detail,
-  [ROUTE_SERVISES]: demo.route_servises,
-  [MAIN_WHY_WE_ARE]: demo.main_why_we_are,
-  [MAIN_QUESTION_ANSWER]: demo.main_question_answer,
-  [MAIN_NEWS]: demo.news,
-  [SERVISES]: demo.servises,
-  [SOCIAL]: demo.social,
-  [PAYMENT]: demo.payment,
-  [CONTACT]: demo.contact,
-  [TOP_NAVS]: demo.main_navs_list,
-  [BUS]: demo.busPlacement,
-  [BASKET]: {
-    0: [],
-    1: [],
-  },
-  [BASKET_COMMIT]: {
-    0: [],
-    1: [],
-  },
-  [SELECTED_OFFERS_ID]: 0,
-  [ALERT]: demo.alert,
-  [SHOW_PAYMENT_SYTEM_DIALOG]: false,
-  [PAYMENT_SYSTEM]: demo.paymentSystem,
-  [TIMER]: demo.timer,
-  [BOOKING_VALID]: false,
-  [AGREEMENT_DIALOGS]: [false, false],
-  [SELECTED_PASSENGER_ID]: null,
-  [SELECTED_DIRECTION]: null,
-  [PERSONAL_NAV]: personal_data.personal_navigation,
-  [USER_INFO]: personal_data.user_info,
-  [CURRENT_OFFERS]: personal_data.current_offers,
-  [HISTORY_OFFERS]: personal_data.history_offers,
-  [ALL_STATUS]: personal_data.all_status,
-  [PASSENGER_LIST]: personal_data.passenger_list,
-  [SHOW_MOBILE_BASKET_IN_OFFERS]: false,
-  [SHOW_MOBILE_FILTER_IN_OFFERS]: false,
-  [SHOW_MOBILE_BASKET_BOOKING]: false,
-  [SHOW_MOBILE_BASKET_DETAIL]: false,
-  [SHOW_MOBILE_PERSONAL_MENU]: false,
 }
