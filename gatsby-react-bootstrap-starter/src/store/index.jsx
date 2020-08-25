@@ -204,7 +204,6 @@ export default function GlobalState({ children }) {
       })
   }, [])
   const onSetLocationHref = location => {
-    console.log(location)
     dispatch({ type: ON_LOCATION_HREF, payload: location })
   }
   const onCloseAllDialogAndDrawer = () => {
