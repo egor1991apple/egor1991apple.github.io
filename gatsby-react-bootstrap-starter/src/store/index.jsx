@@ -4,7 +4,7 @@ import { Reducer } from "./reducer"
 import {
   IS_AUTH,
   OPEN_AUTH_DIALOG,
-  OPEN_PLACEMENT_DIALOG,
+  SHOW_PLACEMENT_DIALOG,
   MAIN_SLIDER_SLIDS,
   OFFERS,
   ROUTES,
@@ -14,7 +14,7 @@ import {
   TOP_NAVS,
   MAIN_WHY_WE_ARE,
   MAIN_QUESTION_ANSWER,
-  TOGGLE_MOBILE_NAV,
+  SHOW_MOBILE_NAV,
   MAIN_NEWS,
   SOCIAL,
   CONTACT,
@@ -57,12 +57,15 @@ import {
   SHOW_MOBILE_BASKET_BOOKING,
   ON_BASKET_OFFERS_COMMIT,
   SHOW_MOBILE_PERSONAL_MENU,
+  SELECT_OFFER_ID,
+  ON_LOCATION_HREF,
+  LOCATION_HREF,
+  ON_SYNC_DEFAULT,
 } from "./const"
-import demo from "./demo.json"
 import personal_data from "./personal.json"
 import { navigate } from "gatsby"
-import { cloneDeep } from "lodash"
-
+import { cloneDeep, thru } from "lodash"
+import { usePath } from "../hooks/usePath"
 function createArray(length, value) {
   const arr = []
   for (let i = 0; i < length; i++) {
@@ -71,28 +74,43 @@ function createArray(length, value) {
   return arr
 }
 let defaultState = {
+  [LOCATION_HREF]: null,
   [IS_AUTH]: false,
   [OPEN_AUTH_DIALOG]: false,
-  [TOGGLE_MOBILE_NAV]: false,
-  [OPEN_PLACEMENT_DIALOG]: false,
-  [MAIN_SLIDER_SLIDS]: demo.main_slider,
-  [OFFERS]: demo.offers,
+  [SHOW_MOBILE_NAV]: false,
+  [SHOW_PLACEMENT_DIALOG]: false,
+  [MAIN_SLIDER_SLIDS]: [],
+  [OFFERS]: [],
   [ROUTES]: {
-    data: demo.routes,
+    data: [],
     nowShowRoutes: 6,
-    allCountRoutes: demo.routes.length,
+    allCountRoutes: [],
   },
-  [ROUTE_DETAIL]: demo.route_detail,
-  [ROUTE_SERVISES]: demo.route_servises,
-  [MAIN_WHY_WE_ARE]: demo.main_why_we_are,
-  [MAIN_QUESTION_ANSWER]: demo.main_question_answer,
-  [MAIN_NEWS]: demo.news,
-  [SERVISES]: demo.servises,
-  [SOCIAL]: demo.social,
-  [PAYMENT]: demo.payment,
-  [CONTACT]: demo.contact,
-  [TOP_NAVS]: demo.main_navs_list,
-  [BUS]: demo.busPlacement,
+  [ROUTE_DETAIL]: {
+    id: "",
+    img: "",
+    title: "",
+    cost: "",
+    currency: "",
+    shortDescription: {
+      text: "",
+      servises: [],
+    },
+    description: [],
+    timetable: [],
+    points: [],
+  },
+  [ROUTE_SERVISES]: [],
+  [MAIN_WHY_WE_ARE]: [],
+
+  [MAIN_QUESTION_ANSWER]: [],
+  [MAIN_NEWS]: [],
+  [SERVISES]: [],
+  [SOCIAL]: [],
+  [PAYMENT]: [],
+  [CONTACT]: [],
+  [TOP_NAVS]: [],
+  [BUS]: [],
   [BASKET]: {
     0: [],
     1: [],
@@ -102,10 +120,10 @@ let defaultState = {
     1: [],
   },
   [SELECTED_OFFERS_ID]: 0,
-  [ALERT]: demo.alert,
+  [ALERT]: [],
   [SHOW_PAYMENT_SYTEM_DIALOG]: false,
-  [PAYMENT_SYSTEM]: demo.paymentSystem,
-  [TIMER]: demo.timer,
+  [PAYMENT_SYSTEM]: [],
+  [TIMER]: 0,
   [BOOKING_VALID]: false,
   [AGREEMENT_DIALOGS]: [false, false],
   [SELECTED_PASSENGER_ID]: null,
@@ -122,18 +140,19 @@ let defaultState = {
   [SHOW_MOBILE_BASKET_DETAIL]: false,
   [SHOW_MOBILE_PERSONAL_MENU]: false,
 }
+
 export default function GlobalState({ children }) {
   const [state, dispatch] = useReducer(Reducer, defaultState)
 
   useEffect(() => {
-    fetch("./demo.json")
+    fetch("/demo.json")
       .then(response => response.json())
       .then(demo => {
         defaultState = {
-          [IS_AUTH]: true,
+          [IS_AUTH]: false,
           [OPEN_AUTH_DIALOG]: false,
-          [TOGGLE_MOBILE_NAV]: false,
-          [OPEN_PLACEMENT_DIALOG]: false,
+          [SHOW_MOBILE_NAV]: false,
+          [SHOW_PLACEMENT_DIALOG]: false,
           [MAIN_SLIDER_SLIDS]: demo.main_slider,
           [OFFERS]: demo.offers,
           [ROUTES]: {
@@ -160,7 +179,7 @@ export default function GlobalState({ children }) {
             0: [],
             1: [],
           },
-          [SELECTED_OFFERS_ID]: 0,
+          [SELECTED_OFFERS_ID]: 1,
           [ALERT]: demo.alert,
           [SHOW_PAYMENT_SYTEM_DIALOG]: false,
           [PAYMENT_SYSTEM]: demo.paymentSystem,
@@ -181,33 +200,36 @@ export default function GlobalState({ children }) {
           [SHOW_MOBILE_BASKET_DETAIL]: false,
           [SHOW_MOBILE_PERSONAL_MENU]: false,
         }
-        dispatch({ type: "SYNC_DEFAULT", payload: defaultState })
+        dispatch({ type: ON_SYNC_DEFAULT, payload: defaultState })
       })
   }, [])
-  //closeAllDialogAndDrawer
-  useEffect(() => {
-    dispatch({ type: OPEN_AUTH_DIALOG, payload: false })
-    dispatch({ type: TOGGLE_MOBILE_NAV, payload: false })
-    //dispatch({ type: OPEN_PLACEMENT_DIALOG, payload: data })
-    dispatch({ type: SHOW_MOBILE_BASKET_IN_OFFERS, payload: false })
-    dispatch({ type: SHOW_MOBILE_FILTER_IN_OFFERS, payload: false })
-    dispatch({ type: SHOW_MOBILE_BASKET_BOOKING, payload: false })
-    dispatch({ type: SHOW_MOBILE_BASKET_DETAIL, payload: false })
-    dispatch({ type: SHOW_MOBILE_PERSONAL_MENU, payload: false })
-  }, [typeof window ? window.location.href : null])
+  const onSetLocationHref = location => {
+    console.log(location)
+    dispatch({ type: ON_LOCATION_HREF, payload: location })
+  }
+  const onCloseAllDialogAndDrawer = () => {
+    // dispatch({ type: OPEN_AUTH_DIALOG, payload: false })
+    // dispatch({ type: SHOW_MOBILE_NAV, payload: false })
+    // //dispatch({ type: SHOW_PLACEMENT_DIALOG, payload: data })
+    // dispatch({ type: SHOW_MOBILE_BASKET_IN_OFFERS, payload: false })
+    // dispatch({ type: SHOW_MOBILE_FILTER_IN_OFFERS, payload: false })
+    // dispatch({ type: SHOW_MOBILE_BASKET_BOOKING, payload: false })
+    // dispatch({ type: SHOW_MOBILE_BASKET_DETAIL, payload: false })
+    // dispatch({ type: SHOW_MOBILE_PERSONAL_MENU, payload: false })
+  }
   //authDialog
   const onSetAuth = e => {
     e.preventDefault()
     dispatch({ type: IS_AUTH, payload: true })
     alert("Вы авторизованы")
-    dispatch({ type: OPEN_AUTH_DIALOG, payload: null })
+    dispatch({ type: OPEN_AUTH_DIALOG, payload: false })
   }
   const onOpenAuthDialog = () => {
     dispatch({ type: OPEN_AUTH_DIALOG, payload: null })
   }
   //mobileMenu
   const onToggleMobileNav = () => {
-    dispatch({ type: TOGGLE_MOBILE_NAV, payload: null })
+    dispatch({ type: SHOW_MOBILE_NAV, payload: null })
   }
   //main slider
 
@@ -224,24 +246,25 @@ export default function GlobalState({ children }) {
   }
   //placementDialog
   const onOpenPlacementDialog = data => {
-    dispatch({ type: OPEN_PLACEMENT_DIALOG, payload: data })
+    dispatch({ type: SHOW_PLACEMENT_DIALOG, payload: null })
+    dispatch({ type: SELECT_OFFER_ID, payload: data })
   }
   //showMobileBasketInOffers
   const onShowMobileBasketInOffers = () => {
-    dispatch({ type: SHOW_MOBILE_BASKET_IN_OFFERS })
+    dispatch({ type: SHOW_MOBILE_BASKET_IN_OFFERS, payload: null })
   }
   //showMobileBasketInOffers
   const onShowMobileFilterInOffers = () => {
-    dispatch({ type: SHOW_MOBILE_FILTER_IN_OFFERS })
+    dispatch({ type: SHOW_MOBILE_FILTER_IN_OFFERS, payload: null })
   }
   const onShowMobileBasketBooking = () => {
-    dispatch({ type: SHOW_MOBILE_BASKET_BOOKING })
+    dispatch({ type: SHOW_MOBILE_BASKET_BOOKING, payload: null })
   }
   const onShowMobileBasketDetail = () => {
-    dispatch({ type: SHOW_MOBILE_BASKET_DETAIL })
+    dispatch({ type: SHOW_MOBILE_BASKET_DETAIL, payload: null })
   }
   const onShowMobilePersonalMenu = () => {
-    dispatch({ type: SHOW_MOBILE_PERSONAL_MENU })
+    dispatch({ type: SHOW_MOBILE_PERSONAL_MENU, payload: null })
   }
   const onSavePrevBasket = () => {
     const newBasket = cloneDeep(state.BASKET_COMMIT)
@@ -353,7 +376,7 @@ export default function GlobalState({ children }) {
       type: "BASKET_COMMIT",
       payload: newBasket,
     })
-    dispatch({ type: OPEN_PLACEMENT_DIALOG, payload: false })
+    dispatch({ type: SHOW_PLACEMENT_DIALOG, payload: false })
   }
   const onBasketOffersCommit = direction => e => {
     const { BASKET, OFFERS, SELECTED_OFFERS_ID } = state
@@ -370,7 +393,7 @@ export default function GlobalState({ children }) {
       type: ON_BASKET_OFFERS_COMMIT,
       payload: newBasket,
     })
-    dispatch({ type: OPEN_PLACEMENT_DIALOG, payload: false })
+    dispatch({ type: SHOW_PLACEMENT_DIALOG, payload: false })
   }
 
   const onClearBasket = () => {
@@ -433,7 +456,7 @@ export default function GlobalState({ children }) {
   const onSelectPassengerId = id => {
     dispatch({ type: SELECT_PASSENGER_ID, payload: id })
   }
-  console.log(state)
+
   return (
     <GlobalContext.Provider
       value={{
@@ -465,6 +488,8 @@ export default function GlobalState({ children }) {
         onShowMobileBasketBooking,
         onShowMobileBasketDetail,
         onShowMobilePersonalMenu,
+        onCloseAllDialogAndDrawer,
+        onSetLocationHref,
         lang: "ru",
       }}
     >

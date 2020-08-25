@@ -8,10 +8,10 @@ import LoginInfo from "../../../sections/personal/loginInfo"
 
 import useMedia from "../../../hooks/useMedia"
 import SectionMobile from "../../../sections/personal/mobileContainer"
-const UserInfoPage = () => {
+const UserInfoPage = ({ location }) => {
   const isMobile = useMedia(992)
   return (
-    <Layout pageInfo={{ pageName: "personal" }}>
+    <Layout pageInfo={{ pageName: "personal/userinfo" }} {...location}>
       <Container className="my-5 ">
         <Row className="bg-white border-radius shadow rounded mx-0">
           {!isMobile ? (

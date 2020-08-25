@@ -11,7 +11,7 @@ const PlacementDialog = ({
   btnText = "ok",
 }) => {
   const {
-    OPEN_PLACEMENT_DIALOG = false,
+    SHOW_PLACEMENT_DIALOG = false,
     onOpenPlacementDialog = null,
     lang = "ru",
   } = useContext(GlobalContext)
@@ -20,7 +20,7 @@ const PlacementDialog = ({
     <Modal
       size="lg"
       id="PlacementDialog"
-      show={OPEN_PLACEMENT_DIALOG}
+      show={SHOW_PLACEMENT_DIALOG}
       onHide={onOpenPlacementDialog}
     >
       <Modal.Header>

@@ -1,7 +1,6 @@
 {
   "timer": "1200",
-  "isAuth":false,
-  
+  "isAuth": false,
   "main_navs_list": [
     {
       "id": "1",

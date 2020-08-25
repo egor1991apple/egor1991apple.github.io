@@ -2,9 +2,9 @@ import {
   IS_AUTH,
   OPEN_AUTH_DIALOG,
   MAIN_SLIDER_SLIDS,
-  TOGGLE_MOBILE_NAV,
+  SHOW_MOBILE_NAV,
   SHOW_MORE_ROUTES,
-  OPEN_PLACEMENT_DIALOG,
+  SHOW_PLACEMENT_DIALOG,
   CREATE_BASKET,
   SELECT_PLACEMENT,
   SELECT_OFFER_ID,
@@ -36,52 +36,91 @@ import {
   SHOW_MOBILE_BASKET_BOOKING,
   ON_BASKET_OFFERS_COMMIT,
   SHOW_MOBILE_PERSONAL_MENU,
+  LOCATION_HREF,
+  ON_LOCATION_HREF,
+  ON_SYNC_DEFAULT,
 } from "./const"
 
 export const Reducer = (state, { type = null, payload = null }) => {
-  //console.log(type,payload);
+  console.log(type, payload)
   switch (type) {
-    case "SYNC_DEFAULT": {
+    case ON_SYNC_DEFAULT: {
       return payload
+    }
+    case ON_LOCATION_HREF: {
+      if (state[LOCATION_HREF] != payload) {
+        return { ...state, LOCATION_HREF: payload }
+      }
     }
     case IS_AUTH: {
       return { ...state, IS_AUTH: payload }
     }
     case OPEN_AUTH_DIALOG: {
-      return { ...state, OPEN_AUTH_DIALOG: !payload ? !state[OPEN_AUTH_DIALOG] : payload }
+      if (state[OPEN_AUTH_DIALOG] != payload) {
+        return {
+          ...state,
+          OPEN_AUTH_DIALOG: !payload ? !state[OPEN_AUTH_DIALOG] : payload,
+        }
+      }
     }
-    case TOGGLE_MOBILE_NAV: {
-      return { ...state, TOGGLE_MOBILE_NAV: !payload ? !state[TOGGLE_MOBILE_NAV] : payload}
+    case SHOW_MOBILE_NAV: {
+      if (state[SHOW_MOBILE_NAV] != payload) {
+        console.log(state[SHOW_MOBILE_NAV], "show-mobile-nav", payload)
+        return {
+          ...state,
+          SHOW_MOBILE_NAV: !payload ? !state[SHOW_MOBILE_NAV] : payload,
+        }
+      }
     }
     case SHOW_MOBILE_BASKET_IN_OFFERS: {
-      return {
-        ...state,
-        SHOW_MOBILE_BASKET_IN_OFFERS: !payload ? !state[SHOW_MOBILE_BASKET_IN_OFFERS] : payload,
+      if (state[SHOW_MOBILE_BASKET_IN_OFFERS] != payload) {
+        return {
+          ...state,
+          SHOW_MOBILE_BASKET_IN_OFFERS: !payload
+            ? !state[SHOW_MOBILE_BASKET_IN_OFFERS]
+            : payload,
+        }
       }
     }
     case SHOW_MOBILE_FILTER_IN_OFFERS: {
-      return {
-        ...state,
-        SHOW_MOBILE_FILTER_IN_OFFERS: !payload ? !state[SHOW_MOBILE_FILTER_IN_OFFERS] : payload,
+      if (state[SHOW_MOBILE_FILTER_IN_OFFERS] != payload) {
+        return {
+          ...state,
+          SHOW_MOBILE_FILTER_IN_OFFERS: !payload
+            ? !state[SHOW_MOBILE_FILTER_IN_OFFERS]
+            : payload,
+        }
       }
     }
     case SHOW_MOBILE_BASKET_DETAIL: {
-      return {
-        ...state,
-        SHOW_MOBILE_BASKET_DETAIL: !payload ? !state[SHOW_MOBILE_BASKET_DETAIL] : payload,
+      if (state[SHOW_MOBILE_BASKET_DETAIL] != payload) {
+        return {
+          ...state,
+          SHOW_MOBILE_BASKET_DETAIL: !payload
+            ? !state[SHOW_MOBILE_BASKET_DETAIL]
+            : payload,
+        }
       }
     }
     case SHOW_MOBILE_BASKET_BOOKING: {
-      return {
-        ...state,
-        SHOW_MOBILE_BASKET_BOOKING: !payload ? !state[SHOW_MOBILE_BASKET_BOOKING] : payload,
+      if (state[SHOW_MOBILE_BASKET_BOOKING] != payload) {
+        return {
+          ...state,
+          SHOW_MOBILE_BASKET_BOOKING: !payload
+            ? !state[SHOW_MOBILE_BASKET_BOOKING]
+            : payload,
+        }
       }
     }
 
     case SHOW_MOBILE_PERSONAL_MENU: {
-      return {
-        ...state,
-        SHOW_MOBILE_PERSONAL_MENU: !payload ? !state[SHOW_MOBILE_PERSONAL_MENU] : payload,
+      if (state[SHOW_MOBILE_PERSONAL_MENU] != payload) {
+        return {
+          ...state,
+          SHOW_MOBILE_PERSONAL_MENU: !payload
+            ? !state[SHOW_MOBILE_PERSONAL_MENU]
+            : payload,
+        }
       }
     }
 
@@ -91,14 +130,18 @@ export const Reducer = (state, { type = null, payload = null }) => {
     case SHOW_MORE_ROUTES: {
       return { ...state, ROUTES: { ...state.ROUTES, nowShowRoutes: payload } }
     }
-    case OPEN_PLACEMENT_DIALOG: {
-      return {
-        ...state,
-        OPEN_PLACEMENT_DIALOG: !state[OPEN_PLACEMENT_DIALOG]
+    case SHOW_PLACEMENT_DIALOG: {
+      if (state[SHOW_PLACEMENT_DIALOG] != payload) {
+        return {
+          ...state,
+          SHOW_PLACEMENT_DIALOG: !payload
+            ? !state[SHOW_PLACEMENT_DIALOG]
+            : payload,
+        }
       }
     }
     case SELECT_OFFER_ID: {
-      return {...state, SELECTED_OFFERS_ID: payload,}
+      return { ...state, SELECTED_OFFERS_ID: payload }
     }
     case ADD_BASKET_ITEM: {
       return { ...state, BASKET: payload }

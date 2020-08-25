@@ -37,7 +37,7 @@ const SlideUp = {
   exiting: { maxHeight: 0 },
   exited: { maxHeight: 0 },
 }
-export default function Offers() {
+export default function Offers({ location }) {
   const isMobile = useMedia(992)
   const {
     SHOW_MOBILE_BASKET_IN_OFFERS = false,
@@ -49,7 +49,7 @@ export default function Offers() {
   const countTicketInBasket = useCountTickets()
 
   return (
-    <Layout pageInfo={{ pageName: "routes" }}>
+    <Layout pageInfo={{ pageName: "offers" }} {...location}>
       <Container className="my-5 ">
         <Row className="bg-white border-radius shadow-sm rounded mx-0">
           {!isMobile ? <SectionForm /> : null}

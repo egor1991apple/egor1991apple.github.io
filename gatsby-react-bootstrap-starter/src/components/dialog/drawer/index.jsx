@@ -22,7 +22,7 @@ const Drawer = ({
 
   const ref = useRef(null)
   //useClickOutside(ref, () => callback())
-  console.log(open, "open")
+
   return typeof document !== "undefined" && document.getElementById(NamePortal)
     ? createPortal(
         <Fade

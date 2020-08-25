@@ -14,7 +14,7 @@ import { MdMenu } from "react-icons/md"
 const TopMobile = ({ children }) => {
   const {
     onToggleMobileNav = null,
-    TOGGLE_MOBILE_NAV = false,
+    SHOW_MOBILE_NAV = false,
     TOP_NAVS = [],
   } = useContext(GlobalContext)
 
@@ -27,7 +27,7 @@ const TopMobile = ({ children }) => {
       <Drawer
         styles={{}}
         callback={onToggleMobileNav}
-        open={TOGGLE_MOBILE_NAV}
+        open={SHOW_MOBILE_NAV}
         NamePortal="NavMobileDrawer"
       >
         <div className="drawer-content">

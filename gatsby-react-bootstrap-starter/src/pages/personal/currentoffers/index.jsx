@@ -7,10 +7,10 @@ import Offers from "../../../sections/personal/offers"
 import useMedia from "../../../hooks/useMedia"
 import SectionMobile from "../../../sections/personal/mobileContainer"
 
-const CurrentOffers = () => {
+const CurrentOffers = ({ location }) => {
   const isMobile = useMedia(992)
   return (
-    <Layout pageInfo={{ pageName: "personal" }}>
+    <Layout pageInfo={{ pageName: "personal" }} {...location}>
       <Container className="my-5 ">
         <Row className="bg-white border-radius shadow rounded mx-0">
           {!isMobile ? (

@@ -15,7 +15,7 @@ import useMedia from "../hooks/useMedia"
 
 import { navigate } from "gatsby"
 
-export default function Basket() {
+export default function Basket({ location }) {
   const {
     BASKET_COMMIT = [],
     onToggleAlert = () => {},
@@ -44,7 +44,7 @@ export default function Basket() {
   const isMobile = useMedia(992)
 
   return (
-    <Layout pageInfo={{ pageName: "basket" }}>
+    <Layout pageInfo={{ pageName: "basket" }} {...location}>
       <Container className="my-5 ">
         <Row>
           <SectionTimer />

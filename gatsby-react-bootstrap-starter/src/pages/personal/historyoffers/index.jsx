@@ -6,10 +6,10 @@ import UserImg from "../../../sections/personal/UserImg"
 import { Link } from "gatsby"
 import useMedia from "../../../hooks/useMedia"
 import SectionMobile from "../../../sections/personal/mobileContainer"
-const CurrentOffers = () => {
+const CurrentOffers = ({ location }) => {
   const isMobile = useMedia(992)
   return (
-    <Layout pageInfo={{ pageName: "personal/historyoffers" }}>
+    <Layout pageInfo={{ pageName: "personal/historyoffers" }} {...location}>
       <Container className="my-5 ">
         <Row className="bg-white border-radius shadow rounded mx-0">
           {!isMobile ? (
