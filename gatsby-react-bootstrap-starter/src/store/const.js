@@ -95,3 +95,4 @@ export const LOCATION_HREF = "LOCATION_HREF"
 
 //busRental
 export const BUS_RENTAL = "BUS_RENTAL"
+export const SHOW_BUSRENTAL_RATE_DIALOG = "SHOW_BUSRENTAL_RATE_DIALOG"

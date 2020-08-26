@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from "react"
 import Layout from "../components/layout"
-import { Container, Row } from "react-bootstrap"
-import SectionForm from "../sections/offers/formOffers"
+import { Container, Row, Col } from "react-bootstrap"
+import Form from "../components/forms/mainSearchForm"
 import SectionOffers from "../sections/offers/listOffers"
 import SectionPlacementDialog from "../sections/offers/placementDialog"
 import SectionBasket from "../sections/offers/basket"
 import Drawer from "../components/dialog/drawer"
-import { Transition } from "react-transition-group"
+import MiniBasket from "../sections/offers/MiniBasket"
 import SectionMobileControl from "../sections/offers/mobileControl"
 import useMedia from "../hooks/useMedia"
 import { GlobalContext } from "../store/context"
@@ -51,25 +51,38 @@ export default function Offers({ location }) {
   return (
     <Layout pageInfo={{ pageName: "offers" }} {...location}>
       <Container className="my-5 ">
-        <Row className="bg-white border-radius shadow-sm rounded mx-0">
-          {!isMobile ? <SectionForm /> : null}
-          <SectionOffers />
+        <Row className="bg-white border-radius shadow-sm rounded mx-0 overflow-hidden">
           {!isMobile ? (
-            <Transition in={countTicketInBasket > 0} timeout={duration}>
-              {state => (
-                <SectionBasket
-                  transitionStyles={{
-                    ...defaultSlideLeft,
-                    ...SlideLeft[state],
-                  }}
-                  isMobile={isMobile}
-                />
-              )}
-            </Transition>
+            <Col lg="12" className="pt-3 border-bottom bg-light-3">
+              <h3 className="text-center mb-3">Поиск автобусных билетов</h3>
+              <Form type={"hor"} />
+            </Col>
           ) : null}
+          <Col lg="3" className={"pt-3 border-right"}>
+            Фильтр
+          </Col>
+
+          <SectionOffers />
         </Row>
       </Container>
       <SectionPlacementDialog />
+
+      <>
+        <MiniBasket />
+        <Drawer
+          open={SHOW_MOBILE_BASKET_IN_OFFERS}
+          type="bottom"
+          NamePortal="BasketInOffersDrawer"
+          callback={onShowMobileBasketInOffers}
+        >
+          <Container className={`h-100 `}>
+            <Row className="mx-0 border rounded overflow-hidden h-100">
+              <SectionBasket />{" "}
+            </Row>
+          </Container>
+        </Drawer>
+      </>
+
       {isMobile ? (
         <>
           <SectionMobileControl />
@@ -89,7 +102,7 @@ export default function Offers({ location }) {
             NamePortal="FormInOffersDrawer"
             callback={onShowMobileFilterInOffers}
           >
-            <SectionForm />
+            <Form />
           </Drawer>
         </>
       ) : null}

@@ -62,6 +62,7 @@ import {
   LOCATION_HREF,
   ON_SYNC_DEFAULT,
   BUS_RENTAL,
+  SHOW_BUSRENTAL_RATE_DIALOG,
 } from "./const"
 import personal_data from "./personal.json"
 import { navigate } from "gatsby"
@@ -144,6 +145,7 @@ let defaultState = {
   [SHOW_MOBILE_BASKET_BOOKING]: false,
   [SHOW_MOBILE_BASKET_DETAIL]: false,
   [SHOW_MOBILE_PERSONAL_MENU]: false,
+  [SHOW_BUSRENTAL_RATE_DIALOG]: false,
 }
 
 export default function GlobalState({ children }) {
@@ -205,6 +207,7 @@ export default function GlobalState({ children }) {
           [SHOW_MOBILE_BASKET_BOOKING]: false,
           [SHOW_MOBILE_BASKET_DETAIL]: false,
           [SHOW_MOBILE_PERSONAL_MENU]: false,
+          [SHOW_BUSRENTAL_RATE_DIALOG]: false,
         }
         dispatch({ type: ON_SYNC_DEFAULT, payload: defaultState })
       })
@@ -221,6 +224,7 @@ export default function GlobalState({ children }) {
     dispatch({ type: SHOW_MOBILE_BASKET_BOOKING, payload: false })
     dispatch({ type: SHOW_MOBILE_BASKET_DETAIL, payload: false })
     dispatch({ type: SHOW_MOBILE_PERSONAL_MENU, payload: false })
+    dispatch({ type: SHOW_BUSRENTAL_RATE_DIALOG, payload: false })
   }
   //authDialog
   const onSetAuth = e => {
@@ -261,6 +265,9 @@ export default function GlobalState({ children }) {
   //showMobileBasketInOffers
   const onShowMobileFilterInOffers = () => {
     dispatch({ type: SHOW_MOBILE_FILTER_IN_OFFERS, payload: null })
+  }
+  const onShowBusRentalRateDialog = () => {
+    dispatch({ type: SHOW_BUSRENTAL_RATE_DIALOG, payload: null })
   }
   const onShowMobileBasketBooking = () => {
     dispatch({ type: SHOW_MOBILE_BASKET_BOOKING, payload: null })
@@ -493,6 +500,7 @@ export default function GlobalState({ children }) {
         onShowMobileBasketBooking,
         onShowMobileBasketDetail,
         onShowMobilePersonalMenu,
+        onShowBusRentalRateDialog,
         onCloseAllDialogAndDrawer,
         onSetLocationHref,
         lang: "ru",

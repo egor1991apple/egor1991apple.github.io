@@ -13,6 +13,7 @@ export default function index({
   typeTransport = 0,
   description = null,
   currency = null,
+  callback = () => {},
 }) {
   return (
     <Card className="d-flex flex-row flex-wrap overflow-hidden mb-3 align-items-center">
@@ -59,7 +60,9 @@ export default function index({
           </tbody>
         </table>
         <div className="ml-auto pt-3 mt-auto">
-          <Button size="sm">Бронировать</Button>
+          <Button size="sm" onClick={callback}>
+            Бронировать
+          </Button>
         </div>
       </Card.Body>
     </Card>

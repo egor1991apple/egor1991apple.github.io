@@ -31,7 +31,7 @@ export default function Offers() {
   return (
     <Fragment>
       <Col lg="9" className="py-3 zIndex mx-auto">
-        <h3 className="mb-3 text-center">Предложения туда</h3>
+        <h3 className="mb-3">Предложения туда</h3>
         {OFFERS.length > 0 &&
           OFFERS.map(
             (offer, index) =>
@@ -44,7 +44,7 @@ export default function Offers() {
 
         {OFFERS.length > 0 &&
           OFFERS.find(({ direction }) => direction == 1) && (
-            <h3 className="mt-5 mb-3 text-center">Предложения обратно</h3>
+            <h3 className="mt-5 mb-3 ">Предложения обратно</h3>
           )}
         {OFFERS.length > 0 &&
           OFFERS.map(

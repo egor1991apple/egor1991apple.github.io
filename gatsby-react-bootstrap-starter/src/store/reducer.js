@@ -39,6 +39,7 @@ import {
   LOCATION_HREF,
   ON_LOCATION_HREF,
   ON_SYNC_DEFAULT,
+  SHOW_BUSRENTAL_RATE_DIALOG,
 } from "./const"
 
 export const Reducer = (state, { type = null, payload = null }) => {
@@ -65,13 +66,23 @@ export const Reducer = (state, { type = null, payload = null }) => {
     }
     case SHOW_MOBILE_NAV: {
       if (state[SHOW_MOBILE_NAV] != payload) {
-        console.log(state[SHOW_MOBILE_NAV], "show-mobile-nav", payload)
         return {
           ...state,
           SHOW_MOBILE_NAV: !payload ? !state[SHOW_MOBILE_NAV] : payload,
         }
       }
     }
+    case SHOW_BUSRENTAL_RATE_DIALOG: {
+      if (state[SHOW_BUSRENTAL_RATE_DIALOG] != payload) {
+        return {
+          ...state,
+          SHOW_BUSRENTAL_RATE_DIALOG: !payload
+            ? !state[SHOW_BUSRENTAL_RATE_DIALOG]
+            : payload,
+        }
+      }
+    }
+
     case SHOW_MOBILE_BASKET_IN_OFFERS: {
       if (state[SHOW_MOBILE_BASKET_IN_OFFERS] != payload) {
         return {

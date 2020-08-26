@@ -4,30 +4,50 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { GlobalContext } from "../store/context"
 import BusRentalCard from "../components/cards/bus_rental"
+import RentalTarifCard from "../components/cards/rentalTarif"
 import ReactHtmlParser from "react-html-parser"
-import SectionForm from "../sections/offers/formOffers"
+import RentBusDialog from "../components/dialog/rentBusDailog"
+import Form from "../components/forms/formRental"
+
 const BusRental = ({ location }) => {
-  const { BUS_RENTAL = {} } = useContext(GlobalContext)
-  const { description = "", offers = [] } = BUS_RENTAL
+  const { BUS_RENTAL = {}, onShowBusRentalRateDialog = () => {} } = useContext(
+    GlobalContext
+  )
+  const { description = "", offers = [], rates = [] } = BUS_RENTAL
 
   return (
     <Layout pageInfo={{ pageName: "offers" }} {...location}>
       <SEO title="Home" keywords={[`gatsby`, `react`, `bootstrap`]} />
       <Container className="my-5">
         <Row className="bg-white border-radius shadow-sm rounded mx-0">
-          <SectionForm />
-          <Col md="12" lg="8" className="py-3 mx-auto">
+          <Col lg="3" className="py-3 border-right">
+            <Form type={"ver"} />
+          </Col>
+
+          <Col md="12" lg="9" className="py-3 mx-auto">
             {offers.length > 0
               ? offers.map(item => (
-                  <BusRentalCard key={`${item.id}_rental_card`} {...item} />
+                  <BusRentalCard
+                    key={`${item.id}_rental_card`}
+                    {...item}
+                    callback={onShowBusRentalRateDialog}
+                  />
                 ))
               : null}
           </Col>
+
           <Col xs="12" className="p-3 border bg-light-2">
             {ReactHtmlParser(description)}
           </Col>
         </Row>
       </Container>
+      <RentBusDialog>
+        {rates.length
+          ? rates.map(item => (
+              <RentalTarifCard key={`${item.id}_rental`} {...item} />
+            ))
+          : null}
+      </RentBusDialog>
     </Layout>
   )
 }

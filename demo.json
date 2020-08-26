@@ -845,6 +845,23 @@
   ],
   "busRental": {
     "description": "Sunt pariatur eu cillum voluptate ex incididunt nostrud deserunt. Non voluptate culpa ut fugiat esse veniam ullamco. Ipsum consequat magna ullamco laborum non nostrud qui esse ex culpa consectetur.Irure aute minim ullamco et enim ut quis enim aliqua eu.Tempor sunt aliquip duis culpa anim amet aliqua adipisicing anim.Quis consectetur labore in nulla mollit ullamco sint nisi Lorem qui veniam proident voluptate. Enim sint ad amet reprehenderit cupidatat labore pariatur.Incididunt aute cupidatat labore do sint qui magna nulla ex excepteur fugiat.Aliqua non Lorem esse sint.",
+    "rates": [
+      {
+        "id": 1,
+        "title": "Город руб/час",
+        "checked": false
+      },
+      {
+        "id": 2,
+        "title": "Город руб/км",
+        "checked": false
+      },
+      {
+        "id": 3,
+        "title": "Медународный руб/км",
+        "checked": false
+      }
+    ],
     "offers": [
       {
         "id": "1",
@@ -856,7 +873,8 @@
         "sizeTransport": 28,
         "typeTransport": 0,
         "description": "Anim adipisicing dolor enim commodo id consequat officia nisi aliquip incididunt duis labore adipisicing.Ad Lorem irure aute consectetur.",
-        "currency": "BYN"
+        "currency": "BYN",
+        "offer_rates": [1, 2, 3]
       },
       {
         "id": "2",
@@ -868,10 +886,11 @@
         "sizeTransport": 28,
         "typeTransport": 0,
         "description": "Anim adipisicing dolor enim commodo id consequat officia nisi aliquip incididunt duis labore adipisicing.Ad Lorem irure aute consectetur.",
-        "currency": "BYN"
+        "currency": "BYN",
+        "offer_rates": [1, 2, 3]
       },
       {
-        "id": "2",
+        "id": "3",
         "img": "/img/mersAvtobus.jpg",
         "transport": "Мерседесбенз Спринтер Автобус",
         "pricePerHour": 5,
@@ -880,7 +899,8 @@
         "sizeTransport": 28,
         "typeTransport": 0,
         "description": "Anim adipisicing dolor enim commodo id consequat officia nisi aliquip incididunt duis labore adipisicing.Ad Lorem irure aute consectetur.",
-        "currency": "BYN"
+        "currency": "BYN",
+        "offer_rates": [2, 3]
       }
     ]
   }
