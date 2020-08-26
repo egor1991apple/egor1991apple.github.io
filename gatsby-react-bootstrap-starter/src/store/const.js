@@ -1,6 +1,6 @@
 //navbar
 export const SHOW_MOBILE_NAV = "SHOW_MOBILE_NAV"
-export const OPEN_AUTH_DIALOG = "OPEN_AUTH_DIALOG"
+export const SHOW_AUTH_DIALOG = "SHOW_AUTH_DIALOG"
 export const IS_AUTH = "IS_AUTH"
 export const TOP_NAVS = "TOP_NAVS"
 //main page
@@ -92,3 +92,6 @@ export const SHOW_MOBILE_PERSONAL_MENU = "SHOW_MOBILE_PERSONAL_MENU"
 export const ON_SYNC_DEFAULT = "ON_SYNC_DEFAULT"
 export const ON_LOCATION_HREF = "ON_LOCATION_HREF"
 export const LOCATION_HREF = "LOCATION_HREF"
+
+//busRental
+export const BUS_RENTAL = "BUS_RENTAL"

@@ -39,44 +39,44 @@ const Layout = ({ children, pageInfo = "", ...rest }) => {
   useEffect(() => {
     setLoader(false)
     onSetLocationHref(rest.pathname)
-
-    //onCloseAllDialogAndDrawer()
+    onCloseAllDialogAndDrawer()
   }, [rest.pathname])
-
+  console.log("render")
   return (
-    <StaticQuery
-      query={graphql`
-        query SiteTitleQuery {
-          site {
-            siteMetadata {
-              title
-            }
-          }
-        }
-      `}
-      render={data => (
-        <Fragment>
-          <Transition in={loaderPage} timeout={duration} unmountOnExit={true}>
-            {state => (
-              <Preloader
-                style={{
-                  ...defaultStyle,
-                  ...transitionStyles[state],
-                }}
-              />
-            )}
-          </Transition>
-          <div id="main-wrapper">
-            <Header />
-            <main>{children}</main>
-            <Footer />
-            <AuthDialog />
-            <SectionAlerts />
-          </div>
-        </Fragment>
-      )}
-    />
+    // <StaticQuery
+    //   query={graphql`
+    //     query SiteTitleQuery {
+    //       site {
+    //         siteMetadata {
+    //           title
+    //         }
+    //       }
+    //     }
+    //   `}
+    //   render={data => (
+    <Fragment>
+      <Transition in={loaderPage} timeout={duration} unmountOnExit={true}>
+        {state => (
+          <Preloader
+            style={{
+              ...defaultStyle,
+              ...transitionStyles[state],
+            }}
+          />
+        )}
+      </Transition>
+      <div id="main-wrapper">
+        <Header />
+        <main>{children}</main>
+        <Footer />
+        <AuthDialog />
+        <SectionAlerts />
+      </div>
+    </Fragment>
   )
+  //       )}
+  //     />
+  //   )
 }
 
 export default Layout

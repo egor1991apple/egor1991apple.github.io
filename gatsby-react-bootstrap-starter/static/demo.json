@@ -10,7 +10,7 @@
     {
       "id": "2",
       "title": "Аренда",
-      "link": "/",
+      "link": "/busrental",
       "children": []
     },
     {
@@ -129,7 +129,7 @@
       "date": "21.02.2020",
       "cost": "400",
       "currency": "USD",
-      "link": "/",
+      "link": "moskow-minks",
       "route": "В одну сторону"
     },
     {
@@ -138,7 +138,7 @@
       "date": "21.02.2020",
       "cost": "400",
       "currency": "USD",
-      "link": "/routes_detail",
+      "link": "moskow-minks",
       "route": "В одну сторону"
     },
     {
@@ -147,7 +147,7 @@
       "date": "21.02.2020",
       "cost": "400",
       "currency": "USD",
-      "link": "/routes_detail",
+      "link": "moskow-minks",
       "route": "В одну сторону"
     },
     {
@@ -156,7 +156,7 @@
       "date": "21.02.2020",
       "cost": "400",
       "currency": "USD",
-      "link": "/routes_detail",
+      "link": "moskow-minks",
       "route": "В одну сторону"
     },
     {
@@ -165,7 +165,7 @@
       "date": "21.02.2020",
       "cost": "400",
       "currency": "USD",
-      "link": "/routes_detail",
+      "link": "moskow-minks",
       "route": "В одну сторону"
     },
     {
@@ -174,7 +174,7 @@
       "date": "21.02.2020",
       "cost": "400",
       "currency": "USD",
-      "link": "/routes_detail",
+      "link": "moskow-minks",
       "route": "В одну сторону"
     },
     {
@@ -183,7 +183,7 @@
       "date": "21.02.2020",
       "cost": "400",
       "currency": "USD",
-      "link": "/routes_detail",
+      "link": "moskow-minks",
       "route": "В одну сторону"
     },
     {
@@ -192,7 +192,7 @@
       "date": "21.02.2020",
       "cost": "400",
       "currency": "USD",
-      "link": "/routes_detail",
+      "link": "moskow-minks",
       "route": "В одну сторону"
     }
   ],
@@ -842,5 +842,46 @@
       "text": "Do amet do Lorem et pariatur laborum nostrud do enim ipsum.",
       "checked": false
     }
-  ]
+  ],
+  "busRental": {
+    "description": "Sunt pariatur eu cillum voluptate ex incididunt nostrud deserunt. Non voluptate culpa ut fugiat esse veniam ullamco. Ipsum consequat magna ullamco laborum non nostrud qui esse ex culpa consectetur.Irure aute minim ullamco et enim ut quis enim aliqua eu.Tempor sunt aliquip duis culpa anim amet aliqua adipisicing anim.Quis consectetur labore in nulla mollit ullamco sint nisi Lorem qui veniam proident voluptate. Enim sint ad amet reprehenderit cupidatat labore pariatur.Incididunt aute cupidatat labore do sint qui magna nulla ex excepteur fugiat.Aliqua non Lorem esse sint.",
+    "offers": [
+      {
+        "id": "1",
+        "img": "img/mers.webp",
+        "transport": "Мерседесбенз Спринтер",
+        "pricePerHour": 7,
+        "pricePerKm": 0.25,
+        "worldPricePerKm": 0.5,
+        "sizeTransport": 28,
+        "typeTransport": 0,
+        "description": "Anim adipisicing dolor enim commodo id consequat officia nisi aliquip incididunt duis labore adipisicing.Ad Lorem irure aute consectetur.",
+        "currency": "BYN"
+      },
+      {
+        "id": "2",
+        "img": "img/mers.webp",
+        "transport": "Мерседесбенз Спринтер",
+        "pricePerHour": 5,
+        "pricePerKm": 0.25,
+        "worldPricePerKm": 0.5,
+        "sizeTransport": 28,
+        "typeTransport": 0,
+        "description": "Anim adipisicing dolor enim commodo id consequat officia nisi aliquip incididunt duis labore adipisicing.Ad Lorem irure aute consectetur.",
+        "currency": "BYN"
+      },
+      {
+        "id": "2",
+        "img": "img/mersAvtobus.jpg",
+        "transport": "Мерседесбенз Спринтер Автобус",
+        "pricePerHour": 5,
+        "pricePerKm": 0.25,
+        "worldPricePerKm": 0.5,
+        "sizeTransport": 28,
+        "typeTransport": 0,
+        "description": "Anim adipisicing dolor enim commodo id consequat officia nisi aliquip incididunt duis labore adipisicing.Ad Lorem irure aute consectetur.",
+        "currency": "BYN"
+      }
+    ]
+  }
 }

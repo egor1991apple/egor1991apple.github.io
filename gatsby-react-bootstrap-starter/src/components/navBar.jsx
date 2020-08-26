@@ -6,6 +6,7 @@ import { MdPerson, MdLocalPhone } from "react-icons/md"
 import TopMobileMenu from "./navs/topMobile"
 import TopDesctopMenu from "./navs/topDesctop"
 import { Link } from "gatsby"
+
 const CustomNavbar = () => {
   const { onOpenAuthDialog = () => {}, IS_AUTH } = useContext(GlobalContext)
 

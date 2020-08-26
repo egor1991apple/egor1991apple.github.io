@@ -10,7 +10,7 @@ import SectionMobile from "../../../sections/personal/mobileContainer"
 const CurrentOffers = ({ location }) => {
   const isMobile = useMedia(992)
   return (
-    <Layout pageInfo={{ pageName: "personal" }} {...location}>
+    <Layout pageInfo={{ pageName: "personal/current" }} {...location}>
       <Container className="my-5 ">
         <Row className="bg-white border-radius shadow rounded mx-0">
           {!isMobile ? (

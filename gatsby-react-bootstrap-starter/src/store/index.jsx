@@ -3,7 +3,7 @@ import { GlobalContext } from "./context"
 import { Reducer } from "./reducer"
 import {
   IS_AUTH,
-  OPEN_AUTH_DIALOG,
+  SHOW_AUTH_DIALOG,
   SHOW_PLACEMENT_DIALOG,
   MAIN_SLIDER_SLIDS,
   OFFERS,
@@ -61,6 +61,7 @@ import {
   ON_LOCATION_HREF,
   LOCATION_HREF,
   ON_SYNC_DEFAULT,
+  BUS_RENTAL,
 } from "./const"
 import personal_data from "./personal.json"
 import { navigate } from "gatsby"
@@ -76,7 +77,7 @@ function createArray(length, value) {
 let defaultState = {
   [LOCATION_HREF]: null,
   [IS_AUTH]: false,
-  [OPEN_AUTH_DIALOG]: false,
+  [SHOW_AUTH_DIALOG]: false,
   [SHOW_MOBILE_NAV]: false,
   [SHOW_PLACEMENT_DIALOG]: false,
   [MAIN_SLIDER_SLIDS]: [],
@@ -119,6 +120,10 @@ let defaultState = {
     0: [],
     1: [],
   },
+  [BUS_RENTAL]: {
+    description: "",
+    offers: [],
+  },
   [SELECTED_OFFERS_ID]: 0,
   [ALERT]: [],
   [SHOW_PAYMENT_SYTEM_DIALOG]: false,
@@ -150,7 +155,7 @@ export default function GlobalState({ children }) {
       .then(demo => {
         defaultState = {
           [IS_AUTH]: false,
-          [OPEN_AUTH_DIALOG]: false,
+          [SHOW_AUTH_DIALOG]: false,
           [SHOW_MOBILE_NAV]: false,
           [SHOW_PLACEMENT_DIALOG]: false,
           [MAIN_SLIDER_SLIDS]: demo.main_slider,
@@ -179,6 +184,7 @@ export default function GlobalState({ children }) {
             0: [],
             1: [],
           },
+          [BUS_RENTAL]: demo.busRental,
           [SELECTED_OFFERS_ID]: 1,
           [ALERT]: demo.alert,
           [SHOW_PAYMENT_SYTEM_DIALOG]: false,
@@ -207,24 +213,24 @@ export default function GlobalState({ children }) {
     dispatch({ type: ON_LOCATION_HREF, payload: location })
   }
   const onCloseAllDialogAndDrawer = () => {
-    // dispatch({ type: OPEN_AUTH_DIALOG, payload: false })
-    // dispatch({ type: SHOW_MOBILE_NAV, payload: false })
-    // //dispatch({ type: SHOW_PLACEMENT_DIALOG, payload: data })
-    // dispatch({ type: SHOW_MOBILE_BASKET_IN_OFFERS, payload: false })
-    // dispatch({ type: SHOW_MOBILE_FILTER_IN_OFFERS, payload: false })
-    // dispatch({ type: SHOW_MOBILE_BASKET_BOOKING, payload: false })
-    // dispatch({ type: SHOW_MOBILE_BASKET_DETAIL, payload: false })
-    // dispatch({ type: SHOW_MOBILE_PERSONAL_MENU, payload: false })
+    dispatch({ type: SHOW_AUTH_DIALOG, payload: false })
+    dispatch({ type: SHOW_MOBILE_NAV, payload: false })
+    dispatch({ type: SHOW_PLACEMENT_DIALOG, payload: false })
+    dispatch({ type: SHOW_MOBILE_BASKET_IN_OFFERS, payload: false })
+    dispatch({ type: SHOW_MOBILE_FILTER_IN_OFFERS, payload: false })
+    dispatch({ type: SHOW_MOBILE_BASKET_BOOKING, payload: false })
+    dispatch({ type: SHOW_MOBILE_BASKET_DETAIL, payload: false })
+    dispatch({ type: SHOW_MOBILE_PERSONAL_MENU, payload: false })
   }
   //authDialog
   const onSetAuth = e => {
     e.preventDefault()
     dispatch({ type: IS_AUTH, payload: true })
     alert("Вы авторизованы")
-    dispatch({ type: OPEN_AUTH_DIALOG, payload: false })
+    dispatch({ type: SHOW_AUTH_DIALOG, payload: false })
   }
   const onOpenAuthDialog = () => {
-    dispatch({ type: OPEN_AUTH_DIALOG, payload: null })
+    dispatch({ type: SHOW_AUTH_DIALOG, payload: null })
   }
   //mobileMenu
   const onToggleMobileNav = () => {
@@ -363,7 +369,7 @@ export default function GlobalState({ children }) {
   const onBasketCommit = direction => e => {
     const { BASKET, OFFERS, SELECTED_OFFERS_ID, SELECTED_DIRECTION } = state
     const newBasket = cloneDeep(BASKET)
-
+    onCloseAllDialogAndDrawer()
     // newBasket[direction].forEach(item => {
     //   if (item.status == 0) {
     //     item.status = 1
@@ -455,7 +461,7 @@ export default function GlobalState({ children }) {
   const onSelectPassengerId = id => {
     dispatch({ type: SELECT_PASSENGER_ID, payload: id })
   }
-
+  console.log(state)
   return (
     <GlobalContext.Provider
       value={{

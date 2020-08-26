@@ -1,6 +1,6 @@
 import {
   IS_AUTH,
-  OPEN_AUTH_DIALOG,
+  SHOW_AUTH_DIALOG,
   MAIN_SLIDER_SLIDS,
   SHOW_MOBILE_NAV,
   SHOW_MORE_ROUTES,
@@ -55,11 +55,11 @@ export const Reducer = (state, { type = null, payload = null }) => {
     case IS_AUTH: {
       return { ...state, IS_AUTH: payload }
     }
-    case OPEN_AUTH_DIALOG: {
-      if (state[OPEN_AUTH_DIALOG] != payload) {
+    case SHOW_AUTH_DIALOG: {
+      if (state[SHOW_AUTH_DIALOG] != payload) {
         return {
           ...state,
-          OPEN_AUTH_DIALOG: !payload ? !state[OPEN_AUTH_DIALOG] : payload,
+          SHOW_AUTH_DIALOG: !payload ? !state[SHOW_AUTH_DIALOG] : payload,
         }
       }
     }

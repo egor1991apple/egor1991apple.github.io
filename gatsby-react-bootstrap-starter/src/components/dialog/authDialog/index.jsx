@@ -10,7 +10,7 @@ import useCreatePortal from "../../../hooks/useCreatePortal"
 const AuthDialog = () => {
   const {
     state,
-    OPEN_AUTH_DIALOG,
+    SHOW_AUTH_DIALOG,
     onOpenAuthDialog = null,
     lang = "ru",
     onSetAuth = () => {},
@@ -19,7 +19,7 @@ const AuthDialog = () => {
   return (
     typeof document !== "undefined" &&
     typeof document !== "null" && (
-      <Modal id="authDialog" show={OPEN_AUTH_DIALOG}>
+      <Modal id="authDialog" show={SHOW_AUTH_DIALOG}>
         <Modal.Body>
           <Button
             onClick={() => onOpenAuthDialog()}

@@ -1,15 +1,10 @@
-const path = require(`path`)
-const fs = require("fs")
-exports.createPages = ({ actions }) => {
+exports.onCreatePage = ({ page, actions }) => {
   const { createPage } = actions
-  const pageData = JSON.parse(
-    fs.readFileSync("./content/demo.json", { encoding: "utf-8" })
-  )
-  const blogPostTemplate = path.resolve(`src/templates/index.jsx`)
-
-  createPage({
-    path: "demo",
-    component: blogPostTemplate,
-    context: { str: "hello world" },
-  })
+  // Make the front page match everything client side.
+  // Normally your paths should be a bit more judicious.
+  if (page.path.match(/^\/routes/)) {
+    page.matchPath = "routes/*"
+    // Update the page.
+    createPage(page)
+  }
 }

@@ -26,7 +26,6 @@ const UserInfoPage = ({ location }) => {
             <Form>
               <UserInfo />
               <LoginInfo />
-
               <Button variant="danger" className="btn-block mt-4">
                 Сохранить
               </Button>
