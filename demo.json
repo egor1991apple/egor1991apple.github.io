@@ -848,7 +848,7 @@
     "offers": [
       {
         "id": "1",
-        "img": "img/mers.webp",
+        "img": "/img/mers.webp",
         "transport": "Мерседесбенз Спринтер",
         "pricePerHour": 7,
         "pricePerKm": 0.25,
@@ -860,7 +860,7 @@
       },
       {
         "id": "2",
-        "img": "img/mers.webp",
+        "img": "/img/mers.webp",
         "transport": "Мерседесбенз Спринтер",
         "pricePerHour": 5,
         "pricePerKm": 0.25,
@@ -872,7 +872,7 @@
       },
       {
         "id": "2",
-        "img": "img/mersAvtobus.jpg",
+        "img": "/img/mersAvtobus.jpg",
         "transport": "Мерседесбенз Спринтер Автобус",
         "pricePerHour": 5,
         "pricePerKm": 0.25,
