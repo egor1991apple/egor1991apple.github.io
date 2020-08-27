@@ -6,7 +6,7 @@ export default function SlideBottom({ children, classes = {}, open = false }) {
     from: { maxHeight: "0vh", display: "none" },
     to: async (next, cancel) => {
       await next({ display: "flex" })
-      await next({ maxHeight: open ? "80vh" : "0vh" })
+      await next({ maxHeight: open ? "99vh" : "0vh" })
     },
     config: {
       duration: 300,

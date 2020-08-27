@@ -8,7 +8,7 @@ export default function DrawerHeader({
   open = false,
 }) {
   return (
-    <div className="drawer-header p-2">
+    <div className="drawer-header">
       <button
         className={`${
           type == "bottom" ? "mx-auto" : " "
@@ -17,7 +17,7 @@ export default function DrawerHeader({
       >
         {type == "bottom" ? (
           <Rotate classes={{}} open={open}>
-            <MdKeyboardArrowUp size="42" className="" />
+            <MdKeyboardArrowUp size="36" className="" />
           </Rotate>
         ) : (
           <MdClose size="28" className="" />

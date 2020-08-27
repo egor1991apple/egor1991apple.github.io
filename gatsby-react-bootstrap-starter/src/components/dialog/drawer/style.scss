@@ -3,18 +3,30 @@
   position: relative;
 }
 .drawer {
+  &-body {
+    background: white;
+    height: 100%;
+    border-radius: 4px 4px 0 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
   &-Wrapper {
     position: fixed;
-    right: 0;
+    right: 50%;
+    transform: translateX(-50%);
     height: 100%;
     width: 100%;
+
     top: 0;
     display: flex;
     justify-content: flex-end;
     z-index: 99999999;
+
     .btn-animate svg {
       color: white !important;
     }
+
     &::before {
       content: "";
       position: fixed;
@@ -29,10 +41,12 @@
       position: fixed;
       bottom: 0;
       left: 0;
+
       height: 100%;
       width: 100%;
       display: flex;
       flex-direction: column;
+
       &::before {
         content: "";
         position: fixed;
@@ -45,11 +59,10 @@
         width: 100%;
       }
       .drawer-Container {
-        border-radius: 8px 8px 0 0;
-        max-width: 100%;
-        margin-top: auto;
-        background: white;
+        margin: auto auto 0;
+        background: transparent;
         z-index: 1;
+        max-width: 1280px;
       }
       .btn-animate svg {
         color: black;
@@ -98,6 +111,11 @@
   &-header {
     display: flex;
     justify-content: space-between;
+    max-width: 200px;
+    margin: 0 auto;
+    background: white;
+    width: 100%;
+    border-radius: 100px 100px 0 0;
   }
   &-content {
     background: white;
@@ -124,7 +142,7 @@
     height: 100%;
     z-index: 2;
     position: relative;
-    box-shadow: -4px 1px 8px 0px #00000026;
+
     margin-left: auto;
   }
   &-footer {

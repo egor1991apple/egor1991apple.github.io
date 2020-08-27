@@ -67,21 +67,21 @@ export default function Offers({ location }) {
       </Container>
       <SectionPlacementDialog />
 
-      <>
-        <MiniBasket />
-        <Drawer
-          open={SHOW_MOBILE_BASKET_IN_OFFERS}
-          type="bottom"
-          NamePortal="BasketInOffersDrawer"
-          callback={onShowMobileBasketInOffers}
-        >
-          <Container className={`h-100 `}>
-            <Row className="mx-0 border rounded overflow-hidden h-100">
+      {!isMobile ? (
+        <>
+          <MiniBasket />
+          <Drawer
+            open={SHOW_MOBILE_BASKET_IN_OFFERS}
+            type="bottom"
+            NamePortal="BasketInOffersDrawer"
+            callback={onShowMobileBasketInOffers}
+          >
+            <Row className="mx-0  overflow-hidden h-100">
               <SectionBasket />{" "}
             </Row>
-          </Container>
-        </Drawer>
-      </>
+          </Drawer>
+        </>
+      ) : null}
 
       {isMobile ? (
         <>

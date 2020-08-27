@@ -36,19 +36,19 @@ const Drawer = ({
           {type == "bottom" ? (
             <SlideBottom classes="drawer-Container" open={open}>
               <DrawerHeader callback={callback} type={type} open={open} />
-              {children}
+              <div className="drawer-body">{children}</div>
             </SlideBottom>
           ) : null}
           {type == "left" ? (
             <SlideLeft classes="drawer-Container" open={open}>
               <DrawerHeader callback={callback} type={type} />
-              {children}
+              <div className="drawer-body">{children}</div>
             </SlideLeft>
           ) : null}
           {type == "right" ? (
             <SlideRight classes="drawer-Container" open={open}>
               <DrawerHeader callback={callback} type={type} />
-              {children}
+              <div className="drawer-body">{children}</div>
             </SlideRight>
           ) : null}
         </Fade>,
