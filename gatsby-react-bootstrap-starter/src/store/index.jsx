@@ -63,6 +63,11 @@ import {
   ON_SYNC_DEFAULT,
   BUS_RENTAL,
   SHOW_BUSRENTAL_RATE_DIALOG,
+  SELECTED_BUSRENTAL_ID,
+  BASKET_RENTAL,
+  ADD_BASKET_RENTAL,
+  BASKET_RENTAL_COMMIT,
+  ON_BASKET_RENTAL_COMMIT,
 } from "./const"
 import personal_data from "./personal.json"
 import { navigate } from "gatsby"
@@ -146,6 +151,9 @@ let defaultState = {
   [SHOW_MOBILE_BASKET_DETAIL]: false,
   [SHOW_MOBILE_PERSONAL_MENU]: false,
   [SHOW_BUSRENTAL_RATE_DIALOG]: false,
+  [SELECTED_BUSRENTAL_ID]: null,
+  [BASKET_RENTAL]: null,
+  [BASKET_RENTAL_COMMIT]: null,
 }
 
 export default function GlobalState({ children }) {
@@ -208,6 +216,9 @@ export default function GlobalState({ children }) {
           [SHOW_MOBILE_BASKET_DETAIL]: false,
           [SHOW_MOBILE_PERSONAL_MENU]: false,
           [SHOW_BUSRENTAL_RATE_DIALOG]: false,
+          [SELECTED_BUSRENTAL_ID]: null,
+          [BASKET_RENTAL]: null,
+          [BASKET_RENTAL_COMMIT]: null,
         }
         dispatch({ type: ON_SYNC_DEFAULT, payload: defaultState })
       })
@@ -268,7 +279,10 @@ export default function GlobalState({ children }) {
   }
   const onShowBusRentalRateDialog = () => {
     dispatch({ type: SHOW_BUSRENTAL_RATE_DIALOG, payload: null })
+    //dispatch({ type: SELECTED_BUSRENTAL_ID, payload: id })
   }
+
+  //const onAddBus
   const onShowMobileBasketBooking = () => {
     dispatch({ type: SHOW_MOBILE_BASKET_BOOKING, payload: null })
   }
@@ -281,6 +295,27 @@ export default function GlobalState({ children }) {
   const onSavePrevBasket = () => {
     const newBasket = cloneDeep(state.BASKET_COMMIT)
     dispatch({ type: SAVE_PREV_BASKET, payload: newBasket })
+  }
+  const onAddBasketRental = data => {
+    dispatch({ type: ADD_BASKET_RENTAL, payload: data })
+  }
+  const onBasketRentalCommit = data => {
+    const newBasket = cloneDeep(state.BASKET_RENTAL)
+    dispatch({ type: ON_BASKET_RENTAL_COMMIT, payload: newBasket })
+    navigate("/basketRental")
+  }
+
+  const onCheckedBusRentalRates = checkedId => {
+    const newBasket = cloneDeep(state.BASKET_RENTAL)
+    newBasket.rates.forEach(item => {
+      if (item.id == checkedId) {
+        item.checked = true
+      } else {
+        item.checked = false
+      }
+    })
+
+    dispatch({ type: ADD_BASKET_RENTAL, payload: newBasket })
   }
 
   const onChangePlacement = (direction = 0) => (data = 3) => {
@@ -503,6 +538,9 @@ export default function GlobalState({ children }) {
         onShowBusRentalRateDialog,
         onCloseAllDialogAndDrawer,
         onSetLocationHref,
+        onAddBasketRental,
+        onCheckedBusRentalRates,
+        onBasketRentalCommit,
         lang: "ru",
       }}
     >

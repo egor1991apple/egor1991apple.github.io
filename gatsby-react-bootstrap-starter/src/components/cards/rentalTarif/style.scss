@@ -1,0 +1,15 @@
+.table-tarif {
+  width: 100%;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px #e1e1e1;
+  td {
+    padding: 0.5rem;
+    border-bottom: 1px solid #e1e1e1;
+    vertical-align: middle;
+    &:first-child {
+      text-align: center;
+    }
+  }
+}

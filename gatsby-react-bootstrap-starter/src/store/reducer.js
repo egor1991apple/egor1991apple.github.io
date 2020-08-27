@@ -40,6 +40,11 @@ import {
   ON_LOCATION_HREF,
   ON_SYNC_DEFAULT,
   SHOW_BUSRENTAL_RATE_DIALOG,
+  SELECTED_BUSRENTAL_ID,
+  BASKET_RENTAL,
+  ADD_BASKET_RENTAL,
+  BASKET_RENTAL_COMMIT,
+  ON_BASKET_RENTAL_COMMIT,
 } from "./const"
 
 export const Reducer = (state, { type = null, payload = null }) => {
@@ -71,6 +76,16 @@ export const Reducer = (state, { type = null, payload = null }) => {
           SHOW_MOBILE_NAV: !payload ? !state[SHOW_MOBILE_NAV] : payload,
         }
       }
+    }
+    case ADD_BASKET_RENTAL: {
+      return { ...state, BASKET_RENTAL: payload }
+    }
+    case ON_BASKET_RENTAL_COMMIT: {
+      return { ...state, BASKET_RENTAL: null, BASKET_RENTAL_COMMIT: payload }
+    }
+
+    case SELECTED_BUSRENTAL_ID: {
+      return { ...state, SELECTED_BUSRENTAL_ID: payload }
     }
     case SHOW_BUSRENTAL_RATE_DIALOG: {
       if (state[SHOW_BUSRENTAL_RATE_DIALOG] != payload) {

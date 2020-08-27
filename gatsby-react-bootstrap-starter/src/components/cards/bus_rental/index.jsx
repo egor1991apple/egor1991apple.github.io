@@ -6,13 +6,11 @@ export default function index({
   id = null,
   img = null,
   transport = null,
-  pricePerHour = null,
-  pricePerKm = null,
-  worldPricePerKm = null,
+
   sizeTransport = null,
   typeTransport = 0,
   description = null,
-  currency = null,
+  rates = [],
   callback = () => {},
 }) {
   return (
@@ -37,28 +35,27 @@ export default function index({
         </div>
 
         <div className="py-2 mt-2 border-top display-inline">{description}</div>
-        <table className="table-price">
-          <thead>
-            <tr>
-              <th>Город, руб/час</th>
-              <th>Город, руб/км</th>
-              <th>Международные, руб/км*</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                {pricePerHour} {currency}
-              </td>
-              <td>
-                {pricePerKm} {currency}
-              </td>
-              <td>
-                {worldPricePerKm} {currency}
-              </td>
-            </tr>
-          </tbody>
-        </table>
+        {rates.length > 0 ? (
+          <table className="table-price">
+            <thead>
+              <tr>
+                {rates.map(({ title = null, id = null }) => (
+                  <th key={`${id}_rate_th`}>{title}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                {rates.map(({ price = null, id = null, currency = null }) => (
+                  <td key={`${id}_rate_td`}>
+                    {price} {currency}
+                  </td>
+                ))}
+              </tr>
+            </tbody>
+          </table>
+        ) : null}
+
         <div className="ml-auto pt-3 mt-auto">
           <Button size="sm" onClick={callback}>
             Бронировать

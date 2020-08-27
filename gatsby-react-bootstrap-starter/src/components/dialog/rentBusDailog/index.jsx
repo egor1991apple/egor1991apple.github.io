@@ -13,7 +13,7 @@ const RentBusDialog = ({ children, disabled, callback }) => {
   return (
     SHOW_BUSRENTAL_RATE_DIALOG && (
       <Modal
-        size="sm"
+        size="md"
         id="PaySystemDialog"
         show={SHOW_BUSRENTAL_RATE_DIALOG}
         onHide={onShowBusRentalRateDialog}

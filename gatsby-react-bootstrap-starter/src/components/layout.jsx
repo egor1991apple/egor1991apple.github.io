@@ -38,7 +38,7 @@ const Layout = ({ children, pageInfo = "", ...rest }) => {
   console.log()
   useEffect(() => {
     setLoader(false)
-    onSetLocationHref(rest.pathname)
+    onSetLocationHref(rest)
     onCloseAllDialogAndDrawer()
   }, [rest.pathname])
   console.log("render")

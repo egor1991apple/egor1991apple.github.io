@@ -10,10 +10,17 @@ import RentBusDialog from "../components/dialog/rentBusDailog"
 import Form from "../components/forms/formRental"
 
 const BusRental = ({ location }) => {
-  const { BUS_RENTAL = {}, onShowBusRentalRateDialog = () => {} } = useContext(
-    GlobalContext
-  )
-  const { description = "", offers = [], rates = [] } = BUS_RENTAL
+  const {
+    BUS_RENTAL = {},
+    BASKET_RENTAL = null,
+    onShowBusRentalRateDialog = () => {},
+    onCheckedBusRentalRates = () => {},
+    onBasketRentalCommit = () => {},
+    onAddBasketRental = () => {},
+
+    //SELECTED_BUSRENTAL_ID = 0,
+  } = useContext(GlobalContext)
+  const { description = "", offers = [] } = BUS_RENTAL
 
   return (
     <Layout pageInfo={{ pageName: "offers" }} {...location}>
@@ -30,7 +37,10 @@ const BusRental = ({ location }) => {
                   <BusRentalCard
                     key={`${item.id}_rental_card`}
                     {...item}
-                    callback={onShowBusRentalRateDialog}
+                    callback={() => {
+                      onShowBusRentalRateDialog()
+                      onAddBasketRental(item)
+                    }}
                   />
                 ))
               : null}
@@ -41,13 +51,19 @@ const BusRental = ({ location }) => {
           </Col>
         </Row>
       </Container>
-      <RentBusDialog>
-        {rates.length
-          ? rates.map(item => (
-              <RentalTarifCard key={`${item.id}_rental`} {...item} />
-            ))
-          : null}
-      </RentBusDialog>
+      {BASKET_RENTAL ? (
+        <RentBusDialog callback={onBasketRentalCommit}>
+          <table className="table-tarif">
+            {BASKET_RENTAL.rates.map(item => (
+              <RentalTarifCard
+                key={`${item.id}_rental`}
+                {...item}
+                callback={onCheckedBusRentalRates}
+              />
+            ))}
+          </table>
+        </RentBusDialog>
+      ) : null}
     </Layout>
   )
 }
