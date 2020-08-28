@@ -64,6 +64,33 @@
       "children": []
     }
   ],
+  "personal_navs_list": [
+    {
+      "id": "1",
+      "title": "Контактная информация",
+      "link": "/personal/userInfo"
+    },
+    {
+      "id": "2",
+      "title": "История поездок",
+      "link": "/personal/historyoffers"
+    },
+    {
+      "id": "3",
+      "title": "Предстоящие поездки",
+      "link": "/personal/currentoffers"
+    },
+    {
+      "id": "4",
+      "title": "Текущая аренда",
+      "link": "/personal/currentrental"
+    },
+    {
+      "id": "5",
+      "title": "История аренда",
+      "link": "/personal/historyrental"
+    }
+  ],
   "main_slider": [
     {
       "img": "/img/main_slider.jpg",
@@ -122,6 +149,7 @@
       "link": "/routes_detail"
     }
   ],
+
   "routes": [
     {
       "img": "/img/moskow.jpg",
@@ -526,7 +554,6 @@
       "text": "г. Минск ул. Киселева 10"
     }
   ],
-
   "offers": [
     {
       "id": "1",

@@ -13,30 +13,6 @@ import { GlobalContext } from "../store/context"
 
 import { useCountTickets } from "../hooks/useCountTickets"
 
-const duration = 600
-
-const defaultSlideLeft = {
-  maxWidth: 0,
-  transition: `max-width ${duration}ms`,
-  overflow: "hidden",
-}
-const SlideLeft = {
-  entering: { maxWidth: 0 },
-  entered: { maxWidth: 400 },
-  exiting: { maxWidth: 0 },
-  exited: { maxWidth: 0 },
-}
-const defaultSlideUp = {
-  maxHeight: 0,
-  transition: `max-height ${duration}ms`,
-  overflow: "hidden",
-}
-const SlideUp = {
-  entering: { maxHeight: 0 },
-  entered: { maxHeight: "80vh" },
-  exiting: { maxHeight: 0 },
-  exited: { maxHeight: 0 },
-}
 export default function Offers({ location }) {
   const isMobile = useMedia(992)
   const {
@@ -102,7 +78,9 @@ export default function Offers({ location }) {
             NamePortal="FormInOffersDrawer"
             callback={onShowMobileFilterInOffers}
           >
-            <Form />
+            <div className="p-3">
+              <Form />
+            </div>
           </Drawer>
         </>
       ) : null}

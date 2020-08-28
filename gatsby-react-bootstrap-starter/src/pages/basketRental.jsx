@@ -56,11 +56,14 @@ export default function Basket({ location }) {
             <SectionRental />
             {!isMobile ? <SectionBooking /> : null}
           </Col>
-
-          <SectionRentalInfo />
+          {!isMobile ? <SectionRentalInfo /> : null}
         </Row>
       </Container>
-      {isMobile ? <SectionMobile /> : null}
+      {isMobile ? (
+        <SectionMobile>
+          <SectionRentalInfo />
+        </SectionMobile>
+      ) : null}
       <SectionPaymentSystem />
       <SectionAgreementDialog />
       <SectionPlacementDialog />

@@ -22,7 +22,7 @@ export default function SectionPlacementDialog() {
   try {
     placements = { ...OFFERS[SELECTED_OFFERS_ID - 1].placements, booking } || []
   } catch (er) {}
-  console.log(OFFERS[SELECTED_OFFERS_ID - 1])
+
   return (
     OFFERS.length &&
     SELECTED_OFFERS_ID && (
@@ -76,7 +76,7 @@ export default function SectionPlacementDialog() {
               )}
             />
             <table className="bus-info mt-2">
-              <tbody className="d-flex ">
+              <tbody className="d-md-flex ">
                 <tr>
                   <td className="bus-td" />
                   <td>Свободные</td>

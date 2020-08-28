@@ -9,7 +9,7 @@ import Drawer from "../../../components/dialog/drawer"
 import { Transition } from "react-transition-group"
 import { navigate } from "gatsby"
 
-export default function Basket() {
+export default function Basket({ children }) {
   const {
     SHOW_MOBILE_BASKET_BOOKING = false,
     SHOW_MOBILE_BASKET_DETAIL = false,
@@ -36,7 +36,7 @@ export default function Basket() {
         NamePortal="BookingInfoDrawer"
         callback={onShowMobileBasketDetail}
       >
-        <BookingInfo />
+        {children}
       </Drawer>
     </>
   )

@@ -71,6 +71,7 @@ export const Reducer = (state, { type = null, payload = null }) => {
     }
     case SHOW_MOBILE_NAV: {
       if (state[SHOW_MOBILE_NAV] != payload) {
+        console.log(state)
         return {
           ...state,
           SHOW_MOBILE_NAV: !payload ? !state[SHOW_MOBILE_NAV] : payload,

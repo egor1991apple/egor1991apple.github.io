@@ -68,18 +68,18 @@ import {
   ADD_BASKET_RENTAL,
   BASKET_RENTAL_COMMIT,
   ON_BASKET_RENTAL_COMMIT,
+  FILTER_OFFERS_SERVISES,
+  FILTER_OFFERS_DURATION,
+  FILTER_OFFERS_START_POINT,
+  FILTER_OFFERS_TIME_PERIOD,
+  CURRENT_RENTAL,
+  HISTORY_RENTAL,
 } from "./const"
 import personal_data from "./personal.json"
 import { navigate } from "gatsby"
-import { cloneDeep, thru } from "lodash"
-import { usePath } from "../hooks/usePath"
-function createArray(length, value) {
-  const arr = []
-  for (let i = 0; i < length; i++) {
-    arr.push(value)
-  }
-  return arr
-}
+import { cloneDeep } from "lodash"
+import { normolizeFilterDataCheckbox } from "./utiles"
+
 let defaultState = {
   [LOCATION_HREF]: null,
   [IS_AUTH]: false,
@@ -139,7 +139,7 @@ let defaultState = {
   [AGREEMENT_DIALOGS]: [false, false],
   [SELECTED_PASSENGER_ID]: null,
   [SELECTED_DIRECTION]: null,
-  [PERSONAL_NAV]: personal_data.personal_navigation,
+  [PERSONAL_NAV]: [],
   [USER_INFO]: personal_data.user_info,
   [CURRENT_OFFERS]: personal_data.current_offers,
   [HISTORY_OFFERS]: personal_data.history_offers,
@@ -154,11 +154,15 @@ let defaultState = {
   [SELECTED_BUSRENTAL_ID]: null,
   [BASKET_RENTAL]: null,
   [BASKET_RENTAL_COMMIT]: null,
+  [FILTER_OFFERS_SERVISES]: null,
+  [FILTER_OFFERS_DURATION]: null,
+  [CURRENT_RENTAL]: [],
+  [HISTORY_RENTAL]: [],
 }
 
 export default function GlobalState({ children }) {
   const [state, dispatch] = useReducer(Reducer, defaultState)
-
+  //sync data
   useEffect(() => {
     fetch("/demo.json")
       .then(response => response.json())
@@ -210,6 +214,8 @@ export default function GlobalState({ children }) {
           [HISTORY_OFFERS]: personal_data.history_offers,
           [ALL_STATUS]: personal_data.all_status,
           [PASSENGER_LIST]: personal_data.passenger_list,
+          [CURRENT_RENTAL]: personal_data.current_rental,
+          [HISTORY_RENTAL]: personal_data.history_rental,
           [SHOW_MOBILE_BASKET_IN_OFFERS]: false,
           [SHOW_MOBILE_FILTER_IN_OFFERS]: false,
           [SHOW_MOBILE_BASKET_BOOKING]: false,
@@ -219,6 +225,10 @@ export default function GlobalState({ children }) {
           [SELECTED_BUSRENTAL_ID]: null,
           [BASKET_RENTAL]: null,
           [BASKET_RENTAL_COMMIT]: null,
+          [FILTER_OFFERS_SERVISES]: normolizeFilterDataCheckbox(
+            demo.route_servises
+          ),
+          [FILTER_OFFERS_DURATION]: null,
         }
         dispatch({ type: ON_SYNC_DEFAULT, payload: defaultState })
       })
@@ -503,7 +513,7 @@ export default function GlobalState({ children }) {
   const onSelectPassengerId = id => {
     dispatch({ type: SELECT_PASSENGER_ID, payload: id })
   }
-  console.log(state)
+
   return (
     <GlobalContext.Provider
       value={{

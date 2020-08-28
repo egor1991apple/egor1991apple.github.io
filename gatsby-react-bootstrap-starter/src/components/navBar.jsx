@@ -1,11 +1,20 @@
 import React, { useContext } from "react"
-import { Navbar, Button, Container, Nav, NavDropdown } from "react-bootstrap"
+import {
+  Navbar,
+  Button,
+  Container,
+  Nav,
+  NavDropdown,
+  Dropdown,
+  DropdownButton,
+} from "react-bootstrap"
 
 import { GlobalContext } from "../store/context"
 import { MdPerson, MdLocalPhone } from "react-icons/md"
 import TopMobileMenu from "./navs/topMobile"
 import TopDesctopMenu from "./navs/topDesctop"
 import { Link } from "gatsby"
+import DropdownMenu from "react-bootstrap/DropdownMenu"
 
 const CustomNavbar = () => {
   const { onOpenAuthDialog = () => {}, IS_AUTH } = useContext(GlobalContext)
@@ -13,7 +22,7 @@ const CustomNavbar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" className="w-100 bg-white shadow-sm">
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
+        <Navbar.Brand href="/" className="d-flex p-0">
           <img src="/img/logo.svg" style={{ maxWidth: "150px" }} alt="sheddi" />
         </Navbar.Brand>
         <div className="d-none d-lg-flex ml-auto align-items-center">
@@ -76,6 +85,12 @@ const CustomNavbar = () => {
                   <NavDropdown.Item as={Link} to={"/personal/historyoffers"}>
                     История поездок
                   </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to={"/personal/currentrental"}>
+                    Текущая аренда
+                  </NavDropdown.Item>
+                  <NavDropdown.Item as={Link} to={"/personal/historyrental"}>
+                    История аренды
+                  </NavDropdown.Item>
                 </NavDropdown>
               </Nav>
             </Navbar.Collapse>
@@ -89,7 +104,36 @@ const CustomNavbar = () => {
             >
               <MdPerson size="28" className="cursor" />
             </button>
-          ) : null}
+          ) : (
+            <Dropdown>
+              <Dropdown.Toggle
+                as={MdPerson}
+                size="28"
+                className={"cursor"}
+                variant="success"
+                id="dropdown-basic"
+              >
+                Dropdown Button
+              </Dropdown.Toggle>
+              <Dropdown.Menu alignRight>
+                <Dropdown.Item as={Link} to={"/personal/userinfo"}>
+                  Контактная информация
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to={"/personal/currentoffers"}>
+                  Предстоящие поездки
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to={"/personal/historyoffers"}>
+                  История поездок
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to={"/personal/currentrental"}>
+                  Текущая аренда
+                </Dropdown.Item>
+                <Dropdown.Item as={Link} to={"/personal/historyrental"}>
+                  История аренды
+                </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          )}
 
           <div className="vertical-line" />
           <TopMobileMenu />
