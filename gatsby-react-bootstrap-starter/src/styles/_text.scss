@@ -1,0 +1,41 @@
+$base: 16px;
+$light: 300;
+$nomal: 500;
+$bold: 700;
+
+$h1-font-size: $base * 2.5 !default;
+$h2-font-size: $base * 2 !default;
+$h3-font-size: $base * 1.75 !default;
+$h4-font-size: $base * 1.5 !default;
+$h5-font-size: $base * 1.25 !default;
+$h6-font-size: $base !default;
+$headings-font-family: Merriweather;
+$display1-size: frem(64) !default;
+$display2-size: frem(56) !default;
+$display3-size: frem(48) !default;
+$display4-size: frem(40) !default;
+
+$small: $base * 0.75 !default;
+$normal: $base * 0.875 !default;
+$big: $base * 1.125 !default;
+
+.font {
+  &-light {
+    font-weight: $light !important;
+  }
+  &-normal {
+    font-weight: $nomal !important;
+  }
+  &-bold {
+    font-weight: $bold !important;
+  }
+  &-small {
+    font-size: $small;
+  }
+  &-big {
+    font-size: $big;
+  }
+  &-normal {
+    font-size: $normal;
+  }
+}

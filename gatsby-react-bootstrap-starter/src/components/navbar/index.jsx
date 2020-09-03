@@ -6,24 +6,23 @@ import {
   Nav,
   NavDropdown,
   Dropdown,
-  DropdownButton,
 } from "react-bootstrap"
 
-import { GlobalContext } from "../store/context"
+import { GlobalContext } from "../../store/context"
 import { MdPerson, MdLocalPhone } from "react-icons/md"
-import TopMobileMenu from "./navs/topMobile"
-import TopDesctopMenu from "./navs/topDesctop"
+import TopMobileMenu from "../navs/topMobile"
+import TopDesctopMenu from "../navs/topDesctop"
 import { Link } from "gatsby"
-import DropdownMenu from "react-bootstrap/DropdownMenu"
+import "./style.scss"
 
 const CustomNavbar = () => {
   const { onOpenAuthDialog = () => {}, IS_AUTH } = useContext(GlobalContext)
 
   return (
-    <Navbar collapseOnSelect expand="lg" className="w-100 bg-white shadow-sm">
+    <Navbar collapseOnSelect expand="lg" className="navbar--custom">
       <Container>
         <Navbar.Brand href="/" className="d-flex p-0">
-          <img src="/img/logo.svg" style={{ maxWidth: "150px" }} alt="sheddi" />
+          <img src="/img1/logo.svg" style={{ maxWidth: "150px" }} alt="logo" />
         </Navbar.Brand>
         <div className="d-none d-lg-flex ml-auto align-items-center">
           <TopDesctopMenu />
@@ -112,9 +111,7 @@ const CustomNavbar = () => {
                 className={"cursor"}
                 variant="success"
                 id="dropdown-basic"
-              >
-                Dropdown Button
-              </Dropdown.Toggle>
+              ></Dropdown.Toggle>
               <Dropdown.Menu alignRight>
                 <Dropdown.Item as={Link} to={"/personal/userinfo"}>
                   Контактная информация

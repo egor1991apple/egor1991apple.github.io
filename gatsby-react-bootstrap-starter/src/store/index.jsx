@@ -1,5 +1,5 @@
 import React, { useReducer, useEffect, useState } from "react"
-import { GlobalContext } from "./context"
+import { GlobalContext } from "./context.js"
 import { Reducer } from "./reducer"
 import {
   IS_AUTH,
@@ -74,6 +74,8 @@ import {
   FILTER_OFFERS_TIME_PERIOD,
   CURRENT_RENTAL,
   HISTORY_RENTAL,
+  COUNTRY_LIST,
+  COUNTRY_OFFERS,
 } from "./const"
 import personal_data from "./personal.json"
 import { navigate } from "gatsby"
@@ -158,6 +160,8 @@ let defaultState = {
   [FILTER_OFFERS_DURATION]: null,
   [CURRENT_RENTAL]: [],
   [HISTORY_RENTAL]: [],
+  [COUNTRY_LIST]: null,
+  [COUNTRY_OFFERS]: null,
 }
 
 export default function GlobalState({ children }) {
@@ -225,6 +229,8 @@ export default function GlobalState({ children }) {
           [SELECTED_BUSRENTAL_ID]: null,
           [BASKET_RENTAL]: null,
           [BASKET_RENTAL_COMMIT]: null,
+          [COUNTRY_LIST]: demo.country_list,
+          [COUNTRY_OFFERS]: demo.country_offers,
           [FILTER_OFFERS_SERVISES]: normolizeFilterDataCheckbox(
             demo.route_servises
           ),
@@ -513,7 +519,7 @@ export default function GlobalState({ children }) {
   const onSelectPassengerId = id => {
     dispatch({ type: SELECT_PASSENGER_ID, payload: id })
   }
-
+  console.log(state)
   return (
     <GlobalContext.Provider
       value={{

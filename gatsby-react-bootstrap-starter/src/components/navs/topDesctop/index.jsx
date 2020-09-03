@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap"
 import { Link } from "gatsby"
 import { GlobalContext } from "../../../store/context"
-
+import "./style.scss"
 export default function TopDesctop() {
   const { TOP_NAVS = [] } = useContext(GlobalContext)
 
@@ -22,12 +22,7 @@ export default function TopDesctop() {
                   {title}
                 </Link>
               ) : (
-                <NavDropdown
-                  key={id}
-                  alignRight
-                  title={title}
-                  id="basic-nav-dropdown"
-                >
+                <NavDropdown key={id} alignRight title={title} id="topDropdown">
                   {children.map(({ title, link, id }) => (
                     <NavDropdown.Item key={`${id}_children`} href={link}>
                       {title}

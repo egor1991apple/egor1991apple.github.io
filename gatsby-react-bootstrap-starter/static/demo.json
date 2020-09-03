@@ -3,63 +3,35 @@
   "main_navs_list": [
     {
       "id": "1",
-      "title": "Маршруты",
+      "title": "Авиатуры",
       "link": "/routes",
-      "children": []
-    },
-    {
-      "id": "2",
-      "title": "Аренда",
-      "link": "/busrental",
-      "children": []
-    },
-    {
-      "id": "3",
-      "title": "Клиентам",
-      "link": "/",
       "children": [
         {
           "id": "01",
-          "title": "Оплата",
+          "title": "Горящие туры",
           "link": "/"
         },
         {
-          "id": "02",
-          "title": "Правила",
-          "link": "/"
-        },
-        {
-          "id": "03",
-          "title": "Договор публиличной оферты",
-          "link": "/"
-        },
-        {
-          "id": "04",
-          "title": "Как забронировать",
-          "link": "/"
-        },
-        {
-          "id": "05",
-          "title": "Вопросы и ответы",
+          "id": "01",
+          "title": "Раннее бронировние",
           "link": "/"
         }
       ]
     },
     {
-      "id": "6",
-      "title": "Агенствам",
-      "link": "/",
+      "id": "2",
+      "title": "Автобусные туры",
+      "link": "/busrental",
       "children": []
+    },
+    {
+      "id": "3",
+      "title": "Путеводитель",
+      "link": "/"
     },
     {
       "id": "4",
-      "title": "Перевозчикам",
-      "link": "/",
-      "children": []
-    },
-    {
-      "id": "5",
-      "title": "О компании",
+      "title": "Блог",
       "link": "/",
       "children": []
     }
@@ -89,6 +61,298 @@
       "id": "5",
       "title": "История аренда",
       "link": "/personal/historyrental"
+    }
+  ],
+  "country_offers": [
+    {
+      "id": "1",
+      "title": "Туры в грецию от",
+      "cost": "300",
+      "country_id": "1",
+      "currency": "BYN",
+      "old_cost": "400",
+      "old_currency": "BYN",
+      "discount": "5%",
+      "img": "/img/main_slider.jpg",
+      "link": "/"
+    },
+    {
+      "id": "2",
+      "title": "Туры в грецию от",
+      "country_id": "2",
+      "cost": "300",
+      "currency": "BYN",
+      "old_cost": "400",
+      "old_currency": "BYN",
+      "discount": "5%",
+      "img": "/img/main_slider.jpg",
+      "link": "/"
+    },
+    {
+      "id": "3",
+      "title": "Туры в грецию от",
+      "country_id": "3",
+      "cost": "300",
+      "currency": "BYN",
+      "old_cost": "400",
+      "old_currency": "BYN",
+      "discount": "5%",
+      "img": "/img/main_slider.jpg",
+      "link": "/"
+    }
+  ],
+  "country_list": [
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
+    },
+    {
+      "id": "1",
+      "title": "Греция",
+      "img": "/img/flag.png",
+      "link": "/",
+      "group_id": "1"
     }
   ],
   "main_slider": [

@@ -1,23 +1,23 @@
 import React, { useEffect } from "react"
 import { Row, Col, Container, ListGroup } from "react-bootstrap"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
-import MainSearctionFormVerticalSlider from "../sections/mainPage/mainSearchFormVerticalSlider"
+import Layout from "../layout"
+
 import SectionFormHorizontal from "../sections/allPages/SearchFormHorizontal"
-import MainSectionServises from "../sections/mainPage/mainServises"
-import MainSectionWhyWeAre from "../sections/mainPage/mainWhyWeAre"
-//import MainSectionQuestionAnswer from '../sections/mainPage/mainQuestionAnswer';
-import MainSectionNews from "../sections/mainPage/mainNews"
+import SectionCountryOffers from "../sections/mainPage/countryOffers"
+import SectionCountryList from "../sections/mainPage/countryList"
+//import SectionWhyWeAre from "sections/mainPage/mainWhyWeAre"
+//
+//import SectionNews from "sections/mainPage/mainNews"
 
 const IndexPage = ({ location }) => {
   return (
-    <Layout pageInfo={{ pageName: "offers" }} {...location}>
-      <SEO title="Home" keywords={[`gatsby`, `react`, `bootstrap`]} />
+    <Layout pageInfo={{ pageName: "main" }} {...location}>
       <SectionFormHorizontal />
-      {/* <MainSearctionFormVerticalSlider /> */}
-      <MainSectionServises />
-      <MainSectionWhyWeAre />
-      <MainSectionNews />
+
+      <SectionCountryOffers />
+      <SectionCountryList />
+      {/* <SectionWhyWeAre />
+      <SectionNews /> */}
     </Layout>
   )
 }

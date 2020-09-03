@@ -9,10 +9,10 @@ import React, { useEffect, useState, Fragment, useContext } from "react"
 import { StaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import Footer from "./footer"
-import AuthDialog from "./dialog/authDialog"
-import Preloader from "./preloader"
+import AuthDialog from "../components/dialog/authDialog"
+import Preloader from "../components/preloader"
 import { Transition } from "react-transition-group"
-import SectionAlerts from "../sections/allPages/alerts"
+//import SectionAlerts from "sections/allPages/alerts"
 import { GlobalContext } from "../store/context"
 
 const duration = 2000
@@ -41,42 +41,16 @@ const Layout = ({ children, pageInfo = "", ...rest }) => {
     onSetLocationHref(rest)
     onCloseAllDialogAndDrawer()
   }, [rest.pathname])
-  console.log("render")
+
   return (
-    // <StaticQuery
-    //   query={graphql`
-    //     query SiteTitleQuery {
-    //       site {
-    //         siteMetadata {
-    //           title
-    //         }
-    //       }
-    //     }
-    //   `}
-    //   render={data => (
-    <Fragment>
-      <Transition in={loaderPage} timeout={duration} unmountOnExit={true}>
-        {state => (
-          <Preloader
-            style={{
-              ...defaultStyle,
-              ...transitionStyles[state],
-            }}
-          />
-        )}
-      </Transition>
-      <div id="main-wrapper">
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <AuthDialog />
-        <SectionAlerts />
-      </div>
-    </Fragment>
+    <div id="ts">
+      <Header />
+      <main>{children}</main>
+      <Footer />
+      <AuthDialog />
+      {/* <SectionAlerts /> */}
+    </div>
   )
-  //       )}
-  //     />
-  //   )
 }
 
 export default Layout

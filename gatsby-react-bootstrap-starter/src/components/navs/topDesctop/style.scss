@@ -1,0 +1,17 @@
+#ts {
+  .nav-link {
+    color: white;
+  }
+  .navbar-nav {
+    .nav-link {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
+  @media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+      padding-right: 0.5rem;
+      padding-left: 0.5rem;
+    }
+  }
+}

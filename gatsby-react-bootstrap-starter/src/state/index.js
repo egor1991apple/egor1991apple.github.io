@@ -1,12 +1,11 @@
 import React, { createContext } from "react"
 import Store from "../store"
 
-const NewGlobalContext = createContext({ data: "hello" })
+const NewGlobalContext = createContext()
 
 export default function wrapGlobalProvider({ element }) {
   return (
-    <NewGlobalContext.Provider value={{ hello: "hello" }}>
-      {" "}
+    <NewGlobalContext.Provider>
       <Store> {element} </Store>
     </NewGlobalContext.Provider>
   )
