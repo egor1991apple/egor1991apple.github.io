@@ -1,0 +1,118 @@
+{
+  "pages": [
+    {
+      "route": "/",
+      "title": "tours.tio.by",
+      "data": {
+        "navigation": [
+          {
+            "id": "1",
+            "title": "Авиатуры",
+            "link": "/routes",
+            "children": [
+              {
+                "id": "01",
+                "title": "Горящие туры",
+                "link": "/"
+              },
+              {
+                "id": "01",
+                "title": "Раннее бронировние",
+                "link": "/"
+              }
+            ]
+          },
+          {
+            "id": "2",
+            "title": "Автобусные туры",
+            "link": "/busrental",
+            "children": []
+          },
+          {
+            "id": "3",
+            "title": "Путеводитель",
+            "link": "/"
+          },
+          {
+            "id": "4",
+            "title": "Блог",
+            "link": "/",
+            "children": []
+          }
+        ],
+        "forms": [],
+        "sections": [
+          {
+            "id": "1234123",
+            "section_name": "country",
+            "title": "",
+            "subtitle": "",
+            "data": {
+              "offers": [
+                {
+                  "id": "1",
+                  "title": "Туры в грецию от",
+                  "cost": "300",
+                  "country_id": "1",
+                  "currency": "BYN",
+                  "old_cost": "400",
+                  "old_currency": "BYN",
+                  "discount": "5%",
+                  "img": "/img/main_slider.jpg",
+                  "link": "/"
+                },
+                {
+                  "id": "2",
+                  "title": "Туры в грецию от",
+                  "country_id": "2",
+                  "cost": "300",
+                  "currency": "BYN",
+                  "old_cost": "400",
+                  "old_currency": "BYN",
+                  "discount": "5%",
+                  "img": "/img/main_slider.jpg",
+                  "link": "/"
+                },
+                {
+                  "id": "3",
+                  "title": "Туры в грецию от",
+                  "country_id": "3",
+                  "cost": "300",
+                  "currency": "BYN",
+                  "old_cost": "400",
+                  "old_currency": "BYN",
+                  "discount": "5%",
+                  "img": "/img/main_slider.jpg",
+                  "link": "/"
+                }
+              ],
+              "countryList": [
+                {
+                  "id": "1",
+                  "title": "Греция",
+                  "img": "/img/flag.png",
+                  "link": "/",
+                  "group_id": "1"
+                },
+                {
+                  "id": "1",
+                  "title": "Греция",
+                  "img": "/img/flag.png",
+                  "link": "/",
+                  "group_id": "1"
+                },
+                {
+                  "id": "1",
+                  "title": "Греция",
+                  "img": "/img/flag.png",
+                  "link": "/",
+                  "group_id": "1"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

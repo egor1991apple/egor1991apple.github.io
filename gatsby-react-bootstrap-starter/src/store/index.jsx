@@ -160,7 +160,7 @@ let defaultState = {
   [FILTER_OFFERS_DURATION]: null,
   [CURRENT_RENTAL]: [],
   [HISTORY_RENTAL]: [],
-  [COUNTRY_LIST]: null,
+  [COUNTRY_LIST]: [],
   [COUNTRY_OFFERS]: null,
 }
 

@@ -10,14 +10,14 @@ import {
 import { chunk } from "lodash"
 
 export default function MainSectionBestPrice() {
-  const { COUNTRY_LIST = null } = useContext(GlobalContext)
+  const { COUNTRY_LIST = [] } = useContext(GlobalContext)
 
   const countColumns = useMemo(() => {
     return Math.round(COUNTRY_LIST.length / 5)
   }, [COUNTRY_LIST])
 
   return (
-    COUNTRY_LIST && (
+    COUNTRY_LIST.length && (
       <Container as="section">
         <Row>
           {chunk(COUNTRY_LIST, countColumns).map((item, index) => {
