@@ -84,7 +84,7 @@ function MainSearchForm({ language = "ru", type = null }, ref) {
             </span>
           </Form.Group>
           <Link to="/offers" className="text-white">
-            <Button variant="primary" type="submit" className="btn-block">
+            <Button variant="danger" type="submit" className="btn-block">
               {lang[language].submit}
             </Button>
           </Link>
@@ -166,7 +166,7 @@ function MainSearchForm({ language = "ru", type = null }, ref) {
             </Form.Group>
             <Form.Group className="position-relative col-sm-6 col-lg">
               <Link to="/offers" className="text-white">
-                <Button variant="primary" type="submit" className="btn-block">
+                <Button variant="danger" type="submit" className="btn-block">
                   {lang[language].submit}
                 </Button>
               </Link>

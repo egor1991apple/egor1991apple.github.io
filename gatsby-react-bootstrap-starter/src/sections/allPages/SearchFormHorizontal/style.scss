@@ -1,0 +1,20 @@
+#main-form {
+  .nav.nav-pills {
+    justify-content: center;
+  }
+  .nav-pills .nav-link {
+    color: white;
+    flex-basis: 15%;
+    text-align: center;
+    border-radius: 4px 4px 0 0;
+    font-size: 1rem;
+  }
+  .nav-pills .nav-link.active {
+    background: var(--primary);
+  }
+  .tab-pane {
+    background: var(--primary);
+    padding: 1rem 1rem 0 1rem;
+    border-radius: 4px;
+  }
+}

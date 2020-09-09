@@ -2,7 +2,7 @@ import React, { useContext } from "react"
 import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap"
 import { Link } from "gatsby"
 import { GlobalContext } from "../../../store/context"
-
+import "./style.scss"
 export default function TopDesctop() {
   const { TOP_NAVS = [] } = useContext(GlobalContext)
 
