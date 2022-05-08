@@ -292,21 +292,13 @@ body {
 p{
   z-index: 1;color: white;font-size: 56px;
 }
-a{
-  display: block;
-  color: #e3e3e3;
-  padding: 15px;
-  font-family: "Courier New";
-  text-decoration: none;
-  /* border: 1px solid #222; */
-  position: relative;background: #336293;z-index: 1;margin-top: auto;margin: auto auto 13px;font-size: 24px;/* box-shadow: 4px 2px 2px #b3b0b0; *//* font-weight: bold; */}
 
-}
 a{
   display: block;
   color: #e3e3e3;
   padding: 15px;
   font-family: "Courier New";
   text-decoration: none;
+
   /* border: 1px solid #222; */
-  position: relative;background: #222;z-index: 1;margin-top: auto;margin: auto auto 13px;font-size: 24px;/* box-shadow: 4px 2px 2px #b3b0b0; *//* font-weight: bold; */}
+  position: relative;background: #222;z-index: 1;margin-top: auto;margin: auto auto 50px;font-size: 24px;/* box-shadow: 4px 2px 2px #b3b0b0; *//* font-weight: bold; */}
